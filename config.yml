@@ -1,0 +1,58 @@
+baseURL: "http://example.org/"
+languageCode: en-us
+title: Enrico's Awesome Site
+theme: papermod
+googleAnalytics: "UA-111111111111-1"
+canonifyURLs: true
+copyright: "Enrico Pesce"
+enableRobotsTXT: true
+
+sitemap:
+  changefreq: weekly
+  priority: 0.5
+permalinks:
+  posts: "/:year/:month/:slug/"
+  page: "/:slug/"
+
+params:
+  # ShowShareButtons: true
+  ShowReadingTime: true
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+taxonomies:
+  category: categories
+  tag: tags
+
+menu:
+  main:
+    - identifier: categories
+      name: Categories
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
+    - identifier: archives
+      name: Archives
+      url: /archives/
+      weight: 30
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 40
+
+languages:
+  it:
+    title: Il mio blog
+    weight: 10
+  en:
+    title: My blog
+    weight: 20
