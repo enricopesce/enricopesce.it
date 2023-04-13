@@ -1,7 +1,7 @@
 baseURL: "http://example.org/"
 languageCode: en-us
 title: Enrico's Awesome Site
-theme: github.com/adityatelange/hugo-PaperMod
+theme: papermod
 googleAnalytics: "UA-111111111111-1"
 canonifyURLs: true
 copyright: "Enrico Pesce"
