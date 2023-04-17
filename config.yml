@@ -1,4 +1,4 @@
-baseURL: "http://example.org/"
+baseURL: "http://example.org/blog/"
 languageCode: en-us
 title: Enrico's Awesome Site
 theme: PaperMod
@@ -11,8 +11,8 @@ sitemap:
   changefreq: weekly
   priority: 0.5
 permalinks:
-  posts: "/:year/:month/:slug/"
-  page: "/:slug/"
+  posts: "blog/:year/:month/:slug/"
+  page: "blog/:slug/"
 
 params:
   # ShowShareButtons: true
@@ -34,19 +34,19 @@ menu:
   main:
     - identifier: categories
       name: Categories
-      url: /categories/
+      url: /blog/categories/
       weight: 10
     - identifier: tags
       name: Tags
-      url: /tags/
+      url: /blog/tags/
       weight: 20
     - identifier: archives
       name: Archives
-      url: /archives/
+      url: /blog/archives/
       weight: 30
     - identifier: search
       name: Search
-      url: /search/
+      url: /blog/search/
       weight: 40
 
 languages:
