@@ -10,7 +10,7 @@ tags:
 categories:
   - federation
 cover:
-  # image: static/one.webp
+  image: static/one.webp
   alt: IAM Identity domains
   caption: IAM Identity domains
 ---
