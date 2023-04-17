@@ -1,4 +1,4 @@
-baseURL: "http://example.org/blog/"
+baseURL: "https://enricopesce.github.io/blog/"
 languageCode: en-us
 title: Enrico's Awesome Site
 theme: PaperMod
