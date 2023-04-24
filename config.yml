@@ -49,6 +49,10 @@ menu:
       name: Search
       url: search/
       weight: 40
+    - identifier: about
+      name: About
+      url: about/
+      weight: 50
 
 languages:
   it:
