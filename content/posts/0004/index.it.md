@@ -9,6 +9,7 @@ categories:
 cover:
   alt: Invocare una funzione con Object Storage service
   caption: Invocare una funzione con Object Storage service
+  image: static/objectstoragefunction.webp
   relative: true
 ---
 
