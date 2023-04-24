@@ -1,7 +1,7 @@
 ---
 title: Invocare una funzione con Object Storage service
 date: 2022-11-20T09:03:20-08:00
-draft: false
+draft: true
 tags:
   - functions
 categories:
