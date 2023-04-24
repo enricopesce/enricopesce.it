@@ -13,11 +13,11 @@ cover:
   relative: true
 ---
 
-## Introduzione in Italiano al database piu’ moderno del mercato
+## Introduzione al database cloud piu’ moderno del mercato
 
 Oracle Autonomous e’ un database cloud che utilizza tecniche di machine learning per automatizzare il suo tuning, la sua sicurezza, il suo backup, gli aggiornamenti e altre procedure di gestione tradizionalmente eseguite da un DBA. Diversamente da un database convenzionale Autonomos esegue tutte queste e altre attivita’ senza la necessita di un internvento umano.
 
-#### Perche’ utilizzare Autonomous
+#### Perche’ utilizzare Autonomous?
 
 I database contengono dati critici per il business e sono essentiali per l’efficente funzionamento delle organizzazioni moderne. I DBA sono spesso impegnati da attivita’ ripetitive e manuali di gestione e manutenzione del database. All’aumentare delle attivita’ di amministrazione il rischio di un errore umano e’ sempre maggiore con conseguenze catastrofiche.
 
@@ -27,18 +27,18 @@ Ciò amplifica la necessità di una gestione del database efficiente e sicura ch
 
 #### Benefici di Autonomous
 
-Ci sono diversi vantaggi:
+Ci sono diversi vantaggi rispetto alle soluzioni tradizionali:
 
 - Uptime elevato, massime prestazioni e sicurezza del database, inclusi aggiornamenti e correzioni automatiche
 - Eliminazione delle attività di gestione manuali soggette a errori tramite l’automazione
 - Riduzione dei costi e miglioramento della produttività automatizzando le attività di routine manuali
 - L’utilizzo di Autonomous consente a un’organizzazione di utilizzre il personale addetto alla gestione del database su attività di livello superiore creando un maggiore valore aziendale.
 
-#### Nel dettaglio, Autonomous ha alcune funzionalità specifich
+#### Nel dettaglio, le funzionalita' piu importanti:
 
 ##### Facile scalabilità:
 
-Può espandere o ridurre istantaneamente le proprie risorse di calcolo e memoria, a seconda delle necessità. Ad esempio, un’azienda potrebbe passare da 8 core di elaborazione di database a 16 core per l’elaborazione di fine trimestre, per poi passare agli 8 core meno costosi in seguito. Infatti, tutte le risorse di calcolo potrebbero essere spente durante il fine settimana per ridurre i costi, per poi essere riavviate il lunedì mattina.
+Può espandere o ridurre istantaneamente le proprie risorse di calcolo e memoria, a seconda delle necessità. Ad esempio, un’azienda potrebbe passare da 8 core di elaborazione di database a 16 core per l’elaborazione di fine trimestre, per poi passare agli 8 core meno costosi in seguito. Infatti, tutte le risorse di calcolo potrebbero essere spente durante il fine settimana per ridurre i costi, per poi essere riavviate il lunedì mattina. Il tutto senza alcun blocco del servizio.
 
 ##### Patching del database
 
@@ -46,7 +46,7 @@ Molte violazioni dei dati sono abilitate da vulnerabilità del sistema per le qu
 
 ##### Intelligenza integrata
 
-Un database autonomo integra funzionalità di monitoraggio, gestione e analisi che sfruttano l’apprendimento automatico e le tecniche di intelligenza artificiale. L’obiettivo è automatizzare l’ottimizzazione del database, prevenire interruzioni dell’applicazione e rafforzare la sicurezza nell’intera applicazione del database.
+Il database integra funzionalità di monitoraggio, gestione e analisi che sfruttano l’apprendimento automatico e le tecniche di intelligenza artificiale. L’obiettivo è automatizzare l’ottimizzazione del database, prevenire interruzioni dell’applicazione e rafforzare la sicurezza nell’intera applicazione del database.
 
 #### Le funzionalita’ chiave di Autonomous
 
