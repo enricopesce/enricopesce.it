@@ -1,11 +1,11 @@
 baseURL: "https://www.enricopesce.it"
-languageCode: en-us
-title: Enrico's Awesome blog
+languageCode: it
+title: Enrico Pesce blog
 theme: PaperMod
 googleAnalytics: "G-XWS0BH16XR"
 copyright: "Enrico Pesce"
 enableRobotsTXT: true
-defaultContentLanguage: en
+defaultContentLanguage: it
 defaultContentLanguageInSubdir: true
 
 sitemap:
