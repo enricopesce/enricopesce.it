@@ -56,8 +56,8 @@ menu:
 
 languages:
   it:
-    title: Il mio blog
+    title: Enrico Pesce blog
     weight: 10
   en:
-    title: My blog
+    title: Enrico Pesce blog
     weight: 20
