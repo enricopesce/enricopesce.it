@@ -9,6 +9,5 @@ categories:
 cover:
   alt: Scrivere in un database oracle da una OCI Function
   caption: Scrivere in un database oracle da una OCI Function
-  image: static/objectstoragefunction.webp
   relative: true
 ---
