@@ -1,5 +1,5 @@
 ---
-title: Invocare una funzione con Object Storage service
+title: Trigger a function by Object Storage
 date: 2023-04-20T19:00:00+01:00
 draft: false
 tags:
@@ -7,8 +7,8 @@ tags:
 categories:
   - serverless
 cover:
-  alt: Invocare una funzione con Object Storage service
-  caption: Invocare una funzione con Object Storage service
+  alt: Trigger a function by Object Storage
+  caption: Trigger a function by Object Storage
   image: static/objectstoragefunction.webp
   relative: true
 ---
