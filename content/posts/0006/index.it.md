@@ -82,4 +82,22 @@ ENTRYPOINT ["/python/bin/fdk", "/function/func.py", "handler"]
 
 Dove andremmo a personalizzare l'immagine ufficiale di Python 3.9 installando il client database di Oracle.
 
-In questo modo la funzione continuera' a funzionare allo stesso modo di una implementazione standard di Python ma con la possibilita' di sviluppare codice che potra' connettersi ai database Oracle.
+E' possibile fare dei test locali senza dover ogni volta dover distribuire l'immagine nel repository remoto utilizzando l'opzione specifica --local nella fase di deploy
+
+```console
+fn deploy --app app --local
+```
+
+lanciando il server FN localmente sara' possibile eseguire il codice della function allo stesso modo come su OCI ma localmente
+
+Quindi lanciare su una sessione distinta del terminale
+
+```console
+fn start
+```
+
+e in un altra il classico comando di invocazione, ad esempio
+
+```console
+echo -n '{"name": "Oracle"}' | fn invoke app hello
+```
