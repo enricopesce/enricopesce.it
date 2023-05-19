@@ -1,5 +1,5 @@
 ---
-title: Usare OCI Function con immagine custom
+title: Usare OCI Function con una immagine custom
 date: 2023-05-12T19:00:00+01:00
 draft: false
 tags:
@@ -7,8 +7,9 @@ tags:
 categories:
   - serverless
 cover:
-  alt: Usare OCI Function con immagine custom
-  caption: Usare OCI Function con immagine custom
+  alt: Usare OCI Function con una immagine custom
+  caption: Usare OCI Function con una immagine custom
+  image: static/fn.png
   relative: true
 ---
 
