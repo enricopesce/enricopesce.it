@@ -9,6 +9,6 @@ I'm Italian, born in the Venice area. Passionate about electronics, video games,
 
 Today I live in Malaga as an engineer of pre-sales cloud solutions at Oracle Inc and I tell my daily working life in this blog.
 
-More information about my working life on [Linkedin](https://www.linkedin.com/in/enricopesce/)
+More information about my working life on [Linkedin](https://www.linkedin.com/in/enricopesce/).
 
-My project, included this blog, on [GitHub](https://github.com/enricopesce)
+My projects, included this blog, on [GitHub](https://github.com/enricopesce).
