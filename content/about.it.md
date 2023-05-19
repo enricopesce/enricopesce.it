@@ -9,4 +9,6 @@ Sono italiano, nato nella provincia di Venezia. Appassionato di elettronica, vid
 
 Oggi vivo in Spagna a Malaga come ingegnere di soluzioni cloud pre-vendita presso Oracle Inc e racconto in questo blog la mia vita lavorativa quotidiana.
 
-Piu' informazioni su di me su [Linkedin](https://www.linkedin.com/in/enricopesce/).
+Piu' informazioni lavorative su di me su [Linkedin](https://www.linkedin.com/in/enricopesce/)
+
+I miei progetti, incluso questo blog su [GitHub](https://github.com/enricopesce)
