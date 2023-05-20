@@ -32,7 +32,7 @@ il comando produrra' un file func.yaml di questo tipo
 
 {{< highlight yaml "linenos=table" >}}
 schema_version: 20180708
-name: helloworld
+name: hello
 version: 0.0.1
 runtime: python
 build_image: fnproject/python:3.9-dev
