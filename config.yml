@@ -17,7 +17,7 @@ permalinks:
   posts: "/:year/:month/:slug/"
 
 params:
-  # ShowShareButtons: true
+  ShowShareButtons: true
   ShowReadingTime: true
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
