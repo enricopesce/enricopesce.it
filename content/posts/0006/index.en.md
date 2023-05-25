@@ -35,11 +35,12 @@ schema_version: 20180708
 name: hello
 version: 0.0.1
 runtime: python
-build_image:fnproject/python:3.9-dev
-run_image:fnproject/python:3.9
+build_image: fnproject/python:3.9-dev
+run_image: fnproject/python:3.9
 entrypoint: /python/bin/fdk /function/func.py handler
-memories: 256
-{{< / highlights >}}
+memory: 256
+{{< / highlight >}}
+
 
 However, in some cases, the predefined images are not sufficient, either for extra language support, extra drivers, or other missing tools.
 
@@ -51,9 +52,10 @@ As a demo, I created [this example](https://github.com/enricopesce/fn-examples/t
 schema_version: 20180708
 name: customimage
 version: 0.0.1
-runtimes: docker
-memories: 256
-{{< / highlights >}}
+runtime: docker
+memory: 256
+{{< / highlight >}}
+
 
 in this way, FN uses a local Dockerfile saved at the same level to create the function execution environment, from the example the Dockerfile will look like this:
 
@@ -63,13 +65,13 @@ WORKDIR /function
 ADD requirements.txt /function/
 
 RUN pip3 install --target /python/ --no-cache --no-cache-dir -r requirements.txt &&\
-     rm -fr ~/.cache/pip /tmp* requirements.txt func.yaml Dockerfile .venv &&\
-     chmod -R o+r /python
+    rm -fr ~/.cache/pip /tmp* requirements.txt func.yaml Dockerfile .venv &&\
+    chmod -R o+r /python
 
 # install Oracle database client
 RUN microdnf install oracle-instantclient-release-el8 &&\
-     microdnf install oracle-instantclient-basic &&\
-     microdnf clean all
+    microdnf install oracle-instantclient-basic &&\
+    microdnf clean all
 
 ADD . /function/
 
@@ -78,7 +80,7 @@ RUN chmod -R o+r /function
 ENV PYTHONPATH=/function:/python
 
 ENTRYPOINT ["/python/bin/fdk", "/function/func.py", "handler"]
-{{< / highlights >}}
+{{< / highlight >}}
 
 In this Dockerfile we have customized the official Python 3.9 with Oracle's database client.
 
