@@ -17,10 +17,15 @@ permalinks:
   posts: "/:year/:month/:slug/"
 
 params:
+  defaultTheme: auto
   ShowShareButtons: true
   ShowReadingTime: true
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
+  editPost:
+      URL: "https://github.com/enricopesce/blog/tree/main/content"
+      Text: "Suggest Changes"
+      appendFilePath: true
 
 outputs:
   home:

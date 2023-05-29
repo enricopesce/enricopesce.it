@@ -4,9 +4,9 @@ layout: "about"
 url: "about/"
 summary: about
 ---
-![Image alt](static/me.jpeg)
+![Me](/me.jpg 'Enrico Pesce')
 
-Sono italiano, nato nella provincia di Venezia. Appassionato di elettronica, videogiochi e hacking con software open-source, la mia esperienza lavorativa è iniziata negli anni 2000 con grandi aziende e startup, dai data center locali alle soluzioni di cloud computing focalizzate sui servizi internet e sui mercati dell'e-commerce. 
+Nato nella provincia di Venezia. Appassionato di elettronica, videogiochi e hacking con software open-source, la mia esperienza lavorativa è iniziata negli anni 2000 con grandi aziende e startup, dai data center locali alle soluzioni di cloud computing focalizzate sui servizi internet e sui mercati dell'e-commerce. 
 
 Oggi vivo in Spagna a Malaga come ingegnere di soluzioni cloud pre-vendita presso Oracle Inc e racconto in questo blog la mia vita lavorativa quotidiana.
 

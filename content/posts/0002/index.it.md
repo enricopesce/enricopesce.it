@@ -1,5 +1,6 @@
 ---
 title: Oracle Autonomous Database
+description: "Introduzione al database completamente gestito di Oracle"
 date: 2023-02-20T19:00:00+01:00
 draft: false
 tags:

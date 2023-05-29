@@ -4,9 +4,9 @@ layout: "about"
 url: "about/"
 summary: about
 ---
-![Image alt](static/me.jpeg)
+![Me](/me.jpg 'Enrico Pesce')
 
-I'm Italian, born in the Venice area. Passionate about electronics, video games, and hacking with open-source software, my work experience started in the 00s with big and startup companies, from local data centers to cloud computing solutions focusing on the internet services and e-commerce markets. 
+Born in the Venice (Italy) area. Passionate about electronics, video games, and hacking with open-source software, my work experience started in the 00s with big and startup companies, from local data centers to cloud computing solutions focusing on the internet services and e-commerce markets. 
 
 Today I live in Malaga as an engineer of pre-sales cloud solutions at Oracle Inc and I tell my daily working life in this blog.
 
