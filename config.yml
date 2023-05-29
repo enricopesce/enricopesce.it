@@ -26,6 +26,9 @@ params:
       URL: "https://github.com/enricopesce/blog/tree/main/content"
       Text: "Suggest Changes"
       appendFilePath: true
+  cover:
+    hiddenInList: true 
+    hiddenInSingle: false
 
 outputs:
   home:
