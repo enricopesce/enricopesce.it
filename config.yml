@@ -29,6 +29,7 @@ params:
   cover:
     hiddenInList: true 
     hiddenInSingle: false
+  favicon: "/img/favicon.ico"
 
 outputs:
   home:
