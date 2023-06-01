@@ -5,8 +5,6 @@ theme: PaperMod
 googleAnalytics: "G-N6VMEVB66C"
 copyright: "Enrico Pesce"
 enableRobotsTXT: true
-defaultContentLanguage: it
-defaultContentLanguageInSubdir: true
 
 sitemap:
   changefreq: weekly
