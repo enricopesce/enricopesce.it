@@ -30,6 +30,7 @@ params:
     hiddenInList: true 
     hiddenInSingle: false
   favicon: "/img/favicon.ico"
+  env: production
 
 outputs:
   home:
