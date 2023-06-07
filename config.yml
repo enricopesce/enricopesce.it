@@ -5,6 +5,8 @@ theme: PaperMod
 googleAnalytics: "G-N6VMEVB66C"
 copyright: "Enrico Pesce"
 enableRobotsTXT: true
+defaultContentLanguage: it
+defaultContentLanguageInSubdir: true
 
 sitemap:
   changefreq: weekly
@@ -21,11 +23,11 @@ params:
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   editPost:
-      URL: "https://github.com/enricopesce/blog/tree/main/content"
-      Text: "Suggest Changes"
-      appendFilePath: true
+    URL: "https://github.com/enricopesce/blog/tree/main/content"
+    Text: "Suggest Changes"
+    appendFilePath: true
   cover:
-    hiddenInList: true 
+    hiddenInList: true
     hiddenInSingle: false
   favicon: "/img/favicon.ico"
   env: production
@@ -66,7 +68,9 @@ menu:
 languages:
   it:
     title: Enrico Pesce blog
+    languageName: Italiano
     weight: 10
   en:
     title: Enrico Pesce blog
+    languageName: English
     weight: 20
