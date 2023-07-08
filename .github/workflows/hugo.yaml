@@ -63,7 +63,7 @@ jobs:
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Replace noindex
         run: |
-          cd public \ &&
+          cd public
           find . -type f -exec gsed -i 's/noindex/index/g' {} +
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
