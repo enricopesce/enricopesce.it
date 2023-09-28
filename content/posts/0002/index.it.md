@@ -8,8 +8,8 @@ tags:
 categories:
   - database
 cover:
-  alt: IAM Identity domains
-  caption: IAM Identity domains
+  alt: Oracle Autonomous Database
+  caption: Oracle Autonomous Database
   image: static/autonomous_database_vision.png
   relative: true
 ---
@@ -35,23 +35,7 @@ Ci sono diversi vantaggi rispetto alle soluzioni tradizionali:
 - Riduzione dei costi e miglioramento della produttività automatizzando le attività di routine manuali
 - L’utilizzo di Autonomous consente a un’organizzazione di utilizzre il personale addetto alla gestione del database su attività di livello superiore creando un maggiore valore aziendale.
 
-#### Nel dettaglio, le funzionalita' piu importanti:
-
-##### Facile scalabilità:
-
-Può espandere o ridurre istantaneamente le proprie risorse di calcolo e memoria, a seconda delle necessità. Ad esempio, un’azienda potrebbe passare da 8 core di elaborazione di database a 16 core per l’elaborazione di fine trimestre, per poi passare agli 8 core meno costosi in seguito. Infatti, tutte le risorse di calcolo potrebbero essere spente durante il fine settimana per ridurre i costi, per poi essere riavviate il lunedì mattina. Il tutto senza alcun blocco del servizio.
-
-##### Patching del database
-
-Molte violazioni dei dati sono abilitate da vulnerabilità del sistema per le quali era già disponibile una patch di sicurezza o di vulnerabilità ma non ancora applicata. Un database Autonomous previene questo problema applicando automaticamente le patch ai server cloud in una sequenza progettata per eliminare i tempi di inattività dell’azienda.
-
-##### Intelligenza integrata
-
-Il database integra funzionalità di monitoraggio, gestione e analisi che sfruttano l’apprendimento automatico e le tecniche di intelligenza artificiale. L’obiettivo è automatizzare l’ottimizzazione del database, prevenire interruzioni dell’applicazione e rafforzare la sicurezza nell’intera applicazione del database.
-
 #### Le funzionalita’ chiave di Autonomous
-
-Di seguito piu’ informazioni specifiche delle funzionalita’ chiave di Autonomous
 
 ##### Provisioning automatico
 
@@ -92,3 +76,5 @@ Utilizzando il riconoscimento dei modelli, i guasti hardware vengono previsti au
 ##### Failover automatico
 
 Failover automatico senza perdita di dati. È completamente trasparente per le applicazioni dell’utente finale. Fornisce il 99,995% di SLA.
+
+Per ulteriori approfondimenti ti consiglio di visitare la [pagina ufficiale del prodotto](https://www.oracle.com/autonomous-database/).
