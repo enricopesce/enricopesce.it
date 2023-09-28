@@ -1,7 +1,7 @@
 ---
 title: Autenticazione SAML su OpenVPN con OCI IAM identity domains
 description: "Una guida su come integrare l'autenticazione SAML su OpenVPN server"
-date: 2023-10-20T19:00:00+01:00
+date: 2023-09-10T19:00:00+01:00
 draft: false
 tags:
   - IAM
