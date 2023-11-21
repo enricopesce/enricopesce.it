@@ -27,7 +27,7 @@ params:
     Text: "Suggest Changes"
     appendFilePath: true
   cover:
-    hiddenInList: true
+    hiddenInList: false
     hiddenInSingle: false
   favicon: "/img/favicon.ico"
   env: production
