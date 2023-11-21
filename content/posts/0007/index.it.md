@@ -1,7 +1,7 @@
 ---
 title: Data ingestion scalabile e serverless
 date: 2023-10-20T19:00:00+01:00
-draft: true
+draft: false
 tags:
   - functions
 categories:
