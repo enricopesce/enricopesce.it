@@ -10,6 +10,7 @@ cover:
   alt: Scalable and Serverless Data Ingestion
   caption: Scalable and Serverless Data Ingestion
   relative: true
+  image: "static/architecture.png"
 ---
 
 In this article, we will leverage OCI's capabilities to the fullest, embracing the following principles:
@@ -23,10 +24,6 @@ In this article, we will leverage OCI's capabilities to the fullest, embracing t
 The "loadfileintoadw" project is located in the same GitHub repository used so far to discuss OCI Function [fn-examples](https://github.com/enricopesce/fn-examples/tree/main/loadfileintoadw).
 
 This example will help you understand how to integrate multiple OCI services and make the most of the cloud provider.
-
-Below is the architectural design we will create.
-
-![Project Architecture](https://github.com/enricopesce/fn-examples/blob/main/loadfileintoadw/architecture.png "Architecture")
 
 We will simulate a series of weather stations that will write a CSV file with sampling data (temperature, humidity, etc.). The sensor will automatically upload the file to an Object Storage bucket.
 
