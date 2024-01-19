@@ -1,6 +1,6 @@
 ---
 title: Alcuni test di performance con PHP e OCI Compute instance
-date: 2024-01-17T19:00:00+01:00
+date: 2024-01-19T19:00:00+01:00
 draft: false
 tags:
   - php
@@ -14,11 +14,11 @@ cover:
   image: "static/Oracle-PHP.png"
 ---
 
-Diverso tempo fa ho sviluppato un [tool](https://github.com/enricopesce/php-performance) con l'obiettivo di verificare il vero miglioramento di performance tra le versioni di PHP e successivamente capire quale AWS instance type era la piu' performante, visto che su AWS non e' possibile scegliere un dimensionamento personalizzato delle risorse CPU e RAM ho voluto comprendere tra le diverse decine di instance type cosa cambiasse e quale taglio mi sarebbe piu' convenuto.
+Diverso tempo fa ho sviluppato un [tool](https://github.com/enricopesce/php-performance) con l'obiettivo di verificare il vero miglioramento di performance tra le versioni di PHP e successivamente capire quale AWS instance type era la piu' performante, visto che su AWS non e' possibile scegliere un dimensionamento personalizzato delle risorse CPU e RAM ho voluto comprendere tra le diverse decine di instance type cosa cambiasse e quale mi sarebbe piu' convenuta scegliere.
 
-In queste vacanze natalizie mi sono dedicato ad esterndere questo progetto e di fare la stessa cosa con [OCI](https://www.oracle.com/it/cloud/), Oracle Cloud Infrastructure.
+In queste vacanze natalizie mi sono dedicato ad estendere questo progetto e di fare la stessa cosa con [OCI](https://www.oracle.com/it/cloud/), Oracle Cloud Infrastructure.
 
-La grande differenza rispetto ad AWS e' che su OCI e' possibile scegliere la shape cioe' la tecnologia di base e poter selezionare quanta CPU e RAM utilizzare in modo flessibile, quindi i test saranno eseguiti su le differenti singole shape e non su un sterminato numero di instance types.
+La grande differenza rispetto ad AWS e' che su OCI e' possibile scegliere la shape cioe' la tecnologia di base e poi poter selezionare quanta CPU e RAM utilizzare in modo flessibile, quindi i test saranno eseguiti su le differenti singole shape e non su un sterminato numero di instance types.
 
 Per appprofondire, le shape disponibili sono le seguenti:
 
@@ -36,7 +36,9 @@ Per appprofondire, le shape disponibili sono le seguenti:
 
 * **VM.Standard.A1.Flex** (Each OCPU corresponds to a single hardware execution thread. Processor: Ampere Altra Q80-30. Max frequency 3.0 GHz.)
 
-Il nostro test andra' ad eseguire attraverso una suite di benchmark open source "Phornoix test suite" due test specifici di PHP 
+Da specificare che non sono state selezionate shape bare metal in questo test ma solo virtual machine.
+
+Il nostro test andra' ad eseguire attraverso una suite di benchmark open source [Phornoix test suite](https://www.phoronix-test-suite.com/) due test specifici di PHP 
 
 * [PHP Micro Benchmarks](https://openbenchmarking.org/test/pts/php)
 * [PHPBench](https://openbenchmarking.org/test/pts/phpbench)
@@ -51,11 +53,11 @@ Al momento non ho utilizzato le ultime verisioni di PHP utlizzando il famoso rep
 
 ![PHP 8.0 performance](static/PHP80.png "PHP 8.0 performance")
 
-Possiamo notare che la nuova shape **VM.Standard.E5.Flex** vince (di poco) anche su Intel affermandosi come la shape piu' veloce per eseguire i propri script PHP, al secondo e terzo posto **VM.Optimized3.Flex** e **VM.Standard3.Flex** le due shape Intel disponibili.
+Possiamo notare che la nuova shape **VM.Standard.E5.Flex** vince (di poco) anche su Intel affermandosi come la shape piu' veloce per eseguire i propri script PHP, al secondo e terzo posto **VM.Optimized3.Flex** e **VM.Standard3.Flex** cioe' le due shape Intel disponibili.
 
-Alla fine penultimo classificato la precendente tecnologia shape AMD **VM.Standard.E4.Flex** e ultima posizione per la **VM.Standard.A1.Flex**, in questo caso da comprendere meglio se dovuto anche a qualche scarsa ottimizzazione delle vecchie versioni di PHP su tecnologia ARM.
+Alla fine penultimo classificato la precendente tecnologia shape AMD **VM.Standard.E4.Flex**, ultima posizione per la **VM.Standard.A1.Flex**, in questo caso da comprendere meglio se dovuto anche a qualche scarsa ottimizzazione delle vecchie versioni di PHP su tecnologia ARM.
 
-Possiamo proclamare quindi vincitrice assoluta la nuova shape **VM.Standard.E5.Fle** non solo in termini di performance ma anche di costo infatti nel podio i costi di ogni shape sono i seguenti:
+Possiamo proclamare quindi vincitrice assoluta la nuova shape **VM.Standard.E5.Flex** non solo in termini di performance ma anche di costo infatti nel podio i costi di ogni shape sono i seguenti:
 
 1) B97384 Compute - Standard - E5 - OCPU **20,76 € costo mensile** 
 2) B93311 Compute - Optimized - X9 - OCPU **37,36 € costo mensile**
