@@ -1,5 +1,5 @@
 ---
-title: Alcuni test di performance con PHP e OCI Compute instance
+title: Test di performance con PHP e OCI Compute instance
 date: 2024-01-19T19:00:00+01:00
 draft: false
 tags:
@@ -8,8 +8,8 @@ tags:
 categories:
   - compute
 cover:
-  alt: Alcuni test di performance con PHP e OCI Compute instance
-  caption: Alcuni test di performance con PHP e OCI Compute instance
+  alt: Test di performance con PHP e OCI Compute instance
+  caption: Test di performance con PHP e OCI Compute instance
   relative: true
   image: "static/Oracle-PHP.png"
 ---
