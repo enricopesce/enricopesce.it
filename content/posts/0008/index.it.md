@@ -69,4 +69,4 @@ La tecnologia E5 oltre ad essere la piu' veloce e' anche la piu' economica del p
 
 Vorrei pero' evidenziare che l'ultimo in classifica **VM.Standard.A1.Flex** e' anche la piu' economica in assoluto soli **6,70 €** menisle stimato..
 
-Spunti per un prossimo articolo sono quelli di testare le ultime versioni di PHP da repository Remi https://blog.remirepo.net/ e comprendere se con tecnologia ARM possiamo ottenere maggiori performance.
+Spunti per un prossimo articolo sono quelli di testare le ultime versioni di PHP da repository Remi https://blog.remirepo.net/ e comprendere se con tecnologia ARM possiamo ottenere maggiori performance e comprendere se in un workload parallelo multiprocessore ARM e' piu prestazionale di x86.
