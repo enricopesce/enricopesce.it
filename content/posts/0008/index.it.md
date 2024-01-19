@@ -63,10 +63,10 @@ Possiamo proclamare quindi vincitrice assoluta la nuova shape **VM.Standard.E5.F
 2) B93311 Compute - Optimized - X9 - OCPU **37,36 € costo mensile**
 3) B94176 Compute - Standard - X9 - OCPU **27,68 € costo mensile**
 
-*I costi sono deirvati dal [cloud cost estimator](https://www.oracle.com/it/cloud/costestimator.html) in data Gennaio 2024*
+*I costi sono derivati dal [cloud cost estimator](https://www.oracle.com/it/cloud/costestimator.html) in data Gennaio 2024*
 
-La tecnologia E5 oltre ad essere la piu' veloce e' anche la piu' economica del podio!
+**La tecnologia E5 oltre ad essere la piu' veloce e' anche la piu' economica del podio!**
 
 Vorrei pero' evidenziare che l'ultimo in classifica **VM.Standard.A1.Flex** e' anche la piu' economica in assoluto soli **6,70 €** menisle stimato..
 
-Spunti per un prossimo articolo sono quelli di testare le ultime versioni di PHP da repository Remi https://blog.remirepo.net/ e comprendere se con tecnologia ARM possiamo ottenere maggiori performance e comprendere se in un workload parallelo multiprocessore ARM e' piu prestazionale di x86.
+Spunti per un prossimo articolo sono quelli di testare le ultime versioni di PHP da repository Remi https://blog.remirepo.net/ e comprendere se con tecnologia ARM possiamo ottenere maggiori performanc, inoltre sarebbe interessante verificare se in un workload di tipo multiprocessore se ARM e' piu prestazionale di x86.
