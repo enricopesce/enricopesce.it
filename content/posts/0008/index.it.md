@@ -16,7 +16,7 @@ cover:
 
 Diverso tempo fa ho sviluppato un [tool](https://github.com/enricopesce/php-performance) con l'obiettivo di verificare il vero miglioramento di performance tra le versioni di PHP e successivamente capire quale AWS instance type era la piu' performante, visto che su AWS non e' possibile scegliere un dimensionamento personalizzato delle risorse CPU e RAM ho voluto comprendere tra le diverse decine di instance type cosa cambiasse e quale mi sarebbe piu' convenuta scegliere.
 
-In queste vacanze natalizie mi sono dedicato ad estendere questo progetto e di fare la stessa cosa con [OCI](https://www.oracle.com/it/cloud/), Oracle Cloud Infrastructure.
+In queste vacanze natalizie mi sono dedicato a estendere questo progetto e di fare la stessa cosa con [OCI](https://www.oracle.com/it/cloud/), Oracle Cloud Infrastructure.
 
 La grande differenza rispetto ad AWS e' che su OCI e' possibile scegliere la shape cioe' la tecnologia di base e poi poter selezionare quanta CPU e RAM utilizzare in modo flessibile, quindi i test saranno eseguiti su le differenti singole shape e non su un sterminato numero di instance types.
 
@@ -38,7 +38,7 @@ Per appprofondire, le shape disponibili sono le seguenti:
 
 Da specificare che non sono state selezionate shape bare metal in questo test ma solo virtual machine.
 
-Il nostro test andra' ad eseguire attraverso una suite di benchmark open source [Phornoix test suite](https://www.phoronix-test-suite.com/) due test specifici di PHP 
+Il nostro test andra' a eseguire attraverso una suite di benchmark open source [Phornoix test suite](https://www.phoronix-test-suite.com/) due test specifici di PHP 
 
 * [PHP Micro Benchmarks](https://openbenchmarking.org/test/pts/php)
 * [PHPBench](https://openbenchmarking.org/test/pts/phpbench)
@@ -65,8 +65,8 @@ Possiamo proclamare quindi vincitrice assoluta la nuova shape **VM.Standard.E5.F
 
 *I costi sono derivati dal [cloud cost estimator](https://www.oracle.com/it/cloud/costestimator.html) in data Gennaio 2024*
 
-**La tecnologia E5 oltre ad essere la piu' veloce e' anche la piu' economica del podio!**
+**La tecnologia E5 oltre a essere la piu' veloce e' anche la piu' economica del podio!**
 
 Vorrei pero' evidenziare che l'ultimo in classifica **VM.Standard.A1.Flex** e' anche la piu' economica in assoluto soli **6,70 €** menisle stimato..
 
-Spunti per un prossimo articolo sono quelli di testare le ultime versioni di PHP da repository Remi https://blog.remirepo.net/ e comprendere se con tecnologia ARM possiamo ottenere maggiori performanc, inoltre sarebbe interessante verificare se in un workload di tipo multiprocessore se ARM e' piu prestazionale di x86.
+Spunti per un prossimo articolo sono quelli di testare le ultime versioni di PHP da repository Remi https://blog.remirepo.net/ e comprendere se con tecnologia ARM possiamo ottenere maggiori performance, inoltre sarebbe interessante verificare se in un workload di tipo multiprocessore se ARM e' piu prestazionale di x86.
