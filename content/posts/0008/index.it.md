@@ -67,6 +67,6 @@ Possiamo proclamare quindi vincitrice assoluta la nuova shape **VM.Standard.E5.F
 
 **La tecnologia E5 oltre a essere la piu' veloce e' anche la piu' economica del podio!**
 
-Vorrei pero' evidenziare che l'ultimo in classifica **VM.Standard.A1.Flex** e' anche la piu' economica in assoluto soli **6,70 €** menisle stimato..
+Vorrei pero' evidenziare che l'ultimo in classifica **VM.Standard.A1.Flex** e' anche la piu' economica in assoluto soli **6,70 €** mensile stimato..
 
 Spunti per un prossimo articolo sono quelli di testare le ultime versioni di PHP da repository Remi https://blog.remirepo.net/ e comprendere se con tecnologia ARM possiamo ottenere maggiori performance, inoltre sarebbe interessante verificare se in un workload di tipo multiprocessore se ARM e' piu prestazionale di x86.
