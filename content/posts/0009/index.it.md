@@ -11,7 +11,7 @@ cover:
   alt: Backup dei dati su OCI con Kopia.io
   caption: Backup dei dati su OCI con Kopia.io
   relative: true
-  image: ""
+  image: "static/home.png"
 ---
 
 Mi capita spesso di ricevere delle domande riguardanti il backup dei dati su OCI che ibridio includendo sistemi esterni.
