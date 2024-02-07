@@ -14,7 +14,9 @@ cover:
   image: "static/home.png"
 ---
 
-I often receive questions about data backup on OCI that includes hybrid systems. Recently, I tested [Kopia.io](kopia.io) and its compatibility with OCI.
+I often receive questions about data backup on OCI that includes hybrid systems. 
+
+Recently, I tested [Kopia.io](kopia.io) and its compatibility with OCI.
 
 Given the success of my tests, I want to share what I've achieved with you.
 
@@ -27,7 +29,9 @@ The object storage service has various [endpoints](https://docs.oracle.com/en-us
 - Swift (OpenStack Object Storage)
 - PARs (Pre-Authenticated Requests)
 
-Kopia supports various storage treated as [repositories](https://kopia.io/docs/repositories/), including many existing cloud services. Additionally, you can privately manage a repository through a [Kopia Repository Server](https://kopia.io/docs/repository-server/), not using public cloud services but, for example, a private VM.
+Kopia supports various storage treated as [repositories](https://kopia.io/docs/repositories/), including many existing cloud services. 
+
+Additionally, you can privately manage a repository through a [Kopia Repository Server](https://kopia.io/docs/repository-server/), not using public cloud services but, for example, a private VM.
 
 In my test, I wanted to try OCI Object Storage. Here's the [installation guide](https://kopia.io/docs/installation/) for Kopia.
 
