@@ -1,5 +1,5 @@
 ---
-title: Data Backup on OCI with Kopia.io
+title: How to Backup Your Data in 10 Minutes with Kopia and OCI
 date: 2024-02-06T13:00:00+01:00
 draft: false
 tags:
@@ -8,34 +8,37 @@ tags:
 categories:
   - storage
 cover:
-  alt: Data Backup on OCI with Kopia.io
-  caption: Data Backup on OCI with Kopia.io
+  alt: How to Backup Your Data in 10 Minutes with Kopia and OCI
+  caption: How to Backup Your Data in 10 Minutes with Kopia and OCI
   relative: true
   image: "static/home.png"
 ---
 
-I often receive questions about data backup on OCI that includes hybrid systems. 
+Do you want to backup your data easily and securely, without spending hours or money on complicated tools or services? If so, this post is for you!
 
-Recently, I tested [Kopia.io](kopia.io) and its compatibility with OCI.
+I will show you how to use Kopia, a fast and secure open-source backup tool, and OCI, a scalable and cost-effective cloud storage provider, to backup your data in 10 minutes or less.
 
-Given the success of my tests, I want to share what I've achieved with you.
+OCI object storage is a cloud storage service that offers the following features:
 
-From the tests, I had no issues integrating it with our Object Storage using the [S3-compatible API](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/s3compatibleapi.htm).
+- It can store any type of unstructured data in its native format, such as images, videos, documents, or analytic data.
+- It has built-in redundancy, encryption, and integrity checking to ensure data durability and security.
+- It supports multiple storage tiers, such as standard, archive, and glacier, to offer cost and performance flexibility.
+- It is compatible with the S3 API, which makes it easy to integrate with other backup tools, such as Kopia.
+- It provides a dedicated and unique storage namespace for each customer, which reduces the risk of exposed or shared buckets.
 
-The object storage service has various [endpoints](https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/dedicatedendpoints.htm) that allow leveraging the service by emulating different types of APIs. Currently supported are:
+Kopia.io is an open-source backup tool that has the following features:
 
-- Native
-- S3-compatible
-- Swift (OpenStack Object Storage)
-- PARs (Pre-Authenticated Requests)
+- It supports cross-platform backup of files and directories to any storage location, including cloud, network, and local storage.
+- It uses end-to-end encryption, compression, and deduplication to secure and optimize your data backup and restore operations.
+- It allows you to create and manage snapshots of your data, based on policies that you define, and restore them whenever you need them.
+- It has both command-line and graphical user interfaces, as well as an optional server mode with API support.
+- It is fast, reliable, and flexible, and integrates with many popular cloud storage providers, such as OCI, S3, Google Cloud, and more.
 
-Kopia supports various storage treated as [repositories](https://kopia.io/docs/repositories/), including many existing cloud services. 
+Now let's see how:
 
-Additionally, you can privately manage a repository through a [Kopia Repository Server](https://kopia.io/docs/repository-server/), not using public cloud services but, for example, a private VM.
-
-In my test, I wanted to try OCI Object Storage. Here's the [installation guide](https://kopia.io/docs/installation/) for Kopia.
-
-Once installed, I followed the simple [getting-started](https://kopia.io/docs/getting-started/).
+In this implementation I used this Kopia documentations:
+- [installation guide](https://kopia.io/docs/installation/) 
+- [getting-started guide](https://kopia.io/docs/getting-started/)
 
 You essentially need these OCI details to create an S3 repository on Kopia:
 
@@ -80,8 +83,7 @@ Running concurrency test for 30s...
 All good.
 Cleaning up temporary data...
 ```
-
-If everything went well, as in this case, you can decide to connect to the repository to use it:
+To connect on the repository:
 
 ```console
 enrico.pesce@enrico ~ % kopia repository connect s3 \
@@ -116,7 +118,9 @@ Storage config:      {
 $ kopia repository connect from-config --token eyJ2ZXJzaW9uIjoiMSIsInN0b3JhZ2UiOnsidHlwZSI6InMzIiwiY29uZmlnIjp7ImJ1Y2tldCI6ImJhY2t1cCIsImVuZHBvaW50IjoiZnJkZG9tdmQ4ejRxLmNvbXBhdC5vYmplY3RzdG9yYWdlLmVdsgfdsgdfsgfdsgo537hn9058jg9v-5869g5k89d-kf8946578bj06vfm056jvk0y458bnj908jg9v6k8fy989f658965jgy968jg94586b9k4869g84y6hgb8j69b8hj69hk8g95687h969bmtiomgufiunfbter
 ```
 
-Now you have a repository to store your data with Kopia. For example, you can create a backup of a folder with this simple command using default settings:
+Now you have a ready repository to store your data with Kopia!
+
+For example, you can create a folder backup with this simple command using default settings:
 
 ```console
 enrico.pesce@enrico ~ % kopia snapshot create $HOME/Downloads
