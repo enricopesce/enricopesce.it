@@ -1,12 +1,9 @@
 baseURL: "https://www.enricopesce.it"
-languageCode: it
 title: Enrico Pesce blog
 theme: PaperMod
 googleAnalytics: "G-N6VMEVB66C"
 copyright: "Enrico Pesce"
 enableRobotsTXT: true
-defaultContentLanguage: en
-defaultContentLanguageInSubdir: true
 
 sitemap:
   changefreq: weekly
@@ -64,13 +61,3 @@ menu:
       name: About
       url: about/
       weight: 50
-
-languages:
-  it:
-    title: Enrico Pesce blog
-    languageName: Italiano
-    weight: 10
-  en:
-    title: Enrico Pesce blog
-    languageName: English
-    weight: 20
