@@ -1,5 +1,5 @@
 baseURL: "https://www.enricopesce.it/"
-title: Enrico Pesce blog
+title: Enrico Pesce blog | Cloud Solution Engineer | Driving Customers Growth Through Cutting-Edge Oracle Tech Solutions | Transforming Challenges into Opportunities
 theme: PaperMod
 googleAnalytics: "G-N6VMEVB66C"
 copyright: "Enrico Pesce"
@@ -14,6 +14,7 @@ permalinks:
   posts: "/:year/:month/:slug/"
 
 params:
+  Description: "Enrico, a Cloud Solution Engineer, uses technology to transform challenges into opportunities with cloud services."
   defaultTheme: auto
   ShowShareButtons: true
   ShowReadingTime: true
