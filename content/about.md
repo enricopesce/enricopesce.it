@@ -4,7 +4,7 @@ layout: "about"
 url: "about/"
 summary: about
 ---
-![Me](/me.jpg 'Enrico Pesce')
+![Me](/me.png 'Enrico Pesce')
 
 Born in the Venice (Italy) area. Passionate about electronics, video games, and hacking with open-source software, my work experience started in the 00s with big and startup companies, from local data centers to cloud computing solutions focusing on the internet services and e-commerce markets. 
 
