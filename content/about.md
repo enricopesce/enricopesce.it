@@ -2,7 +2,6 @@
 title: "About me"
 layout: "about"
 url: "about/"
-summary: about
 ---
 ![Me](/me.webp 'Enrico Pesce')
 
