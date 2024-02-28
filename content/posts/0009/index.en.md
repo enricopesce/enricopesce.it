@@ -12,6 +12,8 @@ cover:
   caption: How to Backup Your Data in 10 Minutes with Kopia and OCI
   relative: true
   image: "static/home.png"
+aliases:
+  - "/2024/02/how-to-backup-your-data-in-10-minutes-with-kopia-and-oci/"
 ---
 
 Do you want to backup your data easily and securely, without spending hours or money on complicated tools or services? If so, this post is for you!
@@ -26,7 +28,7 @@ OCI object storage is a cloud storage service that offers the following features
 - It is compatible with the S3 API, which makes it easy to integrate with other backup tools, such as Kopia.
 - It provides a dedicated and unique storage namespace for each customer, which reduces the risk of exposed or shared buckets.
 
-Kopia.io is an open-source backup tool that has the following features:
+[Kopia.io](https://kopia.io/) is an open-source backup tool that has the following features:
 
 - It supports cross-platform backup of files and directories to any storage location, including cloud, network, and local storage.
 - It uses end-to-end encryption, compression, and deduplication to secure and optimize your data backup and restore operations.

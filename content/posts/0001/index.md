@@ -14,6 +14,8 @@ cover:
   image: static/one.webp
   alt: IAM Identity domains
   caption: IAM Identity domains
+aliases:
+  - "/2023/01/saml-authentication-on-openvpn-with-oci-iam-identity-domains/"
 ---
 
 Identity and access management is a crucial goal in a growing organization.
