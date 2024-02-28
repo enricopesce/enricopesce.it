@@ -9,7 +9,7 @@ categories:
 cover:
   alt: OCI Functions a Python example
   caption: OCI Functions a Python example
-  image: static/oci-fn.png
+  image: static/oci-fn.webp
   relative: true
 aliases:
   - "/en/2023/03/oci-functions-a-python-example/"

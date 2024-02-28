@@ -10,7 +10,7 @@ categories:
 cover:
   alt: Oracle Autonomous Database
   caption: Oracle Autonomous Database
-  image: static/autonomous_database_vision.png
+  image: static/autonomous_database_vision.webp
   relative: true
 aliases:
   - "/2023/09/oracle-autonomous-database/"

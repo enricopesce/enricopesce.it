@@ -11,7 +11,7 @@ cover:
   alt: Performance testing with PHP and OCI Compute instances
   caption: Performance testing with PHP and OCI Compute instances
   relative: true
-  image: "static/Oracle-PHP.png"
+  image: "static/Oracle-PHP.webp"
 aliases: 
   - "/en/2024/01/performance-testing-with-php-and-oci-compute-instances/"
 ---
@@ -53,7 +53,7 @@ Currently, I have not used the latest versions of PHP from the well-known [Remi'
 
 ### The results for PHP 8.0 are as follows:
 
-![PHP 8.0 performance](static/PHP80.png "PHP 8.0 performance")
+![PHP 8.0 performance](static/PHP80.webp "PHP 8.0 performance")
 
 We can observe that the new **VM.Standard.E5.Flex** shape emerges (slightly) victorious even over Intel, establishing itself as the fastest shape for executing PHP scripts. In the second and third positions are **VM.Optimized3.Flex** and **VM.Standard3.Flex**, which are the two available Intel shapes.
 

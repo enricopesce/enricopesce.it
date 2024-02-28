@@ -37,7 +37,7 @@ oci os object put --bucket-name test --file hello.txt
 
 Once the file has been copied, the function will then be activated and through the logs we could verify the execution and the output
 
-![Function log](static/functionlog.jpg "Function log")
+![Function log](static/functionlog.webp "Function log")
 
 This fairly trivial example can help you to understand how through events you can create automatisms and in this case access files in a dynamic and scalable way.
 
