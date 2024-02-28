@@ -12,7 +12,7 @@ cover:
   relative: true
   image: "static/architecture.webp"
 aliases:
-  - "/2023/10/scalable-and-serverless-data-ingestion/"
+  - "/en/2023/10/scalable-and-serverless-data-ingestion/"
 ---
 
 In this article, we will leverage OCI's capabilities to the fullest, embracing the following principles:

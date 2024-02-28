@@ -12,7 +12,7 @@ cover:
   relative: true
   image: static/fn.webp
 aliases:
-  - "/2023/09/accessing-an-autonomous-database-from-an-oci-function/"
+  - "/en//2023/09/accessing-an-autonomous-database-from-an-oci-function/"
 ---
 
 After seeing how to create a custom image, in the [previous case]({{< ref "/posts/0005" >}}) where we installed the Oracle client, now let's try to use this custom image to connect to an Oracle database.
