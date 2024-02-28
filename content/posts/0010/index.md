@@ -5,6 +5,9 @@ draft: true
 tags:
   - php
   - performance
+  - oci
+  - compute
+  - VM
 categories:
   - compute
 cover:
