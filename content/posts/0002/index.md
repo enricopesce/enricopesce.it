@@ -12,6 +12,8 @@ cover:
   caption: Oracle Autonomous Database
   image: static/autonomous_database_vision.png
   relative: true
+aliases:
+  - "/2023/09/oracle-autonomous-database/"
 ---
 
 ## Introduction to the most modern cloud database in the market

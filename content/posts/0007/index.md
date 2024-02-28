@@ -11,6 +11,8 @@ cover:
   caption: Scalable and Serverless Data Ingestion
   relative: true
   image: "static/architecture.png"
+aliases:
+  - "/2023/10/scalable-and-serverless-data-ingestion/"
 ---
 
 In this article, we will leverage OCI's capabilities to the fullest, embracing the following principles:
