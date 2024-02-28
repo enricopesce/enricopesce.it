@@ -11,7 +11,7 @@ cover:
   alt: How to Backup Your Data in 10 Minutes with Kopia and OCI
   caption: How to Backup Your Data in 10 Minutes with Kopia and OCI
   relative: true
-  image: "static/home.png"
+  image: "static/home.webp"
 aliases:
   - "/2024/02/how-to-backup-your-data-in-10-minutes-with-kopia-and-oci/"
 ---
@@ -149,14 +149,14 @@ enrico.pesce@enrico:/Users/enrico.pesce/Downloads
 If you're not a fan of the console, I recommend using a simple and convenient GUI, [KopiaUI](https://github.com/kopia/kopia/releases/tag/v0.15.0), which is very intuitive and easy to use. Here are some screenshots:
 
 where you can check the protected folders
-![List of snapshots](static/home.png "List of snapshots")
+![List of snapshots](static/home.webp "List of snapshots")
 view all backup iterations over time with convenient color-coded tags
-![Snapshot details](static/snapshots.png "Snapshot details")
+![Snapshot details](static/snapshots.webp "Snapshot details")
 the list of protected files
-![List of protected files](static/files.png "List of files")
+![List of protected files](static/files.webp "List of files")
 file restoration is very simple
-![File restoration](static/filesripristino.png "File restoration")
+![File restoration](static/filesripristino.webp "File restoration")
 policy configuration is very comprehensive and granular
-![Policy configuration](static/policy.png "Policy configuration")
+![Policy configuration](static/policy.webp "Policy configuration")
 
 Now you just need to try Kopia and test it on OCI!

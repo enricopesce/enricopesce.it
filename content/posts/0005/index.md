@@ -9,7 +9,7 @@ categories:
 cover:
   alt: OCI Function with a custom image
   caption: OCI Function with a custom image
-  image: static/fn.png  
+  image: static/fn.webp  
   relative: true
 aliases:
   - "/2023/05/oci-function-with-a-custom-image/"
