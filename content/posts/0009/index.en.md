@@ -5,6 +5,9 @@ draft: false
 tags:
   - backup
   - object storage
+  - kopia
+  - s3
+  - bucket
 categories:
   - storage
 cover:
