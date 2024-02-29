@@ -14,6 +14,7 @@ cover:
   image: "static/home.webp"
 aliases:
   - "/en/2024/02/how-to-backup-your-data-in-10-minutes-with-kopia-and-oci/"
+  - "/en/"
 ---
 
 Do you want to backup your data easily and securely, without spending hours or money on complicated tools or services? If so, this post is for you!
