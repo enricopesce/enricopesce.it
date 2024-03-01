@@ -14,6 +14,8 @@ cover:
   caption: Trigger a function by Object Storage
   image: static/objectstoragefunction.webp
   relative: true
+aliases:
+  - "/en/2023/04/trigger-a-function-by-object-storage/"
 ---
 
 The OCI Function service allows you to run code on infrastructure that you don't have to manage. In this [link]({{< relref path="0003/index.md" lang="en" >}}) I presented a basic example of an OCI function developed in Python.
