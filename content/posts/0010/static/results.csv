@@ -1,0 +1,37 @@
+﻿SKU;SHAPE;vCPU;SINGLE;MULTI;CPU Type;Hourly price;Monthly price;Save;Geekbench browser
+B97384;VM.Optimized3.Flex;8;1697;6365;Intel(R) Xeon(R) Gold 6354 CPU @ 3.00GHz; $0,0502 ; $149,45 ;60%;https://browser.geekbench.com/v6/cpu/4837669
+B94176;VM.Standard.A1.Flex;8;1125;6275;Neoverse-N1 BIOS virt-4.2; $0,0100 ; $59,52 ;0%;https://browser.geekbench.com/v6/cpu/4837683
+B93113;VM.Standard.E4.Flex;8;1595;6266;AMD EPYC 7J13 64-Core Processor; $0,0250 ; $74,40 ;20%;https://browser.geekbench.com/v6/cpu/4837682
+B93297;VM.Standard.E5.Flex;8;2070;8335;AMD EPYC 9J14 96-Core Processor; $0,0300 ; $89,28 ;33%;https://browser.geekbench.com/v6/cpu/4837947
+B93311;VM.Standard3.Flex;8;1567;5925;Intel(R) Xeon(R) Platinum 8358 CPU @ 2.60GHz; $0,0400 ; $119,04 ;50%;https://browser.geekbench.com/v6/cpu/4837679
+;VM.Standard.E5.Flex;4;2047;4764;AMD EPYC 9J14 96-Core Processor; $0,0279 ; $20,76 ;;
+;VM.Standard.A1.Flex;4;1115;3728;Neoverse-N1 BIOS virt-4.2; $0,0093 ; $6,92 ;;
+;VM.Standard.E4.Flex;4;1572;3652;AMD EPYC 7J13 64-Core Processor; $0,0233 ; $17,30 ;;
+;VM.Optimized3.Flex;4;1663;3590;Intel(R) Xeon(R) Gold 6354 CPU @ 3.00GHz; $0,0502 ; $37,36 ;;
+;VM.Standard3.Flex;4;1572;3349;Intel(R) Xeon(R) Platinum 8358 CPU @ 2.60GHz; $0,0372 ; $27,68 ;;
+;VM.Standard.E5.Flex;2;2031;2584;AMD EPYC 9J14 96-Core Processor; $0,0279 ; $20,76 ;;
+;VM.Standard.A1.Flex;2;1140;2078;Neoverse-N1 BIOS virt-4.2; $0,0093 ; $6,92 ;;
+;VM.Optimized3.Flex;2;1674;1942;Intel(R) Xeon(R) Gold 6354 CPU @ 3.00GHz; $0,0502 ; $37,36 ;;
+;VM.Standard.E4.Flex;2;1509;1906;AMD EPYC 7J13 64-Core Processor; $0,0233 ; $17,30 ;;
+;VM.Standard3.Flex;2;1531;1788;Intel(R) Xeon(R) Platinum 8358 CPU @ 2.60GHz; $0,0372 ; $27,68 ;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;59,52;;
