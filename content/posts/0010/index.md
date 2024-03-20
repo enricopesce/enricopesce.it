@@ -27,7 +27,7 @@ The following standard flex shapes available in most OCI regions are:
 * **VM.Optimized3.Flex** (Processor: Intel Xeon 6354. Base frequency 3.0 GHz, max turbo frequency 3.6 GHz)
 * **VM.Standard.A1.Flex** (Each OCPU corresponds to a single hardware execution thread. Processor: Ampere Altra Q80-30. Max frequency 3.0 GHz.)
 
-In this article: [Performance testing with PHP and OCI Compute instances]({{< relref "/posts/0008/index.md" >}}) I have tested a single PHP thread/cpu execution over all OCI standard flex shapes, now I conducted multicore benchmark tests with **Geekbench 6** using 8 cpu.
+In this article: [Performance testing with PHP and OCI Compute instances]({{< relref "/posts/0008/index.md" >}}) I have tested a single PHP thread/cpu execution over all OCI standard flex shapes, now I conducted multicore benchmark tests with **Geekbench 6** using 2, 4 and 8 CPU.
 
 For additional information on the [internal tests conducted](https://www.geekbench.com/doc/geekbench6-benchmark-internals.pdf), please refer to the provided link.
 
