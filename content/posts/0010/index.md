@@ -49,7 +49,7 @@ Let's break down the monthly costs for each shape with 8 CPU and Oracle Linux ba
 
 We can observe that there are varying prices; not all shapes have the same cost. 
 
-| **Shape**           | **Single score** | **Multicore scpre** | **Monthly price** | **Save** |
+| **Shape**           | **Single score** | **Multicore score** | **Monthly price** | **Save** |
 |---------------------|------------------|---------------------|-------------------|----------|
 | VM.Standard.A1.Flex | 1125             | 6275                |  $59,52           | 0%       |
 | VM.Standard.E4.Flex | 1595             | 6266                |  $74,40           | 20%      |
