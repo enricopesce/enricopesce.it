@@ -49,15 +49,15 @@ Let's break down the monthly costs for each shape with 8 CPU and Oracle Linux ba
 
 We can observe that there are varying prices; not all shapes have the same cost. 
 
-| **Shape**           | **Single score** | **Multicore score** | **Monthly price** | **Save** |
-|---------------------|------------------|---------------------|-------------------|----------|
-| VM.Standard.A1.Flex | 1125             | 6275                |  $59,52           | 0%       |
-| VM.Standard.E4.Flex | 1595             | 6266                |  $74,40           | 20%      |
-| VM.Standard.E5.Flex | 2070             | 8335                |  $89,28           | 33%      |
-| VM.Standard3.Flex   | 1567             | 5925                |  $119,04          | 50%      |
-| VM.Optimized3.Flex  | 1697             | 6365                |  $149,45          | 60%      |
+| **Shape**           | **Single score** | **Multicore score** | **Monthly price** | **Saving** |
+|---------------------|------------------|---------------------|-------------------|------------|
+| VM.Standard.A1.Flex | 1125             | 6275                |  $59,52           | 0%         |
+| VM.Standard.E4.Flex | 1595             | 6266                |  $74,40           | 20%        |
+| VM.Standard.E5.Flex | 2070             | 8335                |  $89,28           | 33%        |
+| VM.Standard3.Flex   | 1567             | 5925                |  $119,04          | 50%        |
+| VM.Optimized3.Flex  | 1697             | 6365                |  $149,45          | 60%        |
 
-In this table I calculated for every shape the cost difference with VM.Standard.A1.Flex ARM shape.
+In this table, I added a "Saving" column with the cost difference (in percent) compared with VM.Standard.A1.Flex than all other shapes.
 
 ### **Considerations**
 
@@ -65,7 +65,7 @@ If you consider the ARM shape VM.Standard.A1.Flex, you can save 60% than VM.Opti
 
 If performance is the main focus VM.Standard.E5.Flex is the winner! A good price and stunning performance results!
 
-ARM architecture is not only for mobile and low watt devices, ARM processor is a real alternative of the classic x86 server CPU, please read [Whait is Arm?](https://www.oracle.com/hk/cloud/compute/arm/what-is-arm/) page on OCI site to best understand the benefits of OCI A1 shapes!
+ARM architecture is not only for mobile and low watt devices, ARM processor is a real alternative of the classic x86 server CPU, please read [What is Arm?](https://www.oracle.com/hk/cloud/compute/arm/what-is-arm/) page on OCI site to best understand the benefits of OCI A1 shapes!
 
 Remember, the right shape depends on your unique use case.
 
