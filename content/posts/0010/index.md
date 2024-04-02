@@ -57,7 +57,7 @@ We can observe that there are varying prices; not all shapes have the same cost.
 | VM.Standard3.Flex   | 5925                |  $119,04          | 50%        |
 | VM.Optimized3.Flex  | 6365                |  $149,45          | 60%        |
 
-In this table, I added a "Saving" column with the cost difference (in percent) compared with VM.Standard.A1.Flex than all other shapes.
+In this table, I added a "Saving" column to represent the cost difference (in percent) compared with VM.Standard.A1.Flex than all other shapes.
 
 ### **Considerations**
 
