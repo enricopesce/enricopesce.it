@@ -49,13 +49,13 @@ Let's break down the monthly costs for each shape with 8 CPU and Oracle Linux ba
 
 We can observe that there are varying prices; not all shapes have the same cost. 
 
-| **Shape**           | **Single score** | **Multicore score** | **Monthly price** | **Saving** |
-|---------------------|------------------|---------------------|-------------------|------------|
-| VM.Standard.A1.Flex | 1125             | 6275                |  $59,52           | 0%         |
-| VM.Standard.E4.Flex | 1595             | 6266                |  $74,40           | 20%        |
-| VM.Standard.E5.Flex | 2070             | 8335                |  $89,28           | 33%        |
-| VM.Standard3.Flex   | 1567             | 5925                |  $119,04          | 50%        |
-| VM.Optimized3.Flex  | 1697             | 6365                |  $149,45          | 60%        |
+| **Shape**           | **Multicore score** | **Monthly price** | **Saving** |
+|---------------------|---------------------|-------------------|------------|
+| VM.Standard.A1.Flex | 6275                |  $59,52           | 0%         |
+| VM.Standard.E4.Flex | 6266                |  $74,40           | 20%        |
+| VM.Standard.E5.Flex | 8335                |  $89,28           | 33%        |
+| VM.Standard3.Flex   | 5925                |  $119,04          | 50%        |
+| VM.Optimized3.Flex  | 6365                |  $149,45          | 60%        |
 
 In this table, I added a "Saving" column with the cost difference (in percent) compared with VM.Standard.A1.Flex than all other shapes.
 
