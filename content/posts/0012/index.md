@@ -1,6 +1,6 @@
 ---
 title: "Intel x86 vs. ARM Architecture: A Comparative Analysis for Server Technologies"
-date: 2024-0-15T18:00:00+01:00
+date: 2024-04-15T18:00:00+01:00
 draft: false
 tags:
   - performance
