@@ -1,5 +1,5 @@
 ---
-title: Intel x86 vs. ARM Architecture: A Comparative Analysis for Server Technologies
+title: "Intel x86 vs. ARM Architecture: A Comparative Analysis for Server Technologies"
 date: 2024-0-15T18:00:00+01:00
 draft: false
 tags:
@@ -10,8 +10,8 @@ tags:
 categories:
   - compute
 cover:
-  alt: Intel x86 vs. ARM Architecture: A Comparative Analysis for Server Technologies
-  caption: Intel x86 vs. ARM Architecture: A Comparative Analysis for Server Technologies
+  alt: "Intel x86 vs. ARM Architecture: A Comparative Analysis for Server Technologies"
+  caption: "Intel x86 vs. ARM Architecture: A Comparative Analysis for Server Technologies"
   relative: true
   image: "static/logo.webp"
 ---
@@ -50,11 +50,11 @@ In the context of energy consumption and environmental impact, ARM's architectur
 
 Here's an illustrative comparison of their impact in a typical data center scenario:
 
-| Metric                | Intel x86 Impact | ARM Impact  |
-|-----------------------|------------------|-------------|
-| Power Usage Effectiveness (PUE) | 1.58        | 1.50        |
-| Cooling Requirements  | High             | Moderate    |
-| Carbon Footprint      | Higher           | Lower       |
+| Metric                   | Intel x86 Impact | ARM Impact  |
+|--------------------------|------------------|-------------|
+| Power Usage Effectiveness| (PUE) | 1.58     | 1.50        |
+| Cooling Requirements     | High             | Moderate    |
+| Carbon Footprint         | Higher           | Lower       |
 
 ### Influence in the Cloud Computing Sector
 
