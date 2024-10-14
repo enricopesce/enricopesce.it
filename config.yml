@@ -37,7 +37,6 @@ outputs:
 
 taxonomies:
   category: categories
-  tag: tags
 
 menu:
   main:
@@ -45,19 +44,11 @@ menu:
       name: Categories
       url: categories/
       weight: 10
-    - identifier: tags
-      name: Tags
-      url: tags/
-      weight: 20
     - identifier: archives
       name: Archives
       url: archives/
-      weight: 30
-    - identifier: search
-      name: Search
-      url: search/
-      weight: 40
+      weight: 20
     - identifier: about
       name: About
       url: about/
-      weight: 50
+      weight: 30
