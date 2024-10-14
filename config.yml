@@ -12,6 +12,11 @@ sitemap:
 permalinks:
   posts: "/:slug/"
 
+pagination:
+  disableAliases: false
+  pagerSize: 20
+  path: page
+
 params:
   Description: "Enrico, a Cloud Solution Engineer, uses technology to transform challenges into opportunities with cloud services."
   defaultTheme: auto
