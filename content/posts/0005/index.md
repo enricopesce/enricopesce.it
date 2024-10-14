@@ -2,11 +2,6 @@
 title: OCI Function with a custom image
 date: 2023-05-12T19:00:00+01:00
 draft: false
-tags:
-  - functions
-  - oci
-  - fn
-  - python
 categories:
   - serverless
 cover:
@@ -18,7 +13,7 @@ aliases:
   - "/en/2023/05/oci-function-with-a-custom-image/"
 ---
 
-As we have seen from my other [articles]({{< ref "/tags/functions/" >}}), it is possible to use the FN project with different programming languages using predefined container images, the officially supported languages are:
+As we have seen from my other [articles]({{< ref "/categories/serverless/" >}}), it is possible to use the FN project with different programming languages using predefined container images, the officially supported languages are:
 
 * go
 * java

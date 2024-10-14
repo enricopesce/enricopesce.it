@@ -2,12 +2,6 @@
 title: How to Backup Your Data in 10 Minutes with Kopia and OCI
 date: 2024-02-06T13:00:00+01:00
 draft: false
-tags:
-  - backup
-  - object storage
-  - kopia
-  - s3
-  - bucket
 categories:
   - storage
 cover:

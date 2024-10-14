@@ -2,12 +2,6 @@
 title: Another CPU Multicore Performance of OCI Compute Standard Flex Shapes
 date: 2024-02-10T18:00:00+01:00
 draft: true
-tags:
-  - php
-  - performance
-  - oci
-  - compute
-  - VM
 categories:
   - compute
 cover:
