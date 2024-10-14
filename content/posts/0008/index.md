@@ -2,12 +2,6 @@
 title: Performance testing with PHP and OCI Compute instances
 date: 2024-01-19T23:00:00+01:00
 draft: false
-tags:
-  - php
-  - performance
-  - oci
-  - compute
-  - VM
 categories:
   - compute
 cover:

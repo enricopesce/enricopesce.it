@@ -2,11 +2,6 @@
 title: Scalable and Serverless Data Ingestion with OCI Functions
 date: 2023-10-20T19:00:00+01:00
 draft: false
-tags:
-  - functions
-  - oci
-  - fn
-  - python
 categories:
   - serverless
 cover:
