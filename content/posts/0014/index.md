@@ -155,6 +155,6 @@ Now my OCI Vision can distinguish cereals!!
 
 ### Consideration
 
-We have understood how is simple to use and get a classification service without any infrastructure to manage. 
+We have understood how OCI Vision is simple to use and get a classification service without any infrastructure to manage. 
 
 The OCI part is very simple, we need principally to work on the image preprocess and augumentation, the big part of the time used was in the first step of images preparation.
