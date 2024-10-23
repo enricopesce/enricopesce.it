@@ -17,7 +17,9 @@ I was interested in understanding if with OCI Vision service it is possible, wit
 
 ### Yes, it is possible! 
 
-You can use OCI Vision to identify image context and use this feature to improve your software and business. Let me show you how!
+You can use OCI Vision to identify image context and use this feature to improve your software and business. 
+
+### Let me show you how!
 
 In this example, I used some cereals but it is only an example, you can extend the concept with everything visible.
 
