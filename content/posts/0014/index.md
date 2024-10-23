@@ -63,8 +63,6 @@ In my little iteration, I prepared a script to preprocess and augment the origin
 
 [https://github.com/enricopesce/oci-vision-cereals/blob/main/preprocessing.py](https://github.com/enricopesce/oci-vision-cereals/blob/main/preprocessing.py)
 
-![Metadata](static/script.png)
-
 Basically a final user can only run the script and generate from the original images other images optimized and augmented ready to be trained on the OCI services.
 
 ```console
