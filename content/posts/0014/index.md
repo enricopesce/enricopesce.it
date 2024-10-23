@@ -13,11 +13,11 @@ cover:
 
 ## Oci Vision: How do we identify cereals?
 
-I was interested in understanding if with OCI Vision service it is possible, without any infrastructure to manage and mainly without any ML/AI competence, to classify some images related to specific objects not natively included in the standard OCI Vision model.
+Is possible with OCI Vision service, without any infrastructure to manage and any ML/AI competence, to classify some images not included in the default Vision model?
 
-### Yes, it is possible! 
+Yes, it is possible! 
 
-You can use OCI Vision to identify image context and use this feature to improve your software and business. 
+You can use OCI Vision to identify image content and use this feature to improve your software and business. 
 
 ### Let me show you how!
 
