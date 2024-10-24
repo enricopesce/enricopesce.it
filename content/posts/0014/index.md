@@ -68,7 +68,7 @@ In my little iteration, I prepared a script to preprocess and augment the origin
 
 other techniques are well documented [in this paper](https://arxiv.org/pdf/2301.02830).
 
-[https://github.com/enricopesce/oci-vision-cereals/blob/main/preprocessing.py](https://github.com/enricopesce/oci-vision-cereals/blob/main/preprocessing.py)
+You can find the Python script here: [https://github.com/enricopesce/oci-vision-cereals/blob/main/preprocessing.py](https://github.com/enricopesce/oci-vision-cereals/blob/main/preprocessing.py)
 
 Basically a final user can only run the script and generate from the original images other images optimized and augmented ready to be trained on the OCI services.
 
