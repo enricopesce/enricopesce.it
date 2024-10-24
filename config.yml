@@ -6,7 +6,7 @@ copyright: "Enrico Pesce"
 enableRobotsTXT: true
 
 sitemap:
-  changefreq: ""
+  changefreq: Weekly
   filename: sitemap.xml
 
 permalinks:
