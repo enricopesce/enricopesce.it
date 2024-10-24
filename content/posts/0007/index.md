@@ -2,8 +2,6 @@
 title: Scalable and Serverless Data Ingestion with OCI Functions
 date: 2023-10-20T19:00:00+01:00
 draft: false
-categories:
-  - serverless
 cover:
   alt: Scalable and Serverless Data Ingestion with OCI Functions
   caption: Scalable and Serverless Data Ingestion with OCI Functions

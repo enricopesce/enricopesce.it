@@ -2,8 +2,6 @@
 title: "Get a kubernetes cluster in minutes on OCI"
 date: 2024-09-15T18:00:00+01:00
 draft: false
-categories:
-  - compute
 cover:
   alt: "Get a kubernetes cluster in minutes on OCI"
   caption: "Get a kubernetes cluster in minutes on OCI"

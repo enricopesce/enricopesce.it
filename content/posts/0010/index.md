@@ -2,8 +2,6 @@
 title: Comparing CPU Multicore Performance of OCI Compute Standard Flex Shapes
 date: 2024-03-19T18:00:00+01:00
 draft: false
-categories:
-  - compute
 cover:
   alt: Comparing CPU Multicore Performance of OCI Compute Standard Flex Shapes
   caption: Comparing CPU Multicore Performance of OCI Compute Standard Flex Shapes

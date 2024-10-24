@@ -8,6 +8,7 @@ enableRobotsTXT: true
 sitemap:
   changefreq: Weekly
   filename: sitemap.xml
+  priority: 0.5
 
 permalinks:
   posts: "/:slug/"
@@ -39,9 +40,6 @@ outputs:
     - HTML
     - RSS
     - JSON
-
-taxonomies:
-  category: categories
 
 menu:
   main:
