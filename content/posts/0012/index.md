@@ -2,8 +2,6 @@
 title: "Intel x86 vs. ARM Architecture: A Comparative Analysis for Server Technologies"
 date: 2024-04-15T18:00:00+01:00
 draft: false
-categories:
-  - compute
 cover:
   alt: "Intel x86 vs. ARM Architecture: A Comparative Analysis for Server Technologies"
   caption: "Intel x86 vs. ARM Architecture: A Comparative Analysis for Server Technologies"

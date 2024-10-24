@@ -2,8 +2,6 @@
 title: "OCI Vision, identify cereals with custom model"
 date: 2024-09-21T18:00:00+01:00
 draft: false
-categories:
- - ai
 cover:
   alt: "OCI Vision workflow"
   caption: "OCI Vision workflow"

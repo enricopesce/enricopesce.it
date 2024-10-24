@@ -2,8 +2,6 @@
 title: Accessing an Autonomous Database from an OCI Function
 date: 2023-09-01T19:00:00+01:00
 draft: false
-categories:
-  - serverless
 cover:
   alt: Accessing an Autonomous Database from an OCI Function
   caption: Accessing an Autonomous Database from an OCI Function

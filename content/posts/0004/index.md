@@ -2,8 +2,6 @@
 title: Trigger a function by Object Storage
 date: 2023-04-20T19:00:00+01:00
 draft: false
-categories:
-  - serverless
 cover:
   alt: Trigger a function by Object Storage
   caption: Trigger a function by Object Storage

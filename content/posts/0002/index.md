@@ -3,8 +3,6 @@ title: Oracle Autonomous Database
 description: "Introduction to Oracle's fully managed database"
 date: 2023-09-21T19:00:00+01:00
 draft: false
-categories:
-  - database
 cover:
   alt: Oracle Autonomous Database
   caption: Oracle Autonomous Database
