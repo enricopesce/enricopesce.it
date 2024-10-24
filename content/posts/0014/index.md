@@ -57,9 +57,16 @@ and saved them into the **original** folder grouped by the name of the cereal.
 
 ### Prepare the data for the OCI Vision neural network
 
-These images are not sufficient to train a model, I experienced that a neural network to work well requires more images filtered and augmented, [here is a technical paper](https://arxiv.org/pdf/2301.02830).
+These images are not sufficient to train a model, I experienced that a neural network to work well requires more images filtered and augmented.
 
-In my little iteration, I prepared a script to preprocess and augment the original images using some basic techniques.
+In my little iteration, I prepared a script to preprocess and augment the original images using some basic techniques:
+
+- Resize and crop
+- Apply random rotation
+- Apply random brightness
+- Apply random horizontal flip
+
+other techniques are well documented [here is a technical paper](https://arxiv.org/pdf/2301.02830).
 
 [https://github.com/enricopesce/oci-vision-cereals/blob/main/preprocessing.py](https://github.com/enricopesce/oci-vision-cereals/blob/main/preprocessing.py)
 
