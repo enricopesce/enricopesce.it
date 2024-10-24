@@ -45,10 +45,6 @@ taxonomies:
 
 menu:
   main:
-    - identifier: categories
-      name: Categories
-      url: categories/
-      weight: 10
     - identifier: archives
       name: Archives
       url: archives/
