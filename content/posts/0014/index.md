@@ -66,7 +66,7 @@ In my little iteration, I prepared a script to preprocess and augment the origin
 - Apply random brightness
 - Apply random horizontal flip
 
-other techniques are well documented [here is a technical paper](https://arxiv.org/pdf/2301.02830).
+other techniques are well documented [in this paper](https://arxiv.org/pdf/2301.02830).
 
 [https://github.com/enricopesce/oci-vision-cereals/blob/main/preprocessing.py](https://github.com/enricopesce/oci-vision-cereals/blob/main/preprocessing.py)
 
