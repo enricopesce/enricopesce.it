@@ -7,6 +7,10 @@ cover:
   caption: Comparing CPU Multicore Performance of OCI Compute Standard Flex Shapes
   relative: true
   image: "static/logo.webp"
+keywords:
+- "oci"
+- "compute"
+- "performance"
 ---
 
 When selecting a compute instance, factors such as raw computational power, price-to-performance ratio, and workload optimization play a significant role. 

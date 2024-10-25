@@ -8,8 +8,10 @@ cover:
   caption: Oracle Autonomous Database
   image: static/autonomous_database_vision.webp
   relative: true
-aliases:
-  - "/2023/09/oracle-autonomous-database/"
+keywords:
+- "oci"
+- "autonomous"
+- "database"
 ---
 
 ## Introduction to the most modern cloud database in the market

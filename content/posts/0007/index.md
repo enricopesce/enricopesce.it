@@ -7,8 +7,10 @@ cover:
   caption: Scalable and Serverless Data Ingestion with OCI Functions
   relative: true
   image: "static/architecture.webp"
-aliases:
-  - "/en/2023/10/scalable-and-serverless-data-ingestion/"
+keywords:
+- "oci"
+- "functions"
+- "serverless"
 ---
 
 In this article, we will leverage OCI's capabilities to the fullest, embracing the following principles:
