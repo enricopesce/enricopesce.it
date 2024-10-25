@@ -1,11 +1,15 @@
 ---
 title: Another CPU Multicore Performance of OCI Compute Standard Flex Shapes
 date: 2024-02-10T18:00:00+01:00
-draft: true
+draft: false
 cover:
   alt: Another CPU Multicore Performance of OCI Compute Standard Flex Shapes
   caption: Another CPU Multicore Performance of OCI Compute Standard Flex Shapes
   relative: true
+keywords:
+- "oci"
+- "compute"
+- "performance"  
 ---
 
 When selecting a compute instance, factors such as raw computational power, price-to-performance ratio, and workload optimization play a significant role. Let's focus on the following standard flex shapes available in most OCI regions:

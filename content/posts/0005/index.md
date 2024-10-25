@@ -7,8 +7,10 @@ cover:
   caption: OCI Function with a custom image
   image: static/fn.webp  
   relative: true
-aliases:
-  - "/en/2023/05/oci-function-with-a-custom-image/"
+keywords:
+- "oci"
+- "functions"
+- "serverless"
 ---
 
 As we have seen from my other articles, it is possible to use the FN project with different programming languages using predefined container images, the officially supported languages are:

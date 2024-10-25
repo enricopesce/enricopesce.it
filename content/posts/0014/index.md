@@ -7,6 +7,11 @@ cover:
   caption: "OCI Vision workflow"
   relative: true
   image: "static/diagram.avif"
+keywords:
+- "oci"
+- "vision"
+- "classification"
+- "image"
 ---
 
 ## Oci Vision: How do we identify cereals?

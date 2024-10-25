@@ -7,6 +7,10 @@ cover:
   caption: "Get a kubernetes cluster in minutes on OCI"
   relative: true
   image: "static/logo.webp"
+keywords:
+- "oci"
+- "kubernetes"
+- "oke"  
 ---
 
 ## I'm pleased to announce my first automation project on OCI

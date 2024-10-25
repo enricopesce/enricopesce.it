@@ -7,8 +7,10 @@ cover:
   caption: Performance testing with PHP and OCI Compute instances
   relative: true
   image: "static/Oracle-PHP.webp"
-aliases: 
-  - "/en/2024/01/performance-testing-with-php-and-oci-compute-instances/"
+keywords:
+- "oci"
+- "compute"
+- "performance"
 ---
 
 A while ago, I developed a [tool](https://github.com/enricopesce/php-performance) with the aim of assessing the actual performance improvement between different versions of PHP. Subsequently, I search to understand which AWS instance type was the most performant. Since AWS does not allow for custom sizing of CPU and RAM resources, I wanted to explore the differences among the various instance types and determine which one would be most cost-effective to choose.

@@ -7,6 +7,10 @@ cover:
   caption: "Intel x86 vs. ARM Architecture: A Comparative Analysis for Server Technologies"
   relative: true
   image: "static/logo.webp"
+keywords:
+- "oci"
+- "compute"
+- "performance"  
 ---
 
 ## Intel x86 vs. ARM Architecture: A Comparative Analysis for Server Technologies
