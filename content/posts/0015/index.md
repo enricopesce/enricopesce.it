@@ -6,6 +6,7 @@ cover:
   alt: "Stop OCI VM instance"
   caption: "Stop OCI VM instance"
   relative: true
+  image: "static/switch.webp"    
 keywords:
 - "oci"
 - "compute"
