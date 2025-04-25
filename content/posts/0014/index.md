@@ -48,9 +48,9 @@ Folders are defined as follows:
 
 I downloaded, from Google Images, the images as samples to start, in the specific I downloaded three types of seeds:
 
-{{< inTextImg url="static/wheat.jpg" alt="Wheat" height="200" >}}
-{{< inTextImg url="static/corn.jpg" alt="Corn" height="200" >}}
-{{< inTextImg url="static/sorghum.jpg" alt="Sorghum" height="200" >}}
+![Image alt](static/wheat.jpg)
+![Image alt](static/corn.jpg)
+![Image alt](static/sorghum.jpg)
 
 - **Wheat**: is a grass widely cultivated for its seed, a cereal grain that is a staple food worldwide. It is typically ground into flour to make bread, pasta, and other foods.
 - **Corn**: or maize, is one of the most widely grown grains in the world. It is used as food for humans, feed for livestock, and as a raw material in industry.
