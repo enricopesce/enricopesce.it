@@ -53,12 +53,11 @@ fn init --runtime python helloworld
 
 Files will be created inside a new directory
 
-<pre>
 ─ helloworld
    ├── func.py
    ├── func.yaml
    └── requirements.txt
-</pre>
+
 
 the func.py file will contain the executed code and its related requirements.txt file for the dependencies while the func.yaml file is the FN configuration file.
 
