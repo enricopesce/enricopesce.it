@@ -1,12 +1,12 @@
 ---
 title: "Deploy Oracle Kubernetes Engine Clusters in Minutes"
-date: 2024-04-25T18:00:00+01:00
+date: 2025-04-25T18:00:00+01:00
 draft: false
 cover:
   alt: "Deploy Oracle Kubernetes Engine Clusters in Minutes"
   caption: "Deploy Oracle Kubernetes Engine Clusters in Minutes"
   relative: true
-  image: ""
+  image: "static/logo.png"
 keywords:
 - "oci"
 - "kubernetes"
