@@ -8,10 +8,10 @@ cover:
   relative: true
   image: "static/diagram.avif"
 keywords:
-- "oci"
-- "vision"
-- "classification"
-- "image"
+- "oci vision custom model"
+- "image classification oracle"
+- "oracle ai vision"
+- "data labeling oci"
 ---
 
 ## Oci Vision: How do we identify cereals?

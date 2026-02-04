@@ -1,5 +1,6 @@
 ---
 title: "Deploy Oracle Kubernetes Engine Clusters in Minutes"
+description: "OKED with Pulumi: Deploy OKE clusters on Oracle Cloud Free Tier. Zero-expertise Kubernetes deployment with security best practices."
 date: 2025-04-25T18:00:00+01:00
 draft: false
 cover:
@@ -8,9 +9,10 @@ cover:
   relative: true
   image: "static/logo.png"
 keywords:
-- "oci"
-- "kubernetes"
-- "pulumi"
+- "oke pulumi deploy"
+- "oracle kubernetes free tier"
+- "oked automation tool"
+- "kubernetes oracle cloud"
 ---
 
 # OKED: Deploy Oracle Kubernetes Engine Clusters in Minutes

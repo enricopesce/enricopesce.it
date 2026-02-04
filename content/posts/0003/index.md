@@ -1,5 +1,6 @@
 ---
 title: OCI Functions a Python example
+description: "Step-by-step guide to creating serverless OCI Functions with Python. Deploy your first FN project on Oracle Cloud Infrastructure."
 date: 2023-03-20T19:00:00+01:00
 draft: false
 cover:
@@ -8,9 +9,10 @@ cover:
   image: static/oci-fn.webp
   relative: true
 keywords:
-- "oci"
-- "functions"
-- "serverless"
+- "oci functions python"
+- "oracle serverless"
+- "fn project oracle"
+- "faas oracle cloud"
 ---
 
 The [OCI Function](https://www.oracle.com/cloud/cloud-native/functions/) service allows you to run code on an infrastructure that you don't have to manage, in a scalable and automated way.

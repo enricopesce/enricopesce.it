@@ -1,5 +1,6 @@
 ---
 title: Another CPU Multicore Performance of OCI Compute Standard Flex Shapes
+description: "OCI compute price-performance analysis with Geekbench 6. Compare AMD, Intel, and ARM shapes for optimal cloud instance selection."
 date: 2024-02-10T18:00:00+01:00
 draft: false
 cover:
@@ -7,9 +8,10 @@ cover:
   caption: Another CPU Multicore Performance of OCI Compute Standard Flex Shapes
   relative: true
 keywords:
-- "oci"
-- "compute"
-- "performance"  
+- "oci flex shapes benchmark"
+- "ampere a1 performance"
+- "oracle cloud vm comparison"
+- "oci price performance"  
 ---
 
 When selecting a compute instance, factors such as raw computational power, price-to-performance ratio, and workload optimization play a significant role. Let's focus on the following standard flex shapes available in most OCI regions:

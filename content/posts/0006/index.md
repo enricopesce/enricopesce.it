@@ -1,5 +1,6 @@
 ---
 title: Accessing an Autonomous Database from an OCI Function
+description: "Connect OCI Functions to Autonomous Database securely using Vault secrets and Terraform. Complete IaC example with Python code."
 date: 2023-09-01T19:00:00+01:00
 draft: false
 cover:
@@ -8,10 +9,10 @@ cover:
   relative: true
   image: static/fn.webp
 keywords:
-- "oci"
-- "functions"
-- "autonomous"
-- "database"
+- "oci function autonomous database"
+- "python oracledb serverless"
+- "oci vault secrets"
+- "terraform oracle function"
 ---
 
 After seeing how to create a custom image, in the [previous case]({{< ref "/posts/0005" >}}) where we installed the Oracle client, now let's try to use this custom image to connect to an Oracle database.

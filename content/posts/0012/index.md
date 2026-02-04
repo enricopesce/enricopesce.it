@@ -1,5 +1,6 @@
 ---
 title: "Intel x86 vs. ARM Architecture: A Comparative Analysis for Server Technologies"
+description: "x86 vs ARM server architecture comparison: performance benchmarks, energy efficiency, and climate impact for cloud data centers."
 date: 2024-04-15T18:00:00+01:00
 draft: false
 cover:
@@ -8,9 +9,10 @@ cover:
   relative: true
   image: "static/logo.webp"
 keywords:
-- "oci"
-- "compute"
-- "performance"  
+- "x86 vs arm server"
+- "arm data center"
+- "intel xeon vs ampere"
+- "cloud cpu architecture"  
 ---
 
 ## Intel x86 vs. ARM Architecture: A Comparative Analysis for Server Technologies

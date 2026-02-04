@@ -1,5 +1,6 @@
 ---
 title: "Stop OCI VM instance"
+description: "Gracefully stop OCI instances from within using instance metadata and principal authentication. Simple bash alias included."
 date: 2024-12-09T18:00:00+01:00
 draft: false
 cover:
@@ -8,8 +9,10 @@ cover:
   relative: true
   image: "static/switch.webp"    
 keywords:
-- "oci"
-- "compute"
+- "oci instance principal"
+- "stop vm oracle cloud"
+- "oci metadata api"
+- "oci cli instance action"
 ---
 
 # A Practical Guide to Graceful Stop an OCI Instance

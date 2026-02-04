@@ -1,5 +1,6 @@
 ---
 title: Performance testing with PHP and OCI Compute instances
+description: "PHP performance benchmarks across OCI compute shapes: AMD E5, Intel Xeon, and ARM Ampere. Find the best price-performance ratio."
 date: 2024-01-19T23:00:00+01:00
 draft: false
 cover:
@@ -8,9 +9,10 @@ cover:
   relative: true
   image: "static/Oracle-PHP.webp"
 keywords:
-- "oci"
-- "compute"
-- "performance"
+- "php benchmark oci"
+- "oracle cloud compute performance"
+- "amd epyc e5 php"
+- "oci shape comparison"
 ---
 
 A while ago, I developed a [tool](https://github.com/enricopesce/php-performance) with the aim of assessing the actual performance improvement between different versions of PHP. Subsequently, I search to understand which AWS instance type was the most performant. Since AWS does not allow for custom sizing of CPU and RAM resources, I wanted to explore the differences among the various instance types and determine which one would be most cost-effective to choose.

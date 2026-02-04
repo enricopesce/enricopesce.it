@@ -3,7 +3,9 @@ title: Enrico Pesce's blog
 theme: PaperMod
 googleAnalytics: "G-N6VMEVB66C"
 copyright: "Enrico Pesce"
-enableRobotsTXT: true
+enableRobotsTXT: false
+languageCode: "en-US"
+defaultContentLanguage: "en"
 
 sitemap:
   changefreq: Weekly
@@ -24,6 +26,24 @@ pagination:
 
 params:
   Description: "Enrico, a Cloud Solution Engineer, uses technology to transform challenges into opportunities with cloud services."
+  author: "Enrico Pesce"
+
+  schema:
+    publisherType: "Person"
+    sameAs:
+      - "https://www.linkedin.com/in/enricopesce/"
+      - "https://github.com/enricopesce"
+
+  keywords:
+    - "cloud solutions"
+    - "oracle cloud infrastructure"
+    - "oci"
+    - "serverless"
+    - "kubernetes"
+    - "devops"
+    - "cloud engineering"
+    - "enrico pesce"
+
   defaultTheme: auto
   ShowShareButtons: true
   ShowReadingTime: true

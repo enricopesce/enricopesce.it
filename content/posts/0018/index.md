@@ -7,9 +7,10 @@ cover:
   relative: true
   image: "static/ampere.png"
 keywords:
-- "ai"
-- "llama"
-- "ampere"
+- "cpu llm inference"
+- "ampere ai optimization"
+- "llama.cpp oracle cloud"
+- "quantized model inference"
 ---
 
 It's been a while since I last wrote here. Lately, I've been diving deep into AI inference—the process of running AI models to generate responses—specifically exploring whether we truly need expensive GPUs for running modern language models. Spoiler alert: **the answer might surprise you**.

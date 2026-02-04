@@ -1,5 +1,6 @@
 ---
 title: Trigger a function by Object Storage
+description: "Automate OCI Functions with Object Storage events. Learn event-driven serverless architecture using Terraform IaC on Oracle Cloud."
 date: 2023-04-20T19:00:00+01:00
 draft: false
 cover:
@@ -8,9 +9,10 @@ cover:
   image: static/objectstoragefunction.webp
   relative: true
 keywords:
-- "oci"
-- "functions"
-- "serverless"
+- "oci function event trigger"
+- "object storage events"
+- "serverless terraform oci"
+- "event-driven architecture"
 ---
 
 The OCI Function service allows you to run code on infrastructure that you don't have to manage. In this [link]({{< relref path="0003/index.md" lang="en" >}}) I presented a basic example of an OCI function developed in Python.

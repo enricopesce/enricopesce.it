@@ -1,0 +1,39 @@
+<!-- Enhanced meta tags for SEO and LLM discovery -->
+<meta name="author" content="Enrico Pesce">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="{{ .Permalink }}">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:locale" content="en_US">
+
+{{ if .IsHome }}
+<!-- Person Schema for homepage/about -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Enrico Pesce",
+  "url": "https://www.enricopesce.it/",
+  "jobTitle": "Cloud Solution Engineer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Oracle"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/enricopesce/",
+    "https://github.com/enricopesce"
+  ],
+  "knowsAbout": [
+    "Oracle Cloud Infrastructure",
+    "Cloud Computing",
+    "Kubernetes",
+    "Serverless Architecture",
+    "DevOps",
+    "Infrastructure as Code",
+    "Terraform",
+    "Python"
+  ],
+  "description": "Cloud Solution Engineer at Oracle, specializing in Oracle Cloud Infrastructure, Kubernetes, and serverless architectures."
+}
+</script>
+{{ end }}

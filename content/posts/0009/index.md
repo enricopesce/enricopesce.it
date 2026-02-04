@@ -1,5 +1,6 @@
 ---
 title: How to Backup Your Data in 10 Minutes with Kopia and OCI
+description: "Set up encrypted cloud backups using Kopia and OCI Object Storage. Fast, secure, and cost-effective backup solution in minutes."
 date: 2024-02-06T13:00:00+01:00
 draft: false
 cover:
@@ -8,9 +9,10 @@ cover:
   relative: true
   image: "static/home.webp"
 keywords:
-- "oci"
-- "backup"
-- "kopia"
+- "kopia oci object storage"
+- "s3 compatible backup oracle"
+- "encrypted cloud backup"
+- "kopia tutorial"
 ---
 
 Do you want to backup your data easily and securely, without spending hours or money on complicated tools or services? If so, this post is for you!
