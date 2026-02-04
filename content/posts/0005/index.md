@@ -1,5 +1,6 @@
 ---
 title: OCI Function with a custom image
+description: "Build custom Docker images for OCI Functions. Add Oracle database client or any dependency to your serverless Python functions."
 date: 2023-05-12T19:00:00+01:00
 draft: false
 cover:
@@ -8,9 +9,10 @@ cover:
   image: static/fn.webp  
   relative: true
 keywords:
-- "oci"
-- "functions"
-- "serverless"
+- "oci function custom docker"
+- "fn project dockerfile"
+- "oracle instant client function"
+- "custom container serverless"
 ---
 
 As we have seen from my other articles, it is possible to use the FN project with different programming languages using predefined container images, the officially supported languages are:

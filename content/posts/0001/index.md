@@ -8,9 +8,10 @@ cover:
   alt: IAM Identity domains
   caption: IAM Identity domains
 keywords:
-- "oci"
-- "saml"
-- "openvpn"
+- "oci iam identity domains"
+- "saml authentication"
+- "openvpn mfa"
+- "oracle cloud sso"
 ---
 
 Identity and access management is a crucial goal in a growing organization.

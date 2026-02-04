@@ -1,5 +1,6 @@
 ---
 title: "Building a Modern Translation Service with Oracle Cloud Infrastructure's Generative AI"
+description: "Build a translation API with OCI Generative AI. Enterprise-ready, context-aware multilingual service supporting 10 languages."
 date: 2024-12-18T18:00:00+01:00
 draft: false
 cover:
@@ -8,9 +9,10 @@ cover:
   relative: true
   image: "static/translators.webp"
 keywords:
-- "oci"
-- "ai"
-- "language"
+- "oci generative ai translation"
+- "oracle cloud llm"
+- "multilingual api oracle"
+- "ai translation service"
 ---
 
 # Building a Modern Translation Service with Oracle Cloud Infrastructure's Generative AI

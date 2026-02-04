@@ -1,5 +1,6 @@
 ---
 title: Comparing CPU Multicore Performance of OCI Compute Standard Flex Shapes
+description: "Geekbench 6 multicore benchmarks for OCI shapes: AMD EPYC E5, Intel Xeon, and ARM Ampere. Performance and cost analysis included."
 date: 2024-03-19T18:00:00+01:00
 draft: false
 cover:
@@ -8,9 +9,10 @@ cover:
   relative: true
   image: "static/logo.webp"
 keywords:
-- "oci"
-- "compute"
-- "performance"
+- "geekbench oci shapes"
+- "oci multicore benchmark"
+- "arm vs x86 oracle cloud"
+- "oci compute cost performance"
 ---
 
 When selecting a compute instance, factors such as raw computational power, price-to-performance ratio, and workload optimization play a significant role. 

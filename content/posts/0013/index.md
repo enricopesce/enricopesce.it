@@ -1,5 +1,6 @@
 ---
 title: "Get a kubernetes cluster in minutes on OCI"
+description: "Deploy production-ready OKE clusters in minutes with OKED. Automated Kubernetes setup on Oracle Cloud without OCI expertise."
 date: 2024-09-15T18:00:00+01:00
 draft: false
 cover:
@@ -8,9 +9,10 @@ cover:
   relative: true
   image: "static/logo.webp"
 keywords:
-- "oci"
-- "kubernetes"
-- "oke"  
+- "oke terraform deploy"
+- "oracle kubernetes engine"
+- "oked automation"
+- "oci kubernetes cluster"  
 ---
 
 ## I'm pleased to announce my first automation project on OCI

@@ -1,5 +1,6 @@
 ---
 title: Scalable and Serverless Data Ingestion with OCI Functions
+description: "Build a scalable data pipeline: weather station CSV to Autonomous Database using OCI Functions, Object Storage, and Terraform."
 date: 2023-10-20T19:00:00+01:00
 draft: false
 cover:
@@ -8,9 +9,10 @@ cover:
   relative: true
   image: "static/architecture.webp"
 keywords:
-- "oci"
-- "functions"
-- "serverless"
+- "oci data ingestion"
+- "csv to autonomous database"
+- "serverless etl oracle"
+- "oci function pipeline"
 ---
 
 In this article, we will leverage OCI's capabilities to the fullest, embracing the following principles:

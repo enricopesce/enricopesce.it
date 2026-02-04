@@ -9,9 +9,10 @@ cover:
   image: static/autonomous_database_vision.webp
   relative: true
 keywords:
-- "oci"
-- "autonomous"
-- "database"
+- "oracle autonomous database"
+- "self-driving database"
+- "autonomous data warehouse"
+- "oracle cloud database"
 ---
 
 ## Introduction to the most modern cloud database in the market

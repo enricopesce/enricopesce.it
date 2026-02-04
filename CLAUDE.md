@@ -37,4 +37,4 @@ git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth
 
 ## Deployment
 
-Pushes to `main` trigger GitHub Actions workflow (`.github/workflows/hugo.yaml`) which builds and deploys to GitHub Pages. Uses Hugo extended version 0.146.7.
+Pushes to `main` trigger GitHub Actions workflow (`.github/workflows/hugo.yaml`) which builds and deploys to GitHub Pages. Uses Hugo extended version 0.155.2.
