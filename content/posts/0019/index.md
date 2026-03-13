@@ -1,5 +1,5 @@
 ---
-title: "OCI LLM Comparison: Pick the Right Model"
+title: "OCI GenAI Catalog: Pick the Right Model"
 description: "A reference guide covering 30+ LLMs available on Oracle Cloud's Generative AI service, with a model selection wizard."
 date: 2026-03-09T09:00:00+01:00
 draft: false
@@ -15,7 +15,7 @@ keywords:
 
 OCI Generative AI has grown fast—Cohere, Google, Meta, OpenAI, xAI—all available, each with multiple variants. Every time I started a new project I had to dig through documentation to find the right model.
 
-So I built **[OCI LLM Comparison](https://enricopesce.github.io/oci-llm-comparison/)**: a reference guide covering 30+ models with a guided selection wizard.
+So I built **[OCI GenAI Catalog](https://enricopesce.github.io/oci-genai-catalog/)**: a reference guide covering 30+ models with a guided selection wizard.
 
 ## What's inside
 
@@ -33,4 +33,4 @@ So I built **[OCI LLM Comparison](https://enricopesce.github.io/oci-llm-comparis
 | OpenAI gpt-oss | 2 | Reasoning, agents |
 | xAI Grok | 6 | 2M context, code specialization |
 
-Data is sourced from OCI official docs and kept up to date. Check it out at **[enricopesce.github.io/oci-llm-comparison](https://enricopesce.github.io/oci-llm-comparison/)**.
+Data is sourced from OCI official docs and kept up to date. Check it out at **[OCI GenAI Catalog](https://enricopesce.github.io/oci-genai-catalog/)**.
