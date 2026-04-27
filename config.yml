@@ -1,7 +1,6 @@
 baseURL: "https://www.enricopesce.it/"
 title: Enrico Pesce's blog
 theme: PaperMod
-googleAnalytics: "G-N6VMEVB66C"
 copyright: "Enrico Pesce"
 enableRobotsTXT: false
 languageCode: "en-US"
@@ -27,6 +26,9 @@ pagination:
 params:
   Description: "Enrico, a Cloud Solution Engineer, uses technology to transform challenges into opportunities with cloud services."
   author: "Enrico Pesce"
+  analytics:
+    gtm:
+      containerID: "GTM-WQ288D86"
 
   schema:
     publisherType: "Person"
