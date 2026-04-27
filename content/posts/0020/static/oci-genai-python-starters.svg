@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">OCI GenAI Python Starters</title>
+  <desc id="desc">Cover image for a blog post about beginner-friendly OCI Generative AI Python starter demos.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff5e8" />
+      <stop offset="55%" stop-color="#f7e4cc" />
+      <stop offset="100%" stop-color="#f1d2af" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff8a3d" />
+      <stop offset="100%" stop-color="#db5d14" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#7a3d14" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="1110" cy="92" r="176" fill="#ffe8cf" />
+  <circle cx="126" cy="566" r="154" fill="#f8dfc0" />
+
+  <g opacity="0.24">
+    <path d="M0 112H1200" stroke="#cf9c72" stroke-width="2" />
+    <path d="M0 196H1200" stroke="#cf9c72" stroke-width="2" />
+    <path d="M0 280H1200" stroke="#cf9c72" stroke-width="2" />
+    <path d="M0 364H1200" stroke="#cf9c72" stroke-width="2" />
+    <path d="M0 448H1200" stroke="#cf9c72" stroke-width="2" />
+    <path d="M0 532H1200" stroke="#cf9c72" stroke-width="2" />
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="68" y="74" width="1064" height="482" rx="34" fill="#fffdf9" />
+  </g>
+
+  <rect x="96" y="104" width="360" height="422" rx="28" fill="#1f2f3b" />
+  <rect x="124" y="132" width="144" height="36" rx="18" fill="url(#accent)" />
+  <text x="196" y="156" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff" font-family="IBM Plex Sans, Avenir Next, Segoe UI, sans-serif">NEW REPO</text>
+
+  <text x="124" y="228" font-size="56" font-weight="700" fill="#fff7ef" font-family="IBM Plex Sans, Avenir Next, Segoe UI, sans-serif">OCI GenAI</text>
+  <text x="124" y="290" font-size="56" font-weight="700" fill="#fff7ef" font-family="IBM Plex Sans, Avenir Next, Segoe UI, sans-serif">Python</text>
+  <text x="124" y="352" font-size="56" font-weight="700" fill="#ffb57a" font-family="IBM Plex Sans, Avenir Next, Segoe UI, sans-serif">Starters</text>
+
+  <text x="124" y="412" font-size="24" fill="#d8e4ec" font-family="IBM Plex Sans, Avenir Next, Segoe UI, sans-serif">7 small demos for first working</text>
+  <text x="124" y="446" font-size="24" fill="#d8e4ec" font-family="IBM Plex Sans, Avenir Next, Segoe UI, sans-serif">OCI Generative AI examples</text>
+
+  <rect x="124" y="474" width="118" height="32" rx="16" fill="#304858" />
+  <text x="183" y="495" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff" font-family="IBM Plex Sans, Avenir Next, Segoe UI, sans-serif">Python 3.11+</text>
+
+  <text x="510" y="152" font-size="24" font-weight="700" fill="#76411a" font-family="IBM Plex Sans, Avenir Next, Segoe UI, sans-serif">OCI-native path</text>
+  <text x="826" y="152" font-size="24" font-weight="700" fill="#76411a" font-family="IBM Plex Sans, Avenir Next, Segoe UI, sans-serif">OpenAI-compatible path</text>
+
+  <g font-family="IBM Plex Sans, Avenir Next, Segoe UI, sans-serif" font-size="26" font-weight="700">
+    <rect x="494" y="186" width="276" height="56" rx="18" fill="#fff2df" stroke="#efc79a" stroke-width="2" />
+    <text x="632" y="223" text-anchor="middle" fill="#3f2a16">direct-sdk</text>
+
+    <rect x="494" y="258" width="276" height="56" rx="18" fill="#fff2df" stroke="#efc79a" stroke-width="2" />
+    <text x="632" y="295" text-anchor="middle" fill="#3f2a16">langchain</text>
+
+    <rect x="494" y="330" width="276" height="56" rx="18" fill="#fff2df" stroke="#efc79a" stroke-width="2" />
+    <text x="632" y="367" text-anchor="middle" fill="#3f2a16">llamaindex</text>
+
+    <rect x="494" y="402" width="276" height="56" rx="18" fill="#fff2df" stroke="#efc79a" stroke-width="2" />
+    <text x="632" y="439" text-anchor="middle" fill="#3f2a16">langgraph</text>
+  </g>
+
+  <g font-family="IBM Plex Sans, Avenir Next, Segoe UI, sans-serif" font-size="26" font-weight="700">
+    <rect x="810" y="210" width="276" height="56" rx="18" fill="#fff7ef" stroke="#f0c48f" stroke-width="2" />
+    <text x="948" y="247" text-anchor="middle" fill="#3f2a16">openai-chat</text>
+
+    <rect x="810" y="282" width="276" height="56" rx="18" fill="#fff7ef" stroke="#f0c48f" stroke-width="2" />
+    <text x="948" y="319" text-anchor="middle" fill="#3f2a16">openai-agents</text>
+
+    <rect x="810" y="354" width="276" height="56" rx="18" fill="#fff7ef" stroke="#f0c48f" stroke-width="2" />
+    <text x="948" y="391" text-anchor="middle" fill="#3f2a16">openai-responses</text>
+  </g>
+
+  <path d="M770 372C810 372 810 372 834 372" stroke="#db5d14" stroke-width="6" stroke-linecap="round" />
+  <circle cx="788" cy="372" r="9" fill="#db5d14" />
+  <circle cx="816" cy="372" r="9" fill="#db5d14" />
+
+  <text x="510" y="500" font-size="20" fill="#6d5036" font-family="IBM Plex Sans, Avenir Next, Segoe UI, sans-serif">from raw SDK calls to frameworks, agents, and Responses API</text>
+</svg>
