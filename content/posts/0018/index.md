@@ -4,6 +4,8 @@ description: "Real benchmarks showing how optimized CPU inference on Ampere proc
 date: 2026-02-04T09:00:00+01:00
 draft: false
 cover:
+  alt: "Ampere CPU inference benchmark"
+  caption: "Ampere CPU inference benchmark"
   relative: true
   image: "static/ampere.png"
 keywords:
@@ -11,6 +13,14 @@ keywords:
 - "ampere ai optimization"
 - "llama.cpp oracle cloud"
 - "quantized model inference"
+tags:
+- "OCI"
+- "Generative AI"
+- "Ampere"
+- "CPU Inference"
+- "Benchmarks"
+categories:
+- "AI and Machine Learning"
 ---
 
 It's been a while since I last wrote here. Lately, I've been diving deep into AI inference—the process of running AI models to generate responses—specifically exploring whether we truly need expensive GPUs for running modern language models. Spoiler alert: **the answer might surprise you**.

@@ -13,6 +13,14 @@ keywords:
 - "csv to autonomous database"
 - "serverless etl oracle"
 - "oci function pipeline"
+tags:
+- "OCI"
+- "Functions"
+- "Object Storage"
+- "Autonomous Database"
+- "Terraform"
+categories:
+- "Serverless"
 ---
 
 In this article, we will leverage OCI's capabilities to the fullest, embracing the following principles:

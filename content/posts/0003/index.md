@@ -13,6 +13,13 @@ keywords:
 - "oracle serverless"
 - "fn project oracle"
 - "faas oracle cloud"
+tags:
+- "OCI"
+- "Functions"
+- "Python"
+- "Serverless"
+categories:
+- "Serverless"
 ---
 
 The [OCI Function](https://www.oracle.com/cloud/cloud-native/functions/) service allows you to run code on an infrastructure that you don't have to manage, in a scalable and automated way.

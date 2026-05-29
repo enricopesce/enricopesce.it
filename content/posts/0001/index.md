@@ -12,6 +12,14 @@ keywords:
 - "saml authentication"
 - "openvpn mfa"
 - "oracle cloud sso"
+tags:
+- "OCI"
+- "IAM"
+- "SAML"
+- "OpenVPN"
+- "Security"
+categories:
+- "Identity and Security"
 ---
 
 Identity and access management is a crucial goal in a growing organization.

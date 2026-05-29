@@ -4,6 +4,8 @@ description: "A reference guide covering 30+ LLMs available on Oracle Cloud's Ge
 date: 2026-03-09T09:00:00+01:00
 draft: false
 cover:
+  alt: "OCI GenAI Catalog model comparison"
+  caption: "OCI GenAI Catalog model comparison"
   relative: true
   image: "static/oci-llm-comparison.png"
 keywords:
@@ -11,6 +13,13 @@ keywords:
 - "llm comparison"
 - "oracle cloud llm"
 - "model selection"
+tags:
+- "OCI"
+- "Generative AI"
+- "LLM"
+- "Model Selection"
+categories:
+- "AI and Machine Learning"
 ---
 
 OCI Generative AI has grown fast—Cohere, Google, Meta, OpenAI, xAI—all available, each with multiple variants. Every time I started a new project I had to dig through documentation to find the right model.

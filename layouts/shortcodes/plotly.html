@@ -1,1 +1,14 @@
-<iframe width="900" height="800" frameborder="0" scrolling="no" src="{{ index .Params 0 }}"></iframe>
+{{- $src := index .Params 0 -}}
+{{- $height := "640" -}}
+{{- $title := "Interactive Plotly chart" -}}
+{{- if ge (len .Params) 2 }}{{- $height = index .Params 1 -}}{{- end -}}
+{{- if ge (len .Params) 3 }}{{- $title = index .Params 2 -}}{{- end -}}
+<div class="responsive-embed responsive-embed-plotly">
+  <iframe
+    title="{{ $title }}"
+    src="{{ $src | safeURL }}"
+    loading="lazy"
+    scrolling="no"
+    style="width: 100%; height: min(80vh, {{ $height }}px); border: 0;"
+  ></iframe>
+</div>

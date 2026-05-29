@@ -6,13 +6,20 @@ draft: false
 cover:
   alt: OCI Function with a custom image
   caption: OCI Function with a custom image
-  image: static/fn.webp  
+  image: static/fn.webp
   relative: true
 keywords:
 - "oci function custom docker"
 - "fn project dockerfile"
 - "oracle instant client function"
 - "custom container serverless"
+tags:
+- "OCI"
+- "Functions"
+- "Docker"
+- "Serverless"
+categories:
+- "Serverless"
 ---
 
 As we have seen from my other articles, it is possible to use the FN project with different programming languages using predefined container images, the officially supported languages are:

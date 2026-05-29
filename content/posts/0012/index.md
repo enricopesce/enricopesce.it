@@ -12,7 +12,14 @@ keywords:
 - "x86 vs arm server"
 - "arm data center"
 - "intel xeon vs ampere"
-- "cloud cpu architecture"  
+- "cloud cpu architecture"
+tags:
+- "ARM"
+- "x86"
+- "Compute"
+- "Cloud Architecture"
+categories:
+- "Architecture"
 ---
 
 ## Intel x86 vs. ARM Architecture: A Comparative Analysis for Server Technologies
@@ -21,10 +28,10 @@ In the dynamic field of server technology, the battle between CPU architectures 
 
 ### Detailed Architectural Insights
 
-#### Intel x86 Architecture
+### Intel x86 Architecture
 Intel's x86 architecture, grounded in a complex instruction set computing (CISC) framework, offers a broad instruction range and high computation capabilities. This architecture is renowned for its robust performance and extensive software compatibility, making it the preferred choice in traditional server environments.
 
-#### ARM Architecture
+### ARM Architecture
 Conversely, ARM architecture employs a reduced instruction set computing (RISC) model that simplifies processor design and reduces power consumption. Notably, ARM excels in energy efficiency, which has allowed it to dominate in mobile computing and increasingly penetrate the server market.
 
 ### Server Performance Benchmarks

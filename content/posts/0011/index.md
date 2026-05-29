@@ -1,17 +1,22 @@
 ---
-title: Another CPU Multicore Performance of OCI Compute Standard Flex Shapes
+title: "OCI Compute Standard Flex Shapes: Another CPU Multicore Benchmark"
 description: "OCI compute price-performance analysis with Geekbench 6. Compare AMD, Intel, and ARM shapes for optimal cloud instance selection."
 date: 2024-02-10T18:00:00+01:00
+slug: "another-cpu-multicore-performance-of-oci-compute-standard-flex-shapes"
 draft: false
-cover:
-  alt: Another CPU Multicore Performance of OCI Compute Standard Flex Shapes
-  caption: Another CPU Multicore Performance of OCI Compute Standard Flex Shapes
-  relative: true
 keywords:
 - "oci flex shapes benchmark"
 - "ampere a1 performance"
 - "oracle cloud vm comparison"
-- "oci price performance"  
+- "oci price performance"
+tags:
+- "OCI"
+- "Compute"
+- "Ampere"
+- "Geekbench"
+- "Benchmarks"
+categories:
+- "Benchmarks"
 ---
 
 When selecting a compute instance, factors such as raw computational power, price-to-performance ratio, and workload optimization play a significant role. Let's focus on the following standard flex shapes available in most OCI regions:
@@ -22,7 +27,7 @@ When selecting a compute instance, factors such as raw computational power, pric
 * **VM.Optimized3.Flex** (Processor: Intel Xeon 6354. Base frequency 3.0 GHz, max turbo frequency 3.6 GHz)
 * **VM.Standard.A1.Flex** (Each OCPU corresponds to a single hardware execution thread. Processor: Ampere Altra Q80-30. Max frequency 3.0 GHz.)
 
-I conducted benchmark tests with **Geekbench 6** on three CPU configurations: 2, 4, and 8 cores. 
+I conducted benchmark tests with **Geekbench 6** on three CPU configurations: 2, 4, and 8 cores.
 
 For additional information on the [internal tests conducted](https://www.geekbench.com/doc/geekbench6-benchmark-internals.pdf), please refer to the provided link.
 
@@ -30,7 +35,7 @@ Let's explore the results in multi-threaded performance:
 
 {{< plotly "//plotly.com/~enricopesce/7.embed" >}}
 
-We can see that the most powerful shape is the VM.Standard.E5.Flex. This new AMD-based shape significantly surpasses other 
+We can see that the most powerful shape is the VM.Standard.E5.Flex. This new AMD-based shape significantly surpasses other
 shapes; in fact, the results are slightly similar.
 
 But we can evaluate not only the performance; in the real world, price-to-performance is another decisive factor.
@@ -47,4 +52,4 @@ We can observe that there are varying prices; not all shapes have the same cost.
 
 Choose your OCI compute instance wisely by weighing performance, cost, and workload requirements. Whether you're running databases, analytics, or AI workloads, understanding CPU multicore performance empowers informed decisions.
 
-Remember, the right shape depends on your unique use case. Happy computing! 🚀💡
+The right shape depends on your workload, performance target, and budget.

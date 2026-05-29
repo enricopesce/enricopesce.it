@@ -13,6 +13,14 @@ keywords:
 - "object storage events"
 - "serverless terraform oci"
 - "event-driven architecture"
+tags:
+- "OCI"
+- "Functions"
+- "Object Storage"
+- "Terraform"
+- "Serverless"
+categories:
+- "Serverless"
 ---
 
 The OCI Function service allows you to run code on infrastructure that you don't have to manage. In this [link]({{< relref path="0003/index.md" lang="en" >}}) I presented a basic example of an OCI function developed in Python.

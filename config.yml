@@ -1,40 +1,73 @@
 baseURL: "https://www.enricopesce.it/"
-title: Enrico Pesce's blog
+title: "Enrico Pesce"
 theme: PaperMod
 copyright: "Enrico Pesce"
 enableRobotsTXT: false
-languageCode: "en-US"
+locale: "en-US"
 defaultContentLanguage: "en"
+
+security:
+  allowContent:
+    - '^text/(markdown|html|csv|plain)$'
+    - '^image/'
+    - '^application/(json|x-ndjson|vnd\.openxmlformats-officedocument\.spreadsheetml\.sheet)$'
 
 sitemap:
   changefreq: Weekly
   filename: sitemap.xml
   priority: 0.5
 
-disableKinds:
-- taxonomy
-- term
-
 permalinks:
   posts: "/:slug/"
 
 pagination:
   disableAliases: false
-  pagerSize: 20
+  pagerSize: 10
   path: page
 
+taxonomies:
+  tag: tags
+  category: categories
+
 params:
-  Description: "Enrico, a Cloud Solution Engineer, uses technology to transform challenges into opportunities with cloud services."
+  description: "Cloud architecture notes on Oracle Cloud Infrastructure, Kubernetes, serverless systems, automation, and Generative AI."
   author: "Enrico Pesce"
   analytics:
     gtm:
       containerID: "GTM-WQ288D86"
 
+  homeInfoParams:
+    Title: "Cloud Architecture Notes"
+    Content: "Practical notes on Oracle Cloud Infrastructure, Kubernetes, serverless systems, automation, and Generative AI. I write from hands-on experiments, benchmarks, and field patterns."
+    AlignSocialIconsTo: "left"
+
+  socialIcons:
+    - name: "linkedin"
+      title: "LinkedIn"
+      url: "https://www.linkedin.com/in/enricopesce/"
+    - name: "github"
+      title: "GitHub"
+      url: "https://github.com/enricopesce"
+    - name: "rss"
+      title: "RSS"
+      url: "/index.xml"
+
   schema:
     publisherType: "Person"
+    jobTitle: "Cloud Solution Engineer"
+    worksFor: "Oracle"
     sameAs:
       - "https://www.linkedin.com/in/enricopesce/"
       - "https://github.com/enricopesce"
+    knowsAbout:
+      - "Oracle Cloud Infrastructure"
+      - "Cloud Computing"
+      - "Kubernetes"
+      - "Serverless Architecture"
+      - "DevOps"
+      - "Infrastructure as Code"
+      - "Terraform"
+      - "Python"
 
   keywords:
     - "cloud solutions"
@@ -49,8 +82,26 @@ params:
   defaultTheme: auto
   ShowShareButtons: true
   ShowReadingTime: true
+  ShowCodeCopyButtons: true
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
+  ShowRssButtonInSectionTermList: true
+  ShowToc: true
+  TocOpen: false
+  mainSections:
+    - posts
+  fuseOpts:
+    iscasesensitive: false
+    shouldsort: true
+    location: 0
+    distance: 1000
+    threshold: 0.35
+    minmatchcharlength: 2
+    keys:
+      - title
+      - permalink
+      - summary
+      - content
   editPost:
     URL: "https://github.com/enricopesce/blog/tree/main/content"
     Text: "Suggest Changes"
@@ -58,7 +109,15 @@ params:
   cover:
     hiddenInList: false
     hiddenInSingle: false
-  favicon: "/img/favicon.ico"
+  assets:
+    favicon: "/favicon-32x32.png"
+    favicon16x16: "/favicon-16x16.png"
+    favicon32x32: "/favicon-32x32.png"
+    apple_touch_icon: "/apple-touch-icon.png"
+    theme_color: "#2e2e33"
+    msapplication_TileColor: "#2e2e33"
+  footer:
+    text: "Cloud architecture notes on OCI, Kubernetes, Serverless, and GenAI"
   env: production
 
 outputs:
@@ -66,17 +125,35 @@ outputs:
     - HTML
     - RSS
     - JSON
+  section:
+    - HTML
+    - RSS
+  taxonomy:
+    - HTML
+    - RSS
+  term:
+    - HTML
+    - RSS
 
 menu:
   main:
+    - identifier: projects
+      name: Projects
+      url: projects/
+      weight: 10
     - identifier: archives
       name: Archives
       url: archives/
-      weight: 10
+      weight: 20
+    - identifier: tags
+      name: Tags
+      url: tags/
+      weight: 30
+    - identifier: search
+      name: Search
+      url: search/
+      weight: 40
     - identifier: about
       name: About
       url: about/
-      weight: 20
-
-
-      
+      weight: 50

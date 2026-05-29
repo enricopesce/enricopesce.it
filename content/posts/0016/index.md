@@ -13,9 +13,14 @@ keywords:
 - "oracle cloud llm"
 - "multilingual api oracle"
 - "ai translation service"
+tags:
+- "OCI"
+- "Generative AI"
+- "Python"
+- "API"
+categories:
+- "AI and Machine Learning"
 ---
-
-# Building a Modern Translation Service with Oracle Cloud Infrastructure's Generative AI
 
 ## The Challenge with Modern Translation
 

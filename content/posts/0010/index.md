@@ -13,9 +13,17 @@ keywords:
 - "oci multicore benchmark"
 - "arm vs x86 oracle cloud"
 - "oci compute cost performance"
+tags:
+- "OCI"
+- "Compute"
+- "Ampere"
+- "Geekbench"
+- "Benchmarks"
+categories:
+- "Benchmarks"
 ---
 
-When selecting a compute instance, factors such as raw computational power, price-to-performance ratio, and workload optimization play a significant role. 
+When selecting a compute instance, factors such as raw computational power, price-to-performance ratio, and workload optimization play a significant role.
 
 The following standard flex shapes available in most OCI regions are:
 
@@ -35,7 +43,7 @@ Let's explore the results in multi-threaded performance test over different shap
 
 {{< plotly "//plotly.com/~enricopesce/1.embed" >}}
 
-We can see that the most powerful shape is the VM.Standard.E5.Flex. 
+We can see that the most powerful shape is the VM.Standard.E5.Flex.
 
 This new AMD-based shape significantly surpasses other shapes, a very powerful CPU for best-in-class performance needs!
 
@@ -45,7 +53,7 @@ But we can evaluate not only the performance; in the real world, price-to-perfor
 
 Let's break down the monthly costs for each shape with 8 CPU and Oracle Linux based on Oracle's pricing as of March 2024:
 
-We can observe that there are varying prices; not all shapes have the same cost. 
+We can observe that there are varying prices; not all shapes have the same cost.
 
 | **Shape**           | **Multicore score** | **Monthly price** | **Saving** |
 |---------------------|---------------------|-------------------|------------|
@@ -59,7 +67,7 @@ In this table, I added a "Saving" column to represent the cost difference (in pe
 
 ### **Considerations**
 
-If you consider the ARM shape VM.Standard.A1.Flex, you can save 60% than VM.Optimized3.Flex with very similar performance results! Awesome!! 
+If you consider the ARM shape VM.Standard.A1.Flex, you can save 60% compared with VM.Optimized3.Flex while keeping very similar performance results.
 
 If performance is the main focus VM.Standard.E5.Flex is the winner! A good price and stunning performance results!
 

@@ -13,9 +13,15 @@ keywords:
 - "oracle kubernetes free tier"
 - "oked automation tool"
 - "kubernetes oracle cloud"
+tags:
+- "OCI"
+- "OKE"
+- "Kubernetes"
+- "Pulumi"
+- "Automation"
+categories:
+- "Kubernetes"
 ---
-
-# OKED: Deploy Oracle Kubernetes Engine Clusters in Minutes
 
 In today's cloud-native landscape, Kubernetes has become the *de facto* standard for container orchestration. However, setting up a production-ready Kubernetes cluster can still be a complex and time-consuming process, especially for those new to the ecosystem. Enter **OKED** (*Oracle Kubernetes Engine Deploy*), an elegant solution that streamlines the deployment of Kubernetes clusters on Oracle Cloud Infrastructure.
 
@@ -43,7 +49,7 @@ What makes OKED stand out from other deployment methods, including OCI's web con
 
 ## The Architecture
 
-OKED deploys a `BASIC` cluster type (which incurs no management fees) following the recommended architecture from [Oracle's documentation](https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengnetworkconfigexample.htm#example-oci-cni-publick8sapi_privateworkers_publiclb). 
+OKED deploys a `BASIC` cluster type (which incurs no management fees) following the recommended architecture from [Oracle's documentation](https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengnetworkconfigexample.htm#example-oci-cni-publick8sapi_privateworkers_publiclb).
 
 ![OKED Architecture](https://github.com/enricopesce/oracle-kubernetes-engine-deploy/blob/main/arch.png?raw=true)
 
@@ -103,4 +109,4 @@ You can find the complete project on GitHub at [github.com/enricopesce/oracle-ku
 
 ---
 
-*Are you using Kubernetes on Oracle Cloud? What has your experience been with deployment automation tools? Share your thoughts in the comments below!*
+Are you using Kubernetes on Oracle Cloud? I am interested in practical feedback on deployment automation patterns and tradeoffs.

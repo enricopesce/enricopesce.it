@@ -7,15 +7,20 @@ cover:
   alt: "Stop OCI VM instance"
   caption: "Stop OCI VM instance"
   relative: true
-  image: "static/switch.webp"    
+  image: "static/switch.webp"
 keywords:
 - "oci instance principal"
 - "stop vm oracle cloud"
 - "oci metadata api"
 - "oci cli instance action"
+tags:
+- "OCI"
+- "Compute"
+- "CLI"
+- "Instance Principal"
+categories:
+- "Cloud Operations"
 ---
-
-# A Practical Guide to Graceful Stop an OCI Instance
 
 ## Introduction
 When running workloads on Oracle Cloud Infrastructure (OCI), managing your instances efficiently is crucial. This guide will show you how to create a simple, efficient way to shut down your OCI instance from within the instance itself, using instance metadata and instance principal authentication.

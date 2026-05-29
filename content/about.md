@@ -1,31 +1,37 @@
 ---
-title: "About me"
-description: "Enrico Pesce - Cloud Solution Engineer at Oracle specializing in OCI, Kubernetes, and serverless architectures."
+title: "About"
+description: "Enrico Pesce is a Cloud Solution Engineer specializing in Oracle Cloud Infrastructure, Kubernetes, serverless architectures, infrastructure as code, and Generative AI."
 layout: "about"
 url: "about/"
+ShowToc: false
+hideMeta: true
+disableShare: true
+ShowPostNavLinks: false
+ShowShareButtons: false
+ShowCodeCopyButtons: false
 keywords:
-- "enrico pesce"
-- "cloud solution engineer"
-- "oracle cloud infrastructure"
-- "oci expert"
-- "kubernetes specialist"
+  - "enrico pesce"
+  - "cloud solution engineer"
+  - "oracle cloud infrastructure"
+  - "oci expert"
+  - "kubernetes specialist"
 ---
 
-![Image alt](/me.webp)
+![Portrait of Enrico Pesce](/me.webp)
 
-## Enrico Pesce - Cloud Solution Engineer
+## Enrico Pesce
 
-I'm **Enrico Pesce**, a Cloud Solution Engineer at **Oracle**, based in Malaga, Spain. I specialize in **Oracle Cloud Infrastructure (OCI)**, **Kubernetes**, **serverless architectures**, and **Infrastructure as Code** using Terraform and Pulumi.
+I'm a Cloud Solution Engineer at **Oracle**, based in Malaga, Spain. I work with **Oracle Cloud Infrastructure (OCI)**, **Kubernetes**, **serverless architectures**, **infrastructure as code**, and **Generative AI**.
+
+This blog is where I publish practical notes from hands-on experiments, reference architectures, benchmarks, and small open-source projects. The focus is on material that can be reused: commands, architecture decisions, tradeoffs, and implementation details.
 
 ### Background
 
-Born in the Venice (Italy) area. Passionate about electronics, video games, and hacking with open-source software, my work experience started in the 00s with big and startup companies, from local data centers to cloud computing solutions focusing on the internet services and e-commerce markets.
+I was born near Venice, Italy, and started working in technology in the 2000s. My experience spans local data centers, internet services, e-commerce platforms, startups, and cloud computing.
 
-### Current Role
+Today, I help customers design and evaluate cloud-native solutions. The posts here are personal technical notes and do not represent Oracle's official position.
 
-Today I work as a pre-sales cloud solutions engineer at Oracle, helping customers design and implement cloud-native solutions. I share my technical experiences and learnings on this blog.
-
-### Areas of Expertise
+### Focus Areas
 
 - **Oracle Cloud Infrastructure (OCI)**: Compute, Functions, Kubernetes (OKE), Object Storage, Autonomous Database
 - **Serverless & FaaS**: OCI Functions, event-driven architectures
@@ -34,7 +40,7 @@ Today I work as a pre-sales cloud solutions engineer at Oracle, helping customer
 - **Programming**: Python, Bash
 - **AI/ML**: OCI Vision, Generative AI services
 
-### Connect with Me
+### Connect
 
 - **LinkedIn**: [linkedin.com/in/enricopesce](https://www.linkedin.com/in/enricopesce/)
 - **GitHub**: [github.com/enricopesce](https://github.com/enricopesce)

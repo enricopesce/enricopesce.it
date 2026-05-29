@@ -13,6 +13,13 @@ keywords:
 - "s3 compatible backup oracle"
 - "encrypted cloud backup"
 - "kopia tutorial"
+tags:
+- "OCI"
+- "Object Storage"
+- "Kopia"
+- "Backup"
+categories:
+- "Backup and Storage"
 ---
 
 Do you want to backup your data easily and securely, without spending hours or money on complicated tools or services? If so, this post is for you!
@@ -38,7 +45,7 @@ OCI object storage is a cloud storage service that offers the following features
 Now let's see how:
 
 In this implementation I used this Kopia documentations:
-- [installation guide](https://kopia.io/docs/installation/) 
+- [installation guide](https://kopia.io/docs/installation/)
 - [getting-started guide](https://kopia.io/docs/getting-started/)
 
 You essentially need these OCI details to create an S3 repository on Kopia:

@@ -13,13 +13,19 @@ keywords:
 - "self-driving database"
 - "autonomous data warehouse"
 - "oracle cloud database"
+tags:
+- "OCI"
+- "Autonomous Database"
+- "Database"
+categories:
+- "Databases"
 ---
 
 ## Introduction to the most modern cloud database in the market
 
 Oracle Autonomous Database is a cloud database that uses machine learning techniques to automate its tuning, security, backup, updates, and other management procedures traditionally carried out by a DBA. Unlike a conventional database, Autonomous performs all these and other activities without the need for human intervention.
 
-#### Why use Autonomous?
+### Why use Autonomous?
 
 Databases contain critical business data and are essential for the efficient operation of modern organizations. DBAs are often busy with repetitive and manual database management and maintenance activities. As administration activities increase, the risk of human error becomes higher with catastrophic consequences.
 
@@ -27,7 +33,7 @@ Business applications continue to add new records to existing databases over the
 
 This amplifies the need for efficient and secure database management that enhances data security, reduces downtime, improves performance by increasing exposure to human error. An Autonomous Database can address all these issues.
 
-#### Benefits of Autonomous
+### Benefits of Autonomous
 
 There are several advantages over traditional solutions:
 
@@ -36,7 +42,7 @@ There are several advantages over traditional solutions:
 - Cost reduction and productivity improvement by automating manual routine activities
 - Using Autonomous allows an organization to allocate database management staff to higher-level activities, creating greater business value.
 
-#### Key features of Autonomous
+### Key features of Autonomous
 
 ##### Automatic Provisioning
 

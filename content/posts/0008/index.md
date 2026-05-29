@@ -13,6 +13,13 @@ keywords:
 - "oracle cloud compute performance"
 - "amd epyc e5 php"
 - "oci shape comparison"
+tags:
+- "OCI"
+- "Compute"
+- "PHP"
+- "Benchmarks"
+categories:
+- "Benchmarks"
 ---
 
 A while ago, I developed a [tool](https://github.com/enricopesce/php-performance) with the aim of assessing the actual performance improvement between different versions of PHP. Subsequently, I search to understand which AWS instance type was the most performant. Since AWS does not allow for custom sizing of CPU and RAM resources, I wanted to explore the differences among the various instance types and determine which one would be most cost-effective to choose.
@@ -23,17 +30,17 @@ The significant difference compared to AWS is that with OCI, it's possible to ch
 
 To understand deeper, the available shapes are as follows:
 
-#### Shapes based on AMD technology
+### Shapes based on AMD technology
 
 * **VM.Standard.E4.Flex** (Processor: AMD EPYC 7J13. Base frequency 2.55 GHz, max boost frequency 3.5 GHz)
 * **VM.Standard.E5.Flex** (Processor: AMD EPYC 9J14. Base frequency 2.4 GHz, max boost frequency 3.7 GHz)
 
-#### Shapes based on INTEL technology
+### Shapes based on Intel technology
 
 * **VM.Standard3.Flex** (Processor: Intel Xeon Platinum 8358. Base frequency 2.6 GHz, max turbo frequency 3.4 GHz)
 * **VM.Optimized3.Flex** (Processor: Intel Xeon 6354. Base frequency 3.0 GHz, max turbo frequency 3.6 GHz)
 
-#### Shapes based on ARM64 AMPERE technology
+### Shapes based on ARM64 Ampere technology
 
 * **VM.Standard.A1.Flex** (Each OCPU corresponds to a single hardware execution thread. Processor: Ampere Altra Q80-30. Max frequency 3.0 GHz.)
 

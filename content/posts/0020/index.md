@@ -13,6 +13,14 @@ keywords:
 - "oci genai starter"
 - "langchain oci example"
 - "oci openai compatible"
+tags:
+- "OCI"
+- "Generative AI"
+- "Python"
+- "LangChain"
+- "OpenAI API"
+categories:
+- "AI and Machine Learning"
 ---
 
 Every time I want to try something new on OCI Generative AI, I end up needing the same thing: one tiny Python example that actually works.

@@ -13,6 +13,14 @@ keywords:
 - "python oracledb serverless"
 - "oci vault secrets"
 - "terraform oracle function"
+tags:
+- "OCI"
+- "Functions"
+- "Autonomous Database"
+- "Terraform"
+- "Serverless"
+categories:
+- "Serverless"
 ---
 
 After seeing how to create a custom image, in the [previous case]({{< ref "/posts/0005" >}}) where we installed the Oracle client, now let's try to use this custom image to connect to an Oracle database.

@@ -1,0 +1,22 @@
+.responsive-embed {
+  margin: 1.5rem 0;
+  overflow: hidden;
+}
+
+.responsive-embed iframe {
+  display: block;
+  max-width: 100%;
+}
+
+.home-info .entry-content {
+  max-width: 64ch;
+}
+
+.post-content img {
+  border-radius: 6px;
+}
+
+.post-tags:empty,
+.post-footer:has(.post-tags:empty):not(:has(.paginav)):not(:has(.share-buttons)) {
+  display: none;
+}
