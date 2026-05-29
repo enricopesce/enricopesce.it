@@ -13,9 +13,21 @@ security:
     - '^application/(json|x-ndjson|vnd\.openxmlformats-officedocument\.spreadsheetml\.sheet)$'
 
 sitemap:
-  changefreq: Weekly
+  changefreq: weekly
   filename: sitemap.xml
   priority: 0.5
+
+mediaTypes:
+  text/plain:
+    suffixes:
+      - txt
+
+outputFormats:
+  LLMS:
+    mediaType: text/plain
+    baseName: llms
+    isPlainText: true
+    notAlternative: true
 
 permalinks:
   posts: "/:slug/"
@@ -125,6 +137,7 @@ outputs:
     - HTML
     - RSS
     - JSON
+    - LLMS
   section:
     - HTML
     - RSS

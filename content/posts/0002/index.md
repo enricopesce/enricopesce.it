@@ -1,6 +1,6 @@
 ---
 title: Oracle Autonomous Database
-description: "Introduction to Oracle's fully managed database"
+description: "Learn how Oracle Autonomous Database automates provisioning, tuning, scaling, security, backups, and patching for managed cloud databases."
 date: 2023-09-21T19:00:00+01:00
 draft: false
 cover:
