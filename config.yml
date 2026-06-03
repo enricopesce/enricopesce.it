@@ -7,6 +7,13 @@ locale: "en-US"
 defaultContentLanguage: "en"
 defaultContentLanguageInSubdir: false
 
+services:
+  googleAnalytics:
+    # Direct GA4 pageview tracking. This restores the historical measurement ID
+    # that was removed when GTM was introduced, so Analytics does not depend on
+    # a published GA4 tag inside the GTM container.
+    id: "G-N6VMEVB66C"
+
 languages:
   en:
     locale: "en-US"

@@ -1,6 +1,7 @@
-{{- with site.Params.analytics.gtm.containerID }}
+{{- if or site.Params.analytics.gtm.containerID site.Config.Services.GoogleAnalytics.ID }}
 <script>
-  // SEO AI metric: sends one GTM event when a visitor arrives from a known generative answer surface.
+  // SEO AI metric: sends one event when a visitor arrives from a known generative answer surface.
+  // It supports both GTM dataLayer and direct GA4 gtag tracking, so the KPI does not depend on one implementation path.
   (function() {
     var referrer = document.referrer;
     if (!referrer) return;
@@ -28,14 +29,25 @@
 
     if (!match) return;
 
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
+    var eventPayload = {
       event: "ai_referral",
       ai_referrer: match.name,
       ai_referrer_host: host,
       page_path: window.location.pathname,
       page_title: document.title
-    });
+    };
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(eventPayload);
+
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "ai_referral", {
+        ai_referrer: match.name,
+        ai_referrer_host: host,
+        page_path: window.location.pathname,
+        page_title: document.title
+      });
+    }
   }());
 </script>
 {{- end }}
