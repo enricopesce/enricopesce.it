@@ -1,0 +1,55 @@
+{{- $schema := site.Params.schema | default (dict) -}}
+{{- $author := $schema.name | default site.Params.author | default site.Title -}}
+# {{ site.Title }}
+
+> Personal technical blog by {{ $author }} about Oracle Cloud Infrastructure, OCI Generative AI, OKE/Kubernetes, serverless, automation, infrastructure as code, benchmarks, and practical cloud engineering.
+
+Canonical site: {{ site.Home.Permalink }}
+Author profile: {{ "/about/" | absURL }}
+Contact/context page: {{ "/parliamo-di-oci/" | absURL }}
+Projects: {{ "/projects/" | absURL }}
+Robots policy: public pages are crawlable by search and AI answer crawlers; see {{ "/robots.txt" | absURL }}.
+Primary audience: cloud engineers, architects, DevOps teams, developers, and Italian technical communities evaluating Oracle Cloud Infrastructure.
+
+## Author entity
+
+- Name: {{ $author }}
+- Role: {{ $schema.jobTitle | default "Cloud engineer" }}
+- Organization: {{ $schema.worksFor | default "Oracle" }}
+{{- with $schema.sameAs }}
+- SameAs:
+{{- range . }}
+  - {{ . }}
+{{- end }}
+{{- end }}
+{{- with $schema.knowsAbout }}
+- Expertise:
+{{- range . }}
+  - {{ . }}
+{{- end }}
+{{- end }}
+
+## Topic clusters
+
+{{- /* Cluster hints help LLM/RAG crawlers understand the site's topical authority. */}}
+- Oracle Cloud Infrastructure: practical OCI tutorials, architectural decisions, Object Storage, Compute, IAM, Autonomous Database.
+- OCI Generative AI: Python starters, model catalog, OpenAI-compatible APIs, LangChain, LlamaIndex, LangGraph, RAG.
+- Kubernetes on OCI: OKE, cluster automation, Pulumi, deployment defaults, cloud-native operations.
+- Serverless on OCI: OCI Functions, event-driven patterns, Object Storage triggers, Autonomous Database integrations.
+- Benchmarks and cost/performance: Compute shapes, CPU inference, Ampere ARM, AMD/Intel comparisons, workload tradeoffs.
+
+## Core pages
+
+{{- range where site.RegularPages "Section" "" }}
+{{- if and (not .Params.searchHidden) (ne .Layout `archives`) (ne .Layout `search`) (not .IsHome) }}
+- [{{ .Title }}]({{ .Permalink }}): {{ with .Description }}{{ . | plainify }}{{ else }}{{ .Summary | plainify | truncate 180 }}{{ end }}
+{{- end }}
+{{- end }}
+
+## Posts
+
+{{- range where site.RegularPages.ByDate.Reverse "Section" "posts" }}
+{{- if and (not .Params.searchHidden) (ne .Params.robotsNoIndex true) }}
+- [{{ .Title }}]({{ .Permalink }}): {{ with .Description }}{{ . | plainify }}{{ else }}{{ .Summary | plainify | truncate 180 }}{{ end }}{{ with .Params.tags }} Topics: {{ delimit . ", " }}.{{ end }}
+{{- end }}
+{{- end }}

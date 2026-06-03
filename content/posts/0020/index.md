@@ -2,6 +2,7 @@
 title: "OCI GenAI Python Starters: a few small demos to get started"
 description: "A small collection of Python examples for OCI Generative AI, from direct SDK calls to LangChain, LangGraph, and OpenAI-compatible APIs."
 date: 2026-04-27T09:00:00+01:00
+lastmod: 2026-06-03T00:00:00+00:00
 draft: false
 cover:
   alt: "OCI GenAI Python Starters"
@@ -21,7 +22,27 @@ tags:
 - "OpenAI API"
 categories:
 - "AI and Machine Learning"
+inLanguage: "en"
+codeRepository: "https://github.com/enricopesce/oci-genai-python-starters"
+softwareRequirements:
+- "Python"
+- "OCI Generative AI"
+- "OCI Python SDK"
+- "LangChain"
+- "LlamaIndex"
+- "LangGraph"
+faq:
+- question: "What is OCI GenAI Python Starters?"
+  answer: "OCI GenAI Python Starters is a collection of small runnable Python examples for Oracle Cloud Infrastructure Generative AI, including direct SDK usage, LangChain, LlamaIndex, LangGraph, and OpenAI-compatible API flows."
+- question: "Who should use OCI GenAI Python Starters?"
+  answer: "Cloud engineers, developers, and solution architects can use it when they need a quick working starting point for OCI Generative AI experiments in Python."
+- question: "Which OpenAI-compatible OCI example needs a Generative AI project OCID?"
+  answer: "The openai-responses example uses the OpenAI-compatible base URL and needs a Generative AI project OCID."
 ---
+
+## In brief
+
+**OCI GenAI Python Starters** is a collection of small runnable Python demos for Oracle Cloud Infrastructure Generative AI. It helps developers move from credentials to a working example using the OCI SDK, LangChain, LlamaIndex, LangGraph, or OpenAI-compatible API flows.
 
 Every time I want to try something new on OCI Generative AI, I end up needing the same thing: one tiny Python example that actually works.
 
@@ -50,3 +71,17 @@ The OpenAI-compatible examples are not all wired the same way.
 It is a small difference, but it is exactly the kind of detail that can waste half an hour when all you wanted was a quick hello-world.
 
 Anyway, if you're playing with OCI GenAI in Python and want a few simple starting points, the repo is here: **[OCI GenAI Python Starters](https://github.com/enricopesce/oci-genai-python-starters)**.
+
+## FAQ
+
+### What is OCI GenAI Python Starters?
+
+OCI GenAI Python Starters is a collection of small runnable Python examples for Oracle Cloud Infrastructure Generative AI, including direct SDK usage, LangChain, LlamaIndex, LangGraph, and OpenAI-compatible API flows.
+
+### Who should use OCI GenAI Python Starters?
+
+Cloud engineers, developers, and solution architects can use it when they need a quick working starting point for OCI Generative AI experiments in Python.
+
+### Which OpenAI-compatible OCI example needs a Generative AI project OCID?
+
+The `openai-responses` example uses the OpenAI-compatible base URL and needs a Generative AI project OCID.

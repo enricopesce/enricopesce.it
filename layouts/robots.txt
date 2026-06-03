@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 
+# OpenAI search and ChatGPT retrieval crawlers.
 User-agent: OAI-SearchBot
 Allow: /
 
@@ -10,9 +11,14 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
+# Google AI Overviews follows Google Search crawling controls; Google-Extended is separate.
+User-agent: Googlebot
+Allow: /
+
 User-agent: Google-Extended
 Allow: /
 
+# Anthropic crawler family.
 User-agent: ClaudeBot
 Allow: /
 
@@ -25,6 +31,7 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
+# Perplexity crawler family.
 User-agent: PerplexityBot
 Allow: /
 

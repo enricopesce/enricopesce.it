@@ -1,0 +1,41 @@
+{{- with site.Params.analytics.gtm.containerID }}
+<script>
+  // SEO AI metric: sends one GTM event when a visitor arrives from a known generative answer surface.
+  (function() {
+    var referrer = document.referrer;
+    if (!referrer) return;
+
+    var host;
+    try {
+      host = new URL(referrer).hostname.replace(/^www\./, "").toLowerCase();
+    } catch (error) {
+      return;
+    }
+
+    // Keep this list explicit so AI Share of Voice dashboards can group traffic by answer engine.
+    var engines = [
+      { name: "chatgpt", pattern: /(^|\.)chatgpt\.com$/ },
+      { name: "openai", pattern: /(^|\.)openai\.com$/ },
+      { name: "perplexity", pattern: /(^|\.)perplexity\.ai$/ },
+      { name: "claude", pattern: /(^|\.)claude\.ai$/ },
+      { name: "gemini", pattern: /(^|\.)gemini\.google\.com$/ },
+      { name: "copilot", pattern: /(^|\.)copilot\.microsoft\.com$/ }
+    ];
+
+    var match = engines.find(function(engine) {
+      return engine.pattern.test(host);
+    });
+
+    if (!match) return;
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "ai_referral",
+      ai_referrer: match.name,
+      ai_referrer_host: host,
+      page_path: window.location.pathname,
+      page_title: document.title
+    });
+  }());
+</script>
+{{- end }}

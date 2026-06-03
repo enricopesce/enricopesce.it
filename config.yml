@@ -1,10 +1,56 @@
 baseURL: "https://www.enricopesce.it/"
-title: "Enrico Pesce"
+title: "Enrico Pesce - OCI Cloud Specialist"
 theme: PaperMod
 copyright: "Enrico Pesce"
-enableRobotsTXT: false
+enableRobotsTXT: true
 locale: "en-US"
 defaultContentLanguage: "en"
+defaultContentLanguageInSubdir: false
+
+languages:
+  en:
+    locale: "en-US"
+    label: "English"
+    weight: 1
+  it:
+    locale: "it-IT"
+    label: "Italiano"
+    weight: 2
+    title: "Enrico Pesce - Specialista OCI Cloud"
+    params:
+      description: "Enrico Pesce e' uno specialista Oracle Cloud Infrastructure che pubblica guide pratiche su OCI, OCI Generative AI, Kubernetes, serverless, automazione e benchmark cloud."
+      homeInfoParams:
+        Title: "Enrico Pesce, specialista Oracle Cloud Infrastructure"
+        Content: "Sono **Enrico Pesce** e pubblico guide pratiche su **Oracle Cloud Infrastructure**, **OCI Generative AI**, **OKE/Kubernetes**, serverless, automazione e benchmark cloud. Il sito raccoglie esempi tecnici, benchmark e progetti open-source per chi lavora con OCI."
+        AlignSocialIconsTo: "left"
+      footer:
+        text: "Enrico Pesce - Oracle Cloud Infrastructure, Kubernetes, Serverless, GenAI e automazione cloud"
+    menu:
+      main:
+        - identifier: about
+          name: Chi sono
+          url: about/
+          weight: 5
+        - identifier: parliamo-oci
+          name: Parliamo di OCI
+          url: parliamo-di-oci/
+          weight: 20
+        - identifier: projects
+          name: Progetti
+          url: projects/
+          weight: 10
+        - identifier: archives
+          name: Archivio
+          url: archives/
+          weight: 30
+        - identifier: tags
+          name: Tags
+          url: tags/
+          weight: 40
+        - identifier: search
+          name: Cerca
+          url: search/
+          weight: 50
 
 security:
   allowContent:
@@ -42,15 +88,17 @@ taxonomies:
   category: categories
 
 params:
-  description: "Cloud architecture notes on Oracle Cloud Infrastructure, Kubernetes, serverless systems, automation, and Generative AI."
+  description: "Enrico Pesce is an Oracle Cloud Infrastructure specialist publishing practical guides on OCI, OCI Generative AI, Kubernetes, serverless architecture, automation, and cloud benchmarks."
   author: "Enrico Pesce"
+  label:
+    text: "Enrico Pesce"
   analytics:
     gtm:
       containerID: "GTM-WQ288D86"
 
   homeInfoParams:
-    Title: "Cloud Architecture Notes"
-    Content: "Practical notes on Oracle Cloud Infrastructure, Kubernetes, serverless systems, automation, and Generative AI. I write from hands-on experiments, benchmarks, and field patterns."
+    Title: "Enrico Pesce, Oracle Cloud Infrastructure specialist"
+    Content: "I am **Enrico Pesce** and I publish practical guides on **Oracle Cloud Infrastructure**, **OCI Generative AI**, **OKE/Kubernetes**, serverless architecture, automation, and cloud benchmarks. This site collects technical examples, benchmarks, and open-source projects for people working with OCI."
     AlignSocialIconsTo: "left"
 
   socialIcons:
@@ -66,8 +114,14 @@ params:
 
   schema:
     publisherType: "Person"
+    name: "Enrico Pesce"
+    image: "/me.webp"
+    alternateName:
+      - "Enrico Pesce OCI"
+      - "Enrico Pesce Oracle Cloud"
     jobTitle: "Cloud Solution Engineer"
     worksFor: "Oracle"
+    description: "Enrico Pesce is a Cloud Solution Engineer and Oracle Cloud Infrastructure specialist focused on OCI, Kubernetes, serverless, automation, benchmarks, and Generative AI."
     sameAs:
       - "https://www.linkedin.com/in/enricopesce/"
       - "https://github.com/enricopesce"
@@ -80,11 +134,26 @@ params:
       - "Infrastructure as Code"
       - "Terraform"
       - "Python"
+      - "Generative AI"
+    knowsLanguage:
+      - "English"
+      - "Italian"
+    areaServed:
+      - "Italy"
+      - "Europe"
 
   keywords:
-    - "cloud solutions"
     - "oracle cloud infrastructure"
     - "oci"
+    - "oci italy"
+    - "oracle cloud italy"
+    - "oci specialist"
+    - "oci community"
+    - "oci network"
+    - "enrico pesce oci"
+    - "enrico pesce oracle cloud"
+    - "cloud specialist"
+    - "cloud solutions"
     - "serverless"
     - "kubernetes"
     - "devops"
@@ -129,7 +198,7 @@ params:
     theme_color: "#2e2e33"
     msapplication_TileColor: "#2e2e33"
   footer:
-    text: "Cloud architecture notes on OCI, Kubernetes, Serverless, and GenAI"
+    text: "Enrico Pesce - Oracle Cloud Infrastructure, Kubernetes, Serverless, GenAI, and cloud automation"
   env: production
 
 outputs:
@@ -150,6 +219,14 @@ outputs:
 
 menu:
   main:
+    - identifier: about
+      name: About
+      url: about/
+      weight: 5
+    - identifier: parliamo-oci
+      name: Talk OCI
+      url: talk-oci/
+      weight: 20
     - identifier: projects
       name: Projects
       url: projects/
@@ -157,16 +234,12 @@ menu:
     - identifier: archives
       name: Archives
       url: archives/
-      weight: 20
+      weight: 30
     - identifier: tags
       name: Tags
       url: tags/
-      weight: 30
+      weight: 40
     - identifier: search
       name: Search
       url: search/
-      weight: 40
-    - identifier: about
-      name: About
-      url: about/
       weight: 50

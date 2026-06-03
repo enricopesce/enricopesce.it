@@ -1,4 +1,7 @@
 ---
-title: "Posts"
-description: "All technical posts on Oracle Cloud Infrastructure, Kubernetes, serverless architecture, automation, cloud benchmarks, and Generative AI."
+title: "OCI Articles"
+description: "Technical articles about Oracle Cloud Infrastructure, Kubernetes, serverless architecture, automation, cloud benchmarks, and Generative AI."
+locale: "en_US"
+inLanguage: "en"
+lastmod: 2026-06-03T00:00:00+00:00
 ---
