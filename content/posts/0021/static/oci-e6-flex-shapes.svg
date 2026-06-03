@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">OCI E6 vs E5 vs E4 Compute Flex Shapes</title>
+  <desc id="desc">A simple comparison graphic for OCI E6, E5 and E4 Compute Flex shapes.</desc>
+  <rect width="1200" height="630" fill="#111827"/>
+  <rect x="72" y="70" width="1056" height="490" rx="28" fill="#f8fafc"/>
+  <text x="112" y="135" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" fill="#111827">OCI Compute Flex Shapes</text>
+  <text x="112" y="184" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#475569">E6 vs E5 vs E4 decision map</text>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="112" y="250" width="280" height="190" rx="18" fill="#e0f2fe" stroke="#0284c7" stroke-width="3"/>
+    <text x="142" y="310" font-size="52" font-weight="700" fill="#075985">E4</text>
+    <text x="142" y="354" font-size="24" fill="#0f172a">Older AMD baseline</text>
+    <text x="142" y="392" font-size="20" fill="#475569">Keep for stable workloads</text>
+    <rect x="460" y="220" width="280" height="220" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/>
+    <text x="490" y="285" font-size="58" font-weight="700" fill="#166534">E5</text>
+    <text x="490" y="332" font-size="24" fill="#0f172a">Strong current benchmark</text>
+    <text x="490" y="370" font-size="20" fill="#475569">Compare before replacing</text>
+    <rect x="808" y="185" width="280" height="255" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="3"/>
+    <text x="838" y="255" font-size="66" font-weight="700" fill="#9a3412">E6</text>
+    <text x="838" y="306" font-size="24" fill="#0f172a">New default candidate</text>
+    <text x="838" y="344" font-size="20" fill="#475569">Benchmark first for new x86</text>
+  </g>
+  <path d="M396 345h60" stroke="#64748b" stroke-width="6" stroke-linecap="round"/>
+  <path d="M744 330h60" stroke="#64748b" stroke-width="6" stroke-linecap="round"/>
+  <text x="112" y="515" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#334155">Test E6 with the same OCPU, memory, image and benchmark versions.</text>
+</svg>

@@ -1,11 +1,13 @@
 ---
-title: Comparing CPU Multicore Performance of OCI Compute Standard Flex Shapes
-description: "Geekbench 6 multicore benchmarks for OCI shapes: AMD EPYC E5, Intel Xeon, and ARM Ampere. Performance and cost analysis included."
+title: "OCI Flex Shapes: E5 vs E4 vs A1"
+description: "Geekbench 6 benchmark of OCI Compute Flex shapes: compare VM.Standard.E5, E4, A1, Standard3 and Optimized3 by score, cost and workload fit."
 date: 2024-03-19T18:00:00+01:00
+lastmod: 2026-06-03T00:00:00+00:00
+slug: "comparing-cpu-multicore-performance-of-oci-compute-standard-flex-shapes"
 draft: false
 cover:
-  alt: Comparing CPU Multicore Performance of OCI Compute Standard Flex Shapes
-  caption: Comparing CPU Multicore Performance of OCI Compute Standard Flex Shapes
+  alt: OCI Flex Shapes Benchmark
+  caption: OCI Flex Shapes Benchmark
   relative: true
   image: "static/logo.webp"
 keywords:
@@ -13,6 +15,12 @@ keywords:
 - "oci multicore benchmark"
 - "arm vs x86 oracle cloud"
 - "oci compute cost performance"
+- "oci shapes"
+- "flex shapes"
+- "vm.standard.e5.flex"
+- "vm.standard.e4.flex"
+- "vm.standard.a1.flex"
+- "vm.standard3.flex"
 tags:
 - "OCI"
 - "Compute"
@@ -23,7 +31,22 @@ categories:
 - "Benchmarks"
 ---
 
-When selecting a compute instance, factors such as raw computational power, price-to-performance ratio, and workload optimization play a significant role.
+If you are comparing **OCI Compute Flex shapes**, the short answer from this Geekbench 6 run is: **VM.Standard.E5.Flex** led in raw multicore performance, **VM.Standard.A1.Flex** was the strongest cost-conscious option, and the Intel-based shapes remained relevant when x86 compatibility is a hard requirement.
+
+## Quick recommendation
+
+| Goal | Start with | Why |
+|------|------------|-----|
+| Best multicore performance | **VM.Standard.E5.Flex** | Highest Geekbench 6 multicore score in this test. |
+| Lowest cost with strong throughput | **VM.Standard.A1.Flex** | Similar score to E4/Optimized3 in this benchmark, with the lowest price in the table. |
+| Existing x86 workload compatibility | **VM.Standard3.Flex** or **VM.Optimized3.Flex** | Useful when your software stack is tied to x86 packages, binaries, or vendor support. |
+| Balanced AMD x86 option | **VM.Standard.E4.Flex** | Lower-cost x86 option, but behind E5 in this benchmark. |
+
+This is a benchmark snapshot from March 2024. Use the numbers below to compare relative behavior, then verify current regional availability and pricing in the OCI Cost Estimator before making a production decision.
+
+**2026 update:** OCI E6 Standard Compute is now available and changes the AMD x86 comparison. For the newer decision map, read [OCI E6 vs E5 vs E4: Compute Flex Shapes]({{< relref "/posts/0021/index.md" >}}).
+
+## Tested OCI Compute shapes
 
 The following standard flex shapes available in most OCI regions are:
 
@@ -33,51 +56,72 @@ The following standard flex shapes available in most OCI regions are:
 * **VM.Optimized3.Flex** (Processor: Intel Xeon 6354. Base frequency 3.0 GHz, max turbo frequency 3.6 GHz)
 * **VM.Standard.A1.Flex** (Each OCPU corresponds to a single hardware execution thread. Processor: Ampere Altra Q80-30. Max frequency 3.0 GHz.)
 
-In this article: [Performance testing with PHP and OCI Compute instances]({{< relref "/posts/0008/index.md" >}}) I have tested a single PHP thread/cpu execution over all OCI standard flex shapes, now I conducted multicore benchmark tests with **Geekbench 6** using 2, 4 and 8 CPU.
+In [Performance testing with PHP and OCI Compute instances]({{< relref "/posts/0008/index.md" >}}) I tested single-thread PHP execution across OCI Standard Flex shapes. In this article I focus on multicore behavior with **Geekbench 6**, using 2, 4 and 8 CPU configurations.
 
-For additional information on the [internal tests conducted](https://www.geekbench.com/doc/geekbench6-benchmark-internals.pdf), please refer to the provided link.
+For additional information on the [Geekbench 6 internal tests](https://www.geekbench.com/doc/geekbench6-benchmark-internals.pdf), see the official benchmark documentation.
 
-### **Performance Comparison**
+## Performance comparison
 
-Let's explore the results in multi-threaded performance test over different shapes:
+The chart below compares multi-threaded performance across the tested OCI Compute shapes:
 
 {{< plotly "//plotly.com/~enricopesce/1.embed" >}}
 
-We can see that the most powerful shape is the VM.Standard.E5.Flex.
+The strongest result in this run is **VM.Standard.E5.Flex**.
 
-This new AMD-based shape significantly surpasses other shapes, a very powerful CPU for best-in-class performance needs!
+The E5 AMD-based shape clearly separates itself from the other shapes in raw multicore score. That makes it the most direct choice when the application can use several CPU cores and performance is more important than minimizing the monthly bill.
 
-But we can evaluate not only the performance; in the real world, price-to-performance is another decisive factor.
+The second important observation is that **VM.Standard.A1.Flex**, **VM.Standard.E4.Flex**, and **VM.Optimized3.Flex** are close enough in this run that price, architecture, and workload compatibility become decisive.
 
-### **Cost Comparison (Monthly Pricing )**
+## Cost comparison
 
-Let's break down the monthly costs for each shape with 8 CPU and Oracle Linux based on Oracle's pricing as of March 2024:
+The table below uses the monthly price snapshot I collected in March 2024 for an 8 CPU Oracle Linux configuration. Treat it as a relative price-performance snapshot, not as current commercial pricing.
 
-We can observe that there are varying prices; not all shapes have the same cost.
+| **Shape**           | **Multicore score** | **Monthly price snapshot** | **A1 saving vs this shape** |
+|---------------------|---------------------|----------------------------|-----------------------------|
+| VM.Standard.A1.Flex | 6275                | $59.52                     | 0%                          |
+| VM.Standard.E4.Flex | 6266                | $74.40                     | 20%                         |
+| VM.Standard.E5.Flex | 8335                | $89.28                     | 33%                         |
+| VM.Standard3.Flex   | 5925                | $119.04                    | 50%                         |
+| VM.Optimized3.Flex  | 6365                | $149.45                    | 60%                         |
 
-| **Shape**           | **Multicore score** | **Monthly price** | **Saving** |
-|---------------------|---------------------|-------------------|------------|
-| VM.Standard.A1.Flex | 6275                |  $59,52           | 0%         |
-| VM.Standard.E4.Flex | 6266                |  $74,40           | 20%        |
-| VM.Standard.E5.Flex | 8335                |  $89,28           | 33%        |
-| VM.Standard3.Flex   | 5925                |  $119,04          | 50%        |
-| VM.Optimized3.Flex  | 6365                |  $149,45          | 60%        |
+## How to choose between OCI shapes
 
-In this table, I added a "Saving" column to represent the cost difference (in percent) compared with VM.Standard.A1.Flex than all other shapes.
+Choose **VM.Standard.E5.Flex** when raw multicore CPU performance is the main requirement. In this benchmark it has the highest score and a strong price-performance position.
 
-### **Considerations**
+Choose **VM.Standard.A1.Flex** when you can run on ARM and want the lowest cost among the tested options. The benchmark score is close to E4 and Optimized3, while the monthly price snapshot is much lower.
 
-If you consider the ARM shape VM.Standard.A1.Flex, you can save 60% compared with VM.Optimized3.Flex while keeping very similar performance results.
+Choose **VM.Standard3.Flex** or **VM.Optimized3.Flex** when x86 compatibility matters more than benchmark score. This can happen with commercial software, native packages, prebuilt images, or older dependencies.
 
-If performance is the main focus VM.Standard.E5.Flex is the winner! A good price and stunning performance results!
+Choose **VM.Standard.E4.Flex** when you need an AMD x86 shape and E5 is not required or not available for your target region and capacity plan.
 
-ARM architecture is not only for mobile and low watt devices, ARM processor is a real alternative of the classic x86 server CPU, please read [What is Arm?](https://www.oracle.com/hk/cloud/compute/arm/what-is-arm/) page on OCI site to best understand the benefits of OCI A1 shapes!
+ARM architecture is no longer only for mobile or low-power devices. For server workloads, ARM can be a practical alternative to classic x86 CPUs when your runtime, packages, container images, and observability stack support it. For more background, read Oracle's [What is Arm?](https://www.oracle.com/hk/cloud/compute/arm/what-is-arm/) page.
 
-Remember, the right shape depends on your unique use case.
+## Related benchmarks
 
-### **Detailed results**
+Use this benchmark together with:
 
-If you want to deep dive to **Geekbench 6** tests and results excuted by me, below a table with the relative tests executed:
+- [Performance testing with PHP and OCI Compute instances]({{< relref "/posts/0008/index.md" >}}), focused on PHP workloads.
+- [OCI Compute Standard Flex Shapes: Another CPU Multicore Benchmark]({{< relref "/posts/0011/index.md" >}}), another multicore benchmark view.
+- [Intel x86 vs. ARM Architecture: A Comparative Analysis for Server Technologies]({{< relref "/posts/0012/index.md" >}}), useful when the decision is mainly about architecture.
+- [Generative AI: Efficient Inference on Cloud CPUs]({{< relref "/posts/0018/index.md" >}}), focused on CPU inference workloads.
+
+## FAQ
+
+### Which OCI Compute shape had the best Geekbench 6 multicore score?
+
+**VM.Standard.E5.Flex** had the best score in this benchmark, with a multicore result of 8335 in the 8 CPU test.
+
+### Is VM.Standard.A1.Flex a good low-cost option?
+
+Yes, if your workload supports ARM. In this test, A1 was close to E4 and Optimized3 in multicore score while having the lowest monthly price snapshot.
+
+### Should I choose ARM or x86 on OCI?
+
+Choose ARM when your application stack is compatible and cost efficiency matters. Choose x86 when vendor support, binary compatibility, or existing deployment images require it.
+
+## Detailed results
+
+If you want to deep dive into the **Geekbench 6** runs, below is the table with the tests I executed:
 
 | **SHAPE**           | **CPU Type**                                 | **Geekbench browser**                        |
 |---------------------|----------------------------------------------|----------------------------------------------|
@@ -86,5 +130,3 @@ If you want to deep dive to **Geekbench 6** tests and results excuted by me, bel
 | VM.Standard.E4.Flex | AMD EPYC 7J13 64-Core Processor              | https://browser.geekbench.com/v6/cpu/4837682 |
 | VM.Standard.E5.Flex | AMD EPYC 9J14 96-Core Processor              | https://browser.geekbench.com/v6/cpu/4837947 |
 | VM.Standard3.Flex   | Intel(R) Xeon(R) Platinum 8358 CPU @ 2.60GHz | https://browser.geekbench.com/v6/cpu/4837679 |
-
-Happy computing!

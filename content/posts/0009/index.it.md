@@ -1,11 +1,13 @@
 ---
-title: Come fare backup dei dati in 10 minuti con Kopia e OCI
-description: "Configura backup cloud cifrati con Kopia e OCI Object Storage: una soluzione rapida, sicura e conveniente."
+title: "Backup Kopia OCI: setup S3"
+description: "Crea un repository Kopia cifrato su OCI Object Storage usando API compatibile S3, snapshot, policy e workflow di restore."
 date: 2024-02-06T13:00:00+01:00
+lastmod: 2026-06-03T00:00:00+00:00
+slug: "come-fare-backup-dei-dati-in-10-minuti-con-kopia-e-oci"
 draft: false
 cover:
-  alt: Come fare backup dei dati in 10 minuti con Kopia e OCI
-  caption: Come fare backup dei dati in 10 minuti con Kopia e OCI
+  alt: Backup Kopia OCI setup S3
+  caption: Backup Kopia OCI setup S3
   relative: true
   image: "static/home.webp"
 keywords:
@@ -13,6 +15,11 @@ keywords:
 - "backup compatibile s3 oracle"
 - "backup cloud cifrato"
 - "kopia tutorial"
+- "kopia backup"
+- "kopia repository"
+- "kopia encryption"
+- "kopia backup features"
+- "backup oci object storage"
 tags:
 - "OCI"
 - "Object Storage"
@@ -22,34 +29,44 @@ categories:
 - "Backup e Storage"
 ---
 
-Vuoi fare backup dei tuoi dati in modo semplice e sicuro, senza spendere ore o denaro in strumenti o servizi complicati? Questo post fa per te.
+Kopia puo' usare **OCI Object Storage** come backend compatibile S3 per backup cifrati, deduplicati e compressi. L'obiettivo pratico di questa guida e' semplice: creare un repository Kopia su OCI, validarlo, eseguire il primo snapshot e sapere come riconnettersi o ripristinare dati in seguito.
 
-Ti mostro come usare Kopia, uno strumento open source veloce e sicuro per il backup, insieme a OCI, un provider cloud scalabile e conveniente, per fare backup dei dati in 10 minuti o meno.
+## Setup rapido
 
-OCI Object Storage e' un servizio di cloud storage con queste caratteristiche:
+| Step | Cosa serve |
+|------|------------|
+| 1. Creare un bucket OCI | Nome bucket, namespace e regione. |
+| 2. Abilitare accesso S3-compatible | Customer access key e secret key per l'utente OCI. |
+| 3. Creare il repository Kopia | `kopia repository create s3` con endpoint S3 OCI. |
+| 4. Validare il repository | `kopia repository validate-provider`. |
+| 5. Creare snapshot | `kopia snapshot create <path>`. |
 
-- Puo' archiviare qualsiasi tipo di dato non strutturato nel formato nativo, come immagini, video, documenti o dati analitici.
-- Include ridondanza, cifratura e controlli di integrita' per garantire durabilita' e sicurezza.
-- Supporta piu' tier di storage, come standard, archive e glacier, offrendo flessibilita' di costo e performance.
-- E' compatibile con l'API S3, quindi si integra facilmente con tool di backup come Kopia.
-- Fornisce un namespace di storage dedicato e unico per ogni cliente, riducendo il rischio di bucket esposti o condivisi.
+## Perche' Kopia e OCI Object Storage
 
-[Kopia.io](https://kopia.io/) e' uno strumento open source per il backup con queste caratteristiche:
+OCI Object Storage e' utile per un repository Kopia perche' offre:
 
-- Supporta backup multipiattaforma di file e directory verso qualsiasi posizione di storage, cloud, rete o locale.
-- Usa cifratura end-to-end, compressione e deduplicazione per proteggere e ottimizzare backup e restore.
-- Permette di creare e gestire snapshot dei dati, basati su policy definite dall'utente, e ripristinarli quando necessario.
-- Ha interfaccia a riga di comando, GUI e una modalita' server opzionale con API.
-- E' veloce, affidabile e flessibile, e si integra con molti provider cloud come OCI, S3 e Google Cloud.
+- Accesso compatibile S3, quindi Kopia puo' usare il tipo repository `s3`.
+- Modello con namespace e bucket dedicati per isolare i dati di backup.
+- Piu' storage tier: Standard, Infrequent Access e Archive. Per un repository Kopia attivo, parti da Standard o Infrequent Access; usa Archive solo quando il processo di restore gestisce il recupero degli oggetti prima dell'accesso. Vedi la [documentazione Oracle sugli Object Storage tiers](https://docs.oracle.com/iaas/Content/Object/Concepts/understandingstoragetiers.htm).
+- Policy IAM e customer secret key, cosi' l'accesso puo' essere limitato al bucket usato per i backup.
 
-Vediamo come fare.
+[Kopia](https://kopia.io/docs/) e' uno strumento di backup e restore con caratteristiche importanti per repository cloud:
+
+- Cifratura lato client prima che i dati lascino la macchina.
+- Deduplicazione, cosi' blocchi ripetuti vengono archiviati una sola volta.
+- Compressione, per ridurre dati trasferiti e archiviati.
+- Policy di retention per piani hourly, daily, weekly, monthly o custom.
+- Modalita' CLI, GUI e server, a seconda del modo in cui vuoi gestirlo.
 
 In questa implementazione ho usato la documentazione Kopia:
 
 - [guida di installazione](https://kopia.io/docs/installation/)
 - [guida getting started](https://kopia.io/docs/getting-started/)
+- [reference del comando repository create s3](https://kopia.io/docs/reference/command-line/common/repository-create-s3/)
 
-Per creare un repository S3 su Kopia ti servono essenzialmente questi dettagli OCI:
+## Dettagli OCI richiesti da Kopia
+
+Per creare un repository S3 con Kopia ti servono questi dettagli OCI:
 
 - Bucket namespace
 - Nome della regione
@@ -63,7 +80,9 @@ Inoltre ti servono:
 - Nome del bucket
 - Utente con permessi e [customer access/secret key](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm#Working2)
 
-Il comando, una volta raccolte le informazioni, sara' simile a questo, con chiavi mascherate:
+## Creare il repository Kopia S3
+
+Una volta raccolte le informazioni, il comando sara' simile a questo. Le chiavi sono mascherate:
 
 ```console
 enrico.pesce@enrico ~ % kopia repository create s3 \
@@ -73,6 +92,8 @@ enrico.pesce@enrico ~ % kopia repository create s3 \
   --access-key=3fdsfdsfdsfsdf4543gtfreterter \
   --secret-access-key=dsdsadsadsadasdasdasdau7LF/KEjKZDhb8Q=
 ```
+
+Durante la creazione Kopia chiede una password del repository. Conservala fuori dal repository e fuori da OCI Object Storage: senza quella password non puoi decifrare il contenuto del backup.
 
 Se vuoi testare Object Storage e la compatibilita', puoi eseguire un test che effettua operazioni I/O nel repository:
 
@@ -93,6 +114,8 @@ All good.
 Cleaning up temporary data...
 ```
 
+## Riconnettersi al repository Kopia
+
 Per collegarti al repository:
 
 ```console
@@ -104,7 +127,7 @@ enrico.pesce@enrico ~ % kopia repository connect s3 \
   --secret-access-key=dsdsadsadsadasdasdasdau7LF/KEjKZDhb8Q=
 ```
 
-Per controllare alcune informazioni, incluso uno snippet utile per riconnettersi senza usare credenziali in chiaro:
+Per controllare le informazioni del repository, incluso uno snippet utile per riconnettersi senza scrivere credenziali in chiaro nella command line:
 
 ```console
 enrico.pesce@enrico ~ % kopia repository status -t -s
@@ -130,6 +153,8 @@ $ kopia repository connect from-config --token eyJ2ZXJzaW9uIjoiMSIsInN0b3JhZ2UiO
 
 Ora hai un repository pronto per archiviare i tuoi dati con Kopia.
 
+## Creare il primo snapshot
+
 Per esempio puoi creare un backup della cartella Downloads con questo semplice comando usando le impostazioni predefinite:
 
 ```console
@@ -154,7 +179,21 @@ enrico.pesce@enrico:/Users/enrico.pesce/Downloads
   + 1 identical snapshots until 2024-02-06 13:00:00 CET
 ```
 
-Se non ami la console, ti consiglio la GUI semplice e comoda [KopiaUI](https://github.com/kopia/kopia/releases/tag/v0.15.0), molto intuitiva da usare. Ecco alcuni screenshot:
+## Restore e retention di base
+
+Un backup e' utile solo se il restore e' stato testato. Kopia puo' ripristinare un file o una directory da uno snapshot con:
+
+```console
+kopia snapshot restore <snapshot-id> ./restore-test
+```
+
+Esegui un piccolo test di restore dopo aver creato il repository, poi programma controlli periodici. Questo fa emergere problemi di accesso al repository, password, lifecycle e retention prima di un incidente.
+
+Per la retention, configura le policy invece di affidarti alla pulizia manuale. Le policy Kopia permettono di controllare frequenza degli snapshot, finestre di retention e impostazioni di compressione per ogni percorso protetto.
+
+## Screenshot KopiaUI
+
+Se non ami la console, ti consiglio la GUI semplice e comoda [KopiaUI](https://github.com/kopia/kopia/releases), intuitiva da usare. Ecco alcuni screenshot:
 
 dove puoi controllare le cartelle protette:
 ![Lista snapshot](static/home.webp "Lista snapshot")
@@ -171,4 +210,12 @@ il ripristino dei file e' molto semplice:
 la configurazione delle policy e' completa e granulare:
 ![Configurazione policy](static/policy.webp "Configurazione policy")
 
-Ora non ti resta che provare Kopia e testarlo su OCI.
+## Checklist di troubleshooting
+
+- Se la creazione del repository fallisce, verifica il formato dell'endpoint OCI: `{bucketnamespace}.compat.objectstorage.{region}.oraclecloud.com`.
+- Se l'autenticazione fallisce, controlla customer access key e secret key, non la normale API key OCI.
+- Se la validazione fallisce, conferma che l'utente possa elencare, leggere e scrivere oggetti nel bucket target.
+- Se i restore sono lenti o falliscono, controlla se regole lifecycle hanno spostato oggetti del repository in Archive.
+- Se lo storage cresce piu' del previsto, rivedi compressione, retention degli snapshot ed eventuali file generati da escludere.
+
+Ora puoi usare Kopia con OCI Object Storage e testare sia backup sia restore prima di affidarti al repository.
