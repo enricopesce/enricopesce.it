@@ -15,6 +15,9 @@
 {{- end }}
 
 <head>
+    {{- if hugo.IsProduction | or (eq site.Params.env "production") }}
+    {{- partial "google_tag.html" . }}
+    {{- end }}
     {{- partial "head.html" . }}
 </head>
 
