@@ -5,3 +5,5 @@ locale: "it_IT"
 inLanguage: "it-IT"
 lastmod: 2026-06-03T00:00:00+00:00
 ---
+
+Questi articoli OCI raccolgono guide pratiche su Oracle Cloud Infrastructure, da Generative AI e Kubernetes ad automazione serverless e benchmark di performance.

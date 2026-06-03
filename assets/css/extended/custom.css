@@ -20,3 +20,50 @@
 .post-footer:has(.post-tags:empty):not(:has(.paginav)):not(:has(.share-buttons)) {
   display: none;
 }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.page-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rss-link {
+  display: inline-flex;
+  color: inherit;
+}
+
+.entry-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.entry-title-link::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  border-radius: var(--radius);
+}
+
+.searchResults li .entry-title-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.entry-title-link:focus {
+  outline: 2px solid var(--secondary);
+  outline-offset: -2px;
+}
