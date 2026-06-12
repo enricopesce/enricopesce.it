@@ -2,6 +2,7 @@
 title: "Generative AI: Efficient Inference on Cloud CPUs"
 description: "Real benchmarks showing how optimized CPU inference on Ampere processors delivers production-ready performance without GPUs."
 date: 2026-02-04T09:00:00+01:00
+lastmod: 2026-06-12T00:00:00+00:00
 draft: false
 cover:
   alt: "Ampere CPU inference benchmark"
@@ -21,6 +22,13 @@ tags:
 - "Benchmarks"
 categories:
 - "AI and Machine Learning"
+faq:
+  - question: "Can I run LLMs without a GPU on Oracle Cloud?"
+    answer: "Yes. Using llama.cpp with quantized models (Q4_K_M or Q5_K_M) on OCI Ampere A1.Flex or AMD E5.Flex instances, you can run models like Llama 3 8B at 10-25 tokens per second — fast enough for many production use cases without GPU costs."
+  - question: "What is llama.cpp and why is it effective for CPU inference?"
+    answer: "llama.cpp is an open-source C/C++ inference engine optimized for running quantized LLMs on CPU and Apple Silicon. It uses BLAS libraries for matrix operations and AVX2/NEON SIMD instructions to maximize throughput on modern CPUs."
+  - question: "Is Ampere Altra (OCI A1.Flex) good for AI inference?"
+    answer: "Ampere Altra excels at AI inference due to its high memory bandwidth, large core count, and NEON SIMD support. For quantized models under 8B parameters, A1.Flex delivers competitive tokens-per-second at a fraction of GPU cost."
 ---
 
 It's been a while since I last wrote here. Lately, I've been diving deep into AI inference—the process of running AI models to generate responses—specifically exploring whether we truly need expensive GPUs for running modern language models. Spoiler alert: **the answer might surprise you**.

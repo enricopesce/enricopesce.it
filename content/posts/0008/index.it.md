@@ -2,6 +2,7 @@
 title: Test di performance PHP con istanze OCI Compute
 description: "Benchmark PHP sulle shape OCI Compute: AMD E5, Intel Xeon e ARM Ampere, con confronto prezzo-prestazioni."
 date: 2024-01-19T23:00:00+01:00
+lastmod: 2026-06-12T00:00:00+00:00
 draft: false
 cover:
   alt: Test di performance PHP con istanze OCI Compute
@@ -20,6 +21,13 @@ tags:
 - "Benchmark"
 categories:
 - "Benchmark"
+faq:
+  - question: "Quale shape OCI offre le migliori prestazioni per PHP?"
+    answer: "Sulla base dei benchmark, VM.Standard.E5.Flex (AMD EPYC 9J14) offre il throughput PHP più elevato tra le OCI Flex Shape. Per il rapporto prezzo-prestazioni, VM.Standard.A1.Flex (Ampere) è competitivo soprattutto per carichi PHP parallelizzabili."
+  - question: "Ampere ARM è una buona scelta per applicazioni web PHP su OCI?"
+    answer: "Sì. VM.Standard.A1.Flex è conveniente per i carichi PHP e scala bene su più core. PHP 8+ ha un'ottima compatibilità ARM, rendendo Ampere una scelta valida per la produzione con server web nginx e PHP-FPM."
+  - question: "Cos'è una OCI Flex Shape?"
+    answer: "Le OCI Flex Shape permettono di scegliere il numero esatto di OCPU e la quantità di RAM in modo indipendente, invece di scegliere una combinazione fissa. Si paga solo per ciò che si alloca, rendendole più economiche rispetto ai tipi di istanza a dimensione fissa tradizionali."
 ---
 
 Tempo fa ho sviluppato un [tool](https://github.com/enricopesce/php-performance) con l'obiettivo di valutare il reale miglioramento di performance tra diverse versioni di PHP. Successivamente ho cercato di capire quale tipo di istanza AWS fosse piu' performante. Poiche' AWS non permette una personalizzazione libera di CPU e RAM, volevo esplorare le differenze tra le varie istanze e capire quale fosse piu' conveniente.

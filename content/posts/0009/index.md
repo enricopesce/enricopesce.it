@@ -27,6 +27,13 @@ tags:
 - "Backup"
 categories:
 - "Backup and Storage"
+faq:
+  - question: "What is Kopia?"
+    answer: "Kopia is an open-source backup tool that creates encrypted, compressed, and deduplicated snapshots of your data. It supports many storage backends including S3-compatible services, making OCI Object Storage a natural fit."
+  - question: "Is OCI Object Storage compatible with the S3 API?"
+    answer: "Yes. OCI Object Storage provides an S3-compatible API accessible via a regional endpoint. You need to create an S3 compatibility Customer Secret Key from the OCI console and use it in place of AWS credentials."
+  - question: "How does Kopia encrypt backups stored on OCI Object Storage?"
+    answer: "Kopia encrypts data client-side before uploading. You choose a password during repository initialization, and Kopia uses it to derive encryption keys. The storage backend never sees unencrypted data."
 ---
 
 Kopia can use **OCI Object Storage** as an S3-compatible backend for encrypted, deduplicated and compressed backups. The practical goal of this guide is simple: create a Kopia repository on OCI, validate it, run the first snapshot, and know how to reconnect or restore data later.

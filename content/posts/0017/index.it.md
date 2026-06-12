@@ -2,6 +2,7 @@
 title: "Distribuire cluster Oracle Kubernetes Engine in pochi minuti"
 description: "OKED con Pulumi: distribuisci cluster OKE su Oracle Cloud Free Tier. Kubernetes su OCI senza esperienza approfondita e con buone pratiche di sicurezza."
 date: 2025-04-25T18:00:00+01:00
+lastmod: 2026-06-12T00:00:00+00:00
 draft: false
 slug: "distribuire-cluster-oracle-kubernetes-engine-in-pochi-minuti"
 cover:
@@ -22,6 +23,13 @@ tags:
 - "Automation"
 categories:
 - "Kubernetes"
+faq:
+  - question: "Cos'è OKED e come usa Pulumi?"
+    answer: "OKED (Oracle Kubernetes Engine Deploy) è uno strumento open-source per il deployment di cluster OKE production-ready. La versione basata su Pulumi usa infrastructure-as-code Python per provvedere networking, IAM e risorse OKE, offrendo più flessibilità rispetto a Terraform per configurazioni complesse."
+  - question: "Posso deployare OKE nel Free Tier OCI usando OKED?"
+    answer: "Sì. OKED supporta il deployment di cluster OKE usando istanze Always Free Ampere A1.Flex come worker node. Il control plane OKE non ha costi, quindi un cluster Kubernetes funzionale può girare a costo zero di compute."
+  - question: "Qual è la differenza tra Terraform e Pulumi per il deployment OKE?"
+    answer: "Terraform usa la configurazione dichiarativa HCL, mentre Pulumi permette di scrivere codice di infrastruttura in Python, TypeScript o Go. Pulumi è migliore per la logica complessa con loop e risorse dinamiche, mentre Terraform ha un ecosistema community più ampio specifico per OCI."
 ---
 
 Nel panorama cloud-native di oggi, Kubernetes e' diventato lo standard *de facto* per l'orchestrazione dei container. Configurare un cluster Kubernetes pronto per la produzione puo' pero' essere ancora complesso e richiedere tempo, soprattutto per chi e' nuovo nell'ecosistema. **OKED** (*Oracle Kubernetes Engine Deploy*) e' una soluzione che semplifica la distribuzione di cluster Kubernetes su Oracle Cloud Infrastructure.

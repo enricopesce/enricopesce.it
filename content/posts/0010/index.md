@@ -29,6 +29,13 @@ tags:
 - "Benchmarks"
 categories:
 - "Benchmarks"
+faq:
+  - question: "What OCI Flex shapes are compared in the benchmark?"
+    answer: "The benchmark compares VM.Standard.E5.Flex (AMD EPYC 9J14), VM.Standard.E4.Flex (AMD EPYC 7J13), VM.Standard.A1.Flex (Ampere Altra), VM.Standard3.Flex (Intel Xeon), and VM.Optimized3.Flex (Intel Xeon) using Geekbench 6."
+  - question: "Which OCI shape has the best price-performance ratio?"
+    answer: "VM.Standard.A1.Flex (Ampere) typically leads on price-performance due to its lower per-OCPU cost and competitive multicore scores. E5.Flex is the best x86 choice for raw performance. The optimal choice depends on your workload's single-thread vs. multicore requirements."
+  - question: "Is Ampere A1 suitable for production workloads on OCI?"
+    answer: "Yes. VM.Standard.A1.Flex is production-ready and is used for web servers, containerized workloads, and AI inference. Most modern software compiles and runs on ARM64 without changes. Always validate with your own workload benchmark before migrating."
 ---
 
 If you are comparing **OCI Compute Flex shapes**, the short answer from this Geekbench 6 run is: **VM.Standard.E5.Flex** led in raw multicore performance, **VM.Standard.A1.Flex** was the strongest cost-conscious option, and the Intel-based shapes remained relevant when x86 compatibility is a hard requirement.

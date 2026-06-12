@@ -2,6 +2,7 @@
 title: OCI Function con immagine custom
 description: "Costruisci immagini Docker custom per OCI Functions e aggiungi Oracle Database Client o altre dipendenze alle tue funzioni Python serverless."
 date: 2023-05-12T19:00:00+01:00
+lastmod: 2026-06-12T00:00:00+00:00
 draft: false
 cover:
   alt: OCI Function con immagine custom
@@ -20,6 +21,13 @@ tags:
 - "Serverless"
 categories:
 - "Serverless"
+faq:
+  - question: "Posso usare un'immagine Docker personalizzata con OCI Functions?"
+    answer: "Sì. OCI Functions supporta immagini container personalizzate. Costruisci un Dockerfile che estende una delle immagini base del Fn Project o parte da zero, la pubblichi su OCI Container Registry (OCIR) e la referenzi nella configurazione della funzione."
+  - question: "Perché potrei aver bisogno di un'immagine Docker personalizzata per una OCI Function?"
+    answer: "Hai bisogno di un'immagine personalizzata quando la tua funzione dipende da librerie di sistema non disponibili nelle immagini base standard del Fn Project, come Oracle Instant Client per la connettività al database o pacchetti OS specifici."
+  - question: "Qual è la dimensione massima dell'immagine container per OCI Functions?"
+    answer: "OCI raccomanda di mantenere le immagini sotto i 256 MB per cold start veloci. Immagini più grandi sono tecnicamente supportate ma aumentano significativamente la latenza di cold start."
 ---
 
 Come abbiamo visto in altri articoli, e' possibile usare il progetto FN con diversi linguaggi di programmazione tramite immagini container predefinite. I linguaggi ufficialmente supportati sono:

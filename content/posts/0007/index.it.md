@@ -2,6 +2,7 @@
 title: Ingestion dati scalabile e serverless con OCI Functions
 description: "Costruisci una pipeline dati scalabile: CSV da stazioni meteo verso Autonomous Database usando OCI Functions, Object Storage e Terraform."
 date: 2023-10-20T19:00:00+01:00
+lastmod: 2026-06-12T00:00:00+00:00
 draft: false
 cover:
   alt: Ingestion dati scalabile e serverless con OCI Functions
@@ -21,6 +22,13 @@ tags:
 - "Terraform"
 categories:
 - "Serverless"
+faq:
+  - question: "Come si costruisce una pipeline ETL serverless su Oracle Cloud?"
+    answer: "Il pattern OCI standard usa Object Storage come zona di atterraggio, una Event Rule per triggerare una OCI Function all'upload del file, e la Function per analizzare e caricare i dati in Autonomous Database. Terraform provvede l'intera pipeline come infrastruttura come codice."
+  - question: "OCI Functions può elaborare file CSV di grandi dimensioni da Object Storage?"
+    answer: "Sì. OCI Functions può scaricare oggetti direttamente da Object Storage usando l'OCI Python SDK, analizzare i dati CSV con pandas o il modulo csv standard, e inserire righe in Autonomous Database. Per file molto grandi, considera il chunking o OCI Data Integration."
+  - question: "Una pipeline di data ingestion serverless su OCI è conveniente economicamente?"
+    answer: "Sì. Con OCI Functions si paga solo il tempo di esecuzione effettivo. I costi di Object Storage sono minimi per carichi CSV tipici. Per pattern di ingestione intermittenti o batch, questo approccio è molto più economico di una VM in esecuzione continua o di un servizio ETL gestito."
 ---
 
 In questo articolo sfrutteremo al massimo le capacita' di OCI, abbracciando questi principi:

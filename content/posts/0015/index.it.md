@@ -2,6 +2,7 @@
 title: "Arrestare una VM OCI dall'interno dell'istanza"
 description: "Arresta in modo ordinato una VM OCI dall'interno usando instance metadata e autenticazione instance principal. Include un semplice alias bash."
 date: 2024-12-09T18:00:00+01:00
+lastmod: 2026-06-12T00:00:00+00:00
 draft: false
 slug: "arrestare-vm-oci-dall-interno-dell-istanza"
 cover:
@@ -21,6 +22,13 @@ tags:
 - "Instance Principal"
 categories:
 - "Cloud Operations"
+faq:
+  - question: "Cos'è l'autenticazione Instance Principal in OCI?"
+    answer: "Instance Principal permette a un'istanza compute OCI di autenticarsi alle API OCI senza archiviare credenziali. L'istanza viene aggiunta a un dynamic group e una policy IAM concede a quel gruppo permessi specifici. L'OCI SDK legge automaticamente il certificato dell'istanza."
+  - question: "Come si ferma un'istanza OCI dall'interno dell'istanza stessa?"
+    answer: "Si interroga l'OCI Instance Metadata Service per ottenere l'OCID e la regione dell'istanza, poi si usa l'OCI CLI o SDK con autenticazione Instance Principal per chiamare l'API instance action con l'azione STOP. Non è necessario archiviare API key o credenziali su disco."
+  - question: "Cos'è l'OCI Instance Metadata Service (IMDS)?"
+    answer: "L'OCI IMDS è un endpoint HTTP all'indirizzo 169.254.169.254 accessibile dall'interno di qualsiasi istanza OCI. Fornisce metadati come l'OCID dell'istanza, la regione, il dominio di disponibilità, la shape e i dettagli VNIC senza richiedere autenticazione."
 ---
 
 ## Introduzione

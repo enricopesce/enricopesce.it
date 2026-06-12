@@ -2,6 +2,7 @@
 title: "Get a Kubernetes Cluster in Minutes on OCI"
 description: "Deploy production-ready OKE clusters in minutes with OKED. Automated Kubernetes setup on Oracle Cloud without OCI expertise."
 date: 2024-09-15T18:00:00+01:00
+lastmod: 2026-06-12T00:00:00+00:00
 draft: false
 slug: "get-a-kubernetes-cluster-in-minutes-on-oci"
 cover:
@@ -22,6 +23,13 @@ tags:
 - "Terraform"
 categories:
 - "Kubernetes"
+faq:
+  - question: "What is Oracle Kubernetes Engine (OKE)?"
+    answer: "OKE is Oracle Cloud Infrastructure's managed Kubernetes service. It provisions and manages the control plane, handles node upgrades, and integrates with OCI services like Load Balancer, Block Volume, and Container Registry. You pay only for worker nodes, not the control plane."
+  - question: "Can I run OKE on the OCI Free Tier?"
+    answer: "OKE control plane is free. Worker nodes use compute instances, which can be Always Free A1.Flex shapes (up to 4 OCPUs and 24 GB RAM combined). With Ampere nodes you can run a small but functional Kubernetes cluster at zero cost."
+  - question: "What is OKED and how does it simplify OKE deployment?"
+    answer: "OKED (Oracle Kubernetes Engine Deploy) is an open-source CLI tool that automates provisioning of a production-ready OKE cluster with best-practice defaults. It handles networking, IAM policies, node pools, and cluster add-ons, reducing deployment to a single command."
 ---
 
 ## My first OCI automation project

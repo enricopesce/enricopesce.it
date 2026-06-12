@@ -2,6 +2,7 @@
 title: "Stop OCI VM instance"
 description: "Gracefully stop OCI instances from within using instance metadata and principal authentication. Simple bash alias included."
 date: 2024-12-09T18:00:00+01:00
+lastmod: 2026-06-12T00:00:00+00:00
 draft: false
 cover:
   alt: "Stop OCI VM instance"
@@ -20,6 +21,13 @@ tags:
 - "Instance Principal"
 categories:
 - "Cloud Operations"
+faq:
+  - question: "What is Instance Principal authentication in OCI?"
+    answer: "Instance Principal lets an OCI compute instance authenticate to OCI APIs without storing credentials. The instance is added to a dynamic group, and an IAM policy grants that group specific permissions. The OCI SDK reads the instance certificate automatically."
+  - question: "How do I stop an OCI instance from within the instance itself?"
+    answer: "Query the OCI Instance Metadata Service to get the instance OCID and region, then use the OCI CLI or SDK with Instance Principal authentication to call the instance action API with the STOP action. No API keys or credentials need to be stored on disk."
+  - question: "What is the OCI Instance Metadata Service (IMDS)?"
+    answer: "The OCI IMDS is an HTTP endpoint at 169.254.169.254 accessible from within any OCI instance. It provides metadata such as the instance OCID, region, availability domain, shape, and VNIC details without requiring authentication."
 ---
 
 ## Introduction

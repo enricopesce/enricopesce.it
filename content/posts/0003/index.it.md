@@ -2,6 +2,7 @@
 title: "OCI Functions: un esempio Python"
 description: "Guida passo passo per creare OCI Functions serverless con Python e distribuire il primo progetto FN su Oracle Cloud Infrastructure."
 date: 2023-03-20T19:00:00+01:00
+lastmod: 2026-06-12T00:00:00+00:00
 draft: false
 cover:
   alt: "OCI Functions: un esempio Python"
@@ -20,6 +21,13 @@ tags:
 - "Serverless"
 categories:
 - "Serverless"
+faq:
+  - question: "Cos'è OCI Functions?"
+    answer: "OCI Functions è il servizio di compute serverless di Oracle Cloud Infrastructure, basato sul progetto open-source Fn Project. Permette di eseguire codice senza gestire server. Si paga solo il tempo di esecuzione e il servizio scala automaticamente da zero."
+  - question: "Quali linguaggi di programmazione supporta OCI Functions?"
+    answer: "OCI Functions supporta nativamente Go, Java, Node.js, Ruby e Python. Poiché le funzioni girano su immagini container, è possibile usare qualsiasi linguaggio con un runtime compatibile Docker tramite immagini personalizzate."
+  - question: "OCI Functions è disponibile nel tier Always Free OCI?"
+    answer: "Sì. OCI Always Free include 2 milioni di invocazioni e 400.000 GB-secondi di compute al mese. È sufficiente per la maggior parte degli scenari di sviluppo e produzione a basso traffico."
 ---
 
 Il servizio [OCI Functions](https://www.oracle.com/cloud/cloud-native/functions/) permette di eseguire codice su un'infrastruttura che non devi gestire, in modo scalabile e automatizzato.

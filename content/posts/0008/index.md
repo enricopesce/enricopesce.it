@@ -2,6 +2,7 @@
 title: Performance testing with PHP and OCI Compute instances
 description: "PHP performance benchmarks across OCI compute shapes: AMD E5, Intel Xeon, and ARM Ampere. Find the best price-performance ratio."
 date: 2024-01-19T23:00:00+01:00
+lastmod: 2026-06-12T00:00:00+00:00
 draft: false
 cover:
   alt: Performance testing with PHP and OCI Compute instances
@@ -20,6 +21,13 @@ tags:
 - "Benchmarks"
 categories:
 - "Benchmarks"
+faq:
+  - question: "Which OCI compute shape gives the best PHP performance?"
+    answer: "Based on benchmarks, VM.Standard.E5.Flex (AMD EPYC 9J14) delivers the highest raw PHP throughput among OCI Flex shapes. For price-performance, VM.Standard.A1.Flex (Ampere) is competitive especially for parallelizable PHP workloads."
+  - question: "Is ARM Ampere a good choice for PHP web applications on OCI?"
+    answer: "Yes. VM.Standard.A1.Flex is cost-effective for PHP workloads and scales well on multiple cores. PHP 8+ has strong ARM compatibility, making Ampere a viable production choice for web servers running nginx with PHP-FPM."
+  - question: "What is an OCI Flex Shape?"
+    answer: "OCI Flex Shapes let you choose the exact number of OCPUs and amount of RAM independently, rather than picking a fixed combination. You pay only for what you allocate, making them more economical than traditional fixed-size instance types."
 ---
 
 A while ago, I developed a [tool](https://github.com/enricopesce/php-performance) with the aim of assessing the actual performance improvement between different versions of PHP. Subsequently, I search to understand which AWS instance type was the most performant. Since AWS does not allow for custom sizing of CPU and RAM resources, I wanted to explore the differences among the various instance types and determine which one would be most cost-effective to choose.

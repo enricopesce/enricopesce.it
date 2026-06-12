@@ -2,6 +2,7 @@
 title: Attivare una function con Object Storage
 description: "Automatizza OCI Functions con eventi Object Storage e Terraform IaC su Oracle Cloud."
 date: 2023-04-20T19:00:00+01:00
+lastmod: 2026-06-12T00:00:00+00:00
 draft: false
 cover:
   alt: Attivare una function con Object Storage
@@ -21,6 +22,13 @@ tags:
 - "Serverless"
 categories:
 - "Serverless"
+faq:
+  - question: "Come si fa a triggerare una OCI Function da un evento Object Storage?"
+    answer: "Si crea una Event Rule OCI che filtra gli eventi Object Storage (come 'Object Created') e imposta l'azione per invocare una Function. Quando un file viene caricato nel bucket, l'evento si attiva e passa i metadati dell'oggetto alla funzione."
+  - question: "Quali servizi OCI possono triggerare una Function tramite eventi?"
+    answer: "OCI Events supporta trigger da Object Storage, Block Volume, Compute, Networking, Identity, Database e molti altri servizi. Qualsiasi risorsa che emette OCI Events può essere collegata a un'azione Function."
+  - question: "Posso configurare trigger event-driven per OCI Functions con Terraform?"
+    answer: "Sì. È possibile definire OCI Event Rules, applicazioni Function e risorse Function interamente in Terraform usando il provider OCI. Questo consente architetture event-driven completamente riproducibili e versionabili."
 ---
 
 Il servizio OCI Functions permette di eseguire codice su infrastruttura che non devi gestire. In questo [articolo]({{< relref "/posts/0003/index.md" >}}) ho presentato un esempio base di OCI Function sviluppata in Python.

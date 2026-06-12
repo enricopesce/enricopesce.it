@@ -2,6 +2,7 @@
 title: "Building a Modern Translation Service with Oracle Cloud Infrastructure's Generative AI"
 description: "Build a translation API with OCI Generative AI. Enterprise-ready, context-aware multilingual service supporting 10 languages."
 date: 2024-12-18T18:00:00+01:00
+lastmod: 2026-06-12T00:00:00+00:00
 draft: false
 cover:
   alt: "Building a Modern Translation Service with Oracle Cloud Infrastructure's Generative AI"
@@ -20,6 +21,13 @@ tags:
 - "API"
 categories:
 - "AI and Machine Learning"
+faq:
+  - question: "What is OCI Generative AI?"
+    answer: "OCI Generative AI is a managed AI service on Oracle Cloud Infrastructure that provides access to large language models from Cohere, Meta, and other providers via a REST API. It supports text generation, summarization, embeddings, and chat completions without managing GPU infrastructure."
+  - question: "Can I use OCI Generative AI for multilingual translation?"
+    answer: "Yes. Large language models available through OCI Generative AI handle translation across many languages with high contextual accuracy. Unlike traditional translation APIs, LLMs preserve tone, idioms, and domain-specific terminology."
+  - question: "Which OCI Generative AI model is best for translation tasks?"
+    answer: "For translation, Cohere Command R+ and Meta Llama 3 models available on OCI GenAI perform well across European and Asian languages. Command R+ is particularly suited for structured, document-level translations requiring consistency."
 ---
 
 ## The Challenge with Modern Translation

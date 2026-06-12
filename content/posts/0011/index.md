@@ -2,6 +2,7 @@
 title: "OCI Compute Standard Flex Shapes: Another CPU Multicore Benchmark"
 description: "OCI compute price-performance analysis with Geekbench 6. Compare AMD, Intel, and ARM shapes for optimal cloud instance selection."
 date: 2024-02-10T18:00:00+01:00
+lastmod: 2026-06-12T00:00:00+00:00
 slug: "another-cpu-multicore-performance-of-oci-compute-standard-flex-shapes"
 draft: false
 keywords:
@@ -17,6 +18,13 @@ tags:
 - "Benchmarks"
 categories:
 - "Benchmarks"
+faq:
+  - question: "What are OCI Flex Shapes?"
+    answer: "OCI Flex Shapes are compute instances where you independently configure the number of OCPUs and RAM rather than choosing a fixed size. Available shapes include VM.Standard.E4.Flex (AMD), VM.Standard.E5.Flex (AMD), VM.Standard3.Flex (Intel), VM.Optimized3.Flex (Intel), and VM.Standard.A1.Flex (ARM Ampere)."
+  - question: "How does VM.Standard.E5.Flex compare to E4.Flex in multicore benchmarks?"
+    answer: "In Geekbench 6 multicore tests, E5.Flex (AMD EPYC 9J14) outperforms E4.Flex (AMD EPYC 7J13) by approximately 20-30% at the same OCPU count. E5 also has a higher max boost frequency at 3.7 GHz versus 3.5 GHz for E4."
+  - question: "Which OCI shape is best for multicore workloads?"
+    answer: "For maximum raw multicore performance, VM.Standard.E5.Flex is the best x86 option. For the best price-per-core ratio, VM.Standard.A1.Flex (Ampere) is highly competitive, especially when workloads can utilize many cores simultaneously."
 ---
 
 When selecting a compute instance, factors such as raw computational power, price-to-performance ratio, and workload optimization play a significant role. Let's focus on the following standard flex shapes available in most OCI regions:

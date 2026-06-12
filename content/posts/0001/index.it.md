@@ -2,6 +2,7 @@
 title: Autenticazione SAML su OpenVPN con domini OCI IAM Identity
 description: "Guida per integrare l'autenticazione SAML nel tuo server OpenVPN usando OCI IAM Identity Domains."
 date: 2023-01-20T19:00:00+01:00
+lastmod: 2026-06-12T00:00:00+00:00
 draft: false
 cover:
   image: static/one.webp
@@ -20,6 +21,13 @@ tags:
 - "Sicurezza"
 categories:
 - "Identita e Sicurezza"
+faq:
+  - question: "Cos'è OCI IAM Identity Domains?"
+    answer: "OCI IAM Identity Domains è il servizio di gestione delle identità enterprise di Oracle Cloud Infrastructure. Gestisce il ciclo di vita degli utenti, il single sign-on (SSO), l'autenticazione multi-fattore e l'integrazione con provider di identità esterni tramite SAML 2.0 o OIDC."
+  - question: "Posso usare SAML per aggiungere MFA a OpenVPN su Oracle Cloud?"
+    answer: "Sì. Puoi configurare OpenVPN per delegare l'autenticazione a OCI IAM Identity Domains via SAML 2.0. Gli utenti si autenticano tramite il portale Identity Domain, che può applicare policy MFA prima di concedere l'accesso VPN."
+  - question: "OCI IAM Identity Domains è disponibile nel Free Tier?"
+    answer: "OCI IAM Identity Domains è incluso senza costi in tutte le tenancy OCI per le funzionalità di gestione identità di base. Il Free Tier include fino a 2 Identity Domain con SSO e MFA."
 ---
 
 La gestione di identita' e accessi e' un obiettivo cruciale in un'organizzazione che cresce.

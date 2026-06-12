@@ -2,6 +2,7 @@
 title: Accessing an Autonomous Database from an OCI Function
 description: "Connect OCI Functions to Autonomous Database securely using Vault secrets and Terraform. Complete IaC example with Python code."
 date: 2023-09-01T19:00:00+01:00
+lastmod: 2026-06-12T00:00:00+00:00
 draft: false
 cover:
   alt: Accessing an Autonomous Database from an OCI Function
@@ -21,6 +22,13 @@ tags:
 - "Serverless"
 categories:
 - "Serverless"
+faq:
+  - question: "How do I connect an OCI Function to an Autonomous Database securely?"
+    answer: "The recommended pattern is to store the database wallet and credentials in OCI Vault, grant the function's dynamic group access via IAM policy, and retrieve credentials at runtime using the OCI SDK. This avoids hardcoding secrets in the container image or configuration."
+  - question: "What is OCI Vault and why should I use it with OCI Functions?"
+    answer: "OCI Vault is a managed secrets and key management service. Using Vault with Functions lets you rotate credentials centrally without redeploying the function, and ensures secrets are never stored in code, environment variables, or container images."
+  - question: "Can I connect to Oracle Autonomous Database from Python inside an OCI Function?"
+    answer: "Yes. Using a custom Docker image that includes Oracle Instant Client and the python-oracledb package, you can connect to Autonomous Database using mTLS with the wallet downloaded from the OCI console."
 ---
 
 After seeing how to create a custom image, in the [previous case]({{< ref "/posts/0005" >}}) where we installed the Oracle client, now let's try to use this custom image to connect to an Oracle database.

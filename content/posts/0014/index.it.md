@@ -2,6 +2,7 @@
 title: "OCI Vision: identificare cereali con un modello custom"
 description: "Addestra e testa un modello custom di classificazione immagini con OCI Vision usando immagini etichettate e preprocessing leggero."
 date: 2024-09-21T18:00:00+01:00
+lastmod: 2026-06-12T00:00:00+00:00
 draft: false
 slug: "oci-vision-identificare-cereali-con-modello-custom"
 cover:
@@ -22,6 +23,13 @@ tags:
 - "Data Labeling"
 categories:
 - "AI and Machine Learning"
+faq:
+  - question: "Cos'è OCI Vision?"
+    answer: "OCI Vision è un servizio AI gestito su Oracle Cloud Infrastructure per l'analisi delle immagini. Offre modelli pre-addestrati per il rilevamento di oggetti, la classificazione delle immagini e l'estrazione di testo, oltre alla possibilità di addestrare modelli personalizzati sui propri dati etichettati."
+  - question: "Come si addestra un modello di classificazione immagini personalizzato con OCI Vision?"
+    answer: "Si crea un progetto in OCI Vision, si caricano immagini etichettate usando OCI Data Labeling e si invia un job di training. Il servizio esegue il fine-tuning del modello sul dataset. Una volta addestrato, può essere chiamato tramite l'OCI SDK o l'API REST."
+  - question: "OCI Vision è disponibile nel Free Tier OCI?"
+    answer: "OCI Vision offre un tier gratuito con 1.000 transazioni di analisi immagini al mese per i modelli pre-addestrati. Il training di modelli personalizzati comporta costi di compute in base al tempo di addestramento."
 ---
 
 ## OCI Vision: come identifichiamo i cereali?

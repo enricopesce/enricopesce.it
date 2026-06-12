@@ -2,6 +2,7 @@
 title: "OCI GenAI Catalog: Pick the Right Model"
 description: "A reference guide covering 30+ LLMs available on Oracle Cloud's Generative AI service, with a model selection wizard."
 date: 2026-03-09T09:00:00+01:00
+lastmod: 2026-06-12T00:00:00+00:00
 draft: false
 cover:
   alt: "OCI GenAI Catalog model comparison"
@@ -20,6 +21,13 @@ tags:
 - "Model Selection"
 categories:
 - "AI and Machine Learning"
+faq:
+  - question: "What LLM providers are available on OCI Generative AI?"
+    answer: "OCI Generative AI offers models from Cohere (Command R, Command R+), Meta (Llama 3, 3.1, 3.2, 3.3), xAI (Grok), Google (Gemma), and other providers. The catalog includes 30+ model variants across different sizes and capabilities."
+  - question: "How do I choose the right LLM model on OCI Generative AI?"
+    answer: "Choose based on the primary task: Cohere Command R+ for RAG and enterprise documents, Llama 3.1/3.3 70B for general reasoning and coding, smaller Llama models for low-latency use cases, and embedding models for vector search. Context window size and output quality matter more than parameter count alone."
+  - question: "Are all OCI Generative AI models available in all regions?"
+    answer: "No. Model availability varies by OCI region. US East (Ashburn) and EU Frankfurt typically have the broadest selection. Check the OCI Generative AI documentation or the OCI GenAI Catalog tool for current regional availability."
 ---
 
 OCI Generative AI has grown fast—Cohere, Google, Meta, OpenAI, xAI—all available, each with multiple variants. Every time I started a new project I had to dig through documentation to find the right model.

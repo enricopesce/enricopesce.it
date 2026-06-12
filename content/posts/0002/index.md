@@ -2,6 +2,7 @@
 title: Oracle Autonomous Database
 description: "Learn how Oracle Autonomous Database automates provisioning, tuning, scaling, security, backups, and patching for managed cloud databases."
 date: 2023-09-21T19:00:00+01:00
+lastmod: 2026-06-12T00:00:00+00:00
 draft: false
 cover:
   alt: Oracle Autonomous Database
@@ -19,6 +20,13 @@ tags:
 - "Database"
 categories:
 - "Databases"
+faq:
+  - question: "What is Oracle Autonomous Database?"
+    answer: "Oracle Autonomous Database is a cloud database service that uses machine learning to automate tuning, security, backups, and patching without DBA intervention. It comes in two variants: Autonomous Data Warehouse (ADW) for analytics and Autonomous Transaction Processing (ATP) for OLTP workloads."
+  - question: "Is Oracle Autonomous Database available on the OCI Free Tier?"
+    answer: "Yes. OCI Always Free includes two Autonomous Database instances with 20 GB storage each. The free tier supports both ATP and ADW workload types with up to 1 OCPU and 1 GB of RAM."
+  - question: "What is the difference between ATP and ADW in Oracle Autonomous Database?"
+    answer: "Autonomous Transaction Processing (ATP) is optimized for mixed, high-concurrency OLTP workloads, web applications, and reporting. Autonomous Data Warehouse (ADW) is tuned for analytical queries, data warehousing, and batch processing with columnar storage and parallel execution."
 ---
 
 ## Introduction to the most modern cloud database in the market

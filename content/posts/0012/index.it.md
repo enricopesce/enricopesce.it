@@ -2,6 +2,7 @@
 title: "Architettura Intel x86 vs ARM: analisi comparativa per tecnologie server"
 description: "Confronto tra architetture server x86 e ARM: benchmark, efficienza energetica e impatto climatico nei data center cloud."
 date: 2024-04-15T18:00:00+01:00
+lastmod: 2026-06-12T00:00:00+00:00
 draft: false
 cover:
   alt: "Architettura Intel x86 vs ARM: analisi comparativa per tecnologie server"
@@ -20,6 +21,13 @@ tags:
 - "Architettura Cloud"
 categories:
 - "Architettura"
+faq:
+  - question: "ARM è migliore di x86 per i carichi di lavoro nei server cloud?"
+    answer: "ARM (come Ampere Altra) eccelle in throughput-per-watt ed efficienza di costo per carichi scale-out. x86 (Intel o AMD) guida ancora nelle prestazioni single-thread e ha una compatibilità software più ampia. La scelta migliore dipende dalle caratteristiche specifiche del carico di lavoro."
+  - question: "Quale shape Oracle Cloud è basata su ARM?"
+    answer: "VM.Standard.A1.Flex usa il processore Ampere Altra Q80-30, una CPU basata su ARM. È disponibile nel tier Always Free (fino a 4 OCPU e 24 GB di RAM combinati), rendendola la shape OCI più accessibile economicamente per la sperimentazione."
+  - question: "Come influisce l'architettura ARM sull'efficienza energetica nei data center cloud?"
+    answer: "I processori ARM tipicamente offrono 2-3x migliori prestazioni per watt rispetto ai chip x86 equivalenti. Per i cloud provider, questo si traduce in minori costi di raffreddamento, maggiore densità nei rack e una ridotta impronta di carbonio per unità di calcolo."
 ---
 
 ## Architettura Intel x86 vs ARM: analisi comparativa per tecnologie server
