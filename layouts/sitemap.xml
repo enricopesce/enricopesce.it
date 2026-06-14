@@ -10,6 +10,14 @@
       {{- end }}
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+      {{- if .IsTranslated }}
+        {{- range .AllTranslations }}
+    <xhtml:link rel="alternate" hreflang="{{ .Language.Locale | default .Lang }}" href="{{ .Permalink }}"/>
+        {{- end }}
+        {{- with (index (where .AllTranslations "Lang" "en") 0) }}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ .Permalink }}"/>
+        {{- end }}
+      {{- end }}
   </url>
     {{- end }}
   {{- end }}
