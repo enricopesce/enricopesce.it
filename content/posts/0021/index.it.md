@@ -10,6 +10,8 @@ cover:
   caption: "OCI E6 vs E5 vs E4 Compute Flex Shapes"
   relative: true
   image: "static/oci-e6-flex-shapes.svg"
+  width: 1200
+  height: 630
 keywords:
 - "oci e6"
 - "vm.standard.e6.flex"

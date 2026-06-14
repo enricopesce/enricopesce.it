@@ -10,6 +10,8 @@ cover:
   caption: "OCI Vision workflow"
   relative: true
   image: "static/diagram.avif"
+  width: 1344
+  height: 553
 keywords:
 - "oci vision custom model"
 - "image classification oracle"

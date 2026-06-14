@@ -9,6 +9,8 @@ cover:
   caption: "OCI GenAI Python Starters"
   relative: true
   image: "static/oci-genai-python-starters.svg"
+  width: 1200
+  height: 630
 keywords:
 - "oci generative ai python"
 - "oci genai starter"
