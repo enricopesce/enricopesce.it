@@ -66,6 +66,7 @@
     {{- range $terms }}{{ $about = $about | append (dict "@type" "Thing" "name" .) }}{{ end -}}
 
     {{- $article := dict "@type" "BlogPosting" "@id" (printf "%s#article" .Permalink) "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink) "headline" (.Title | plainify) "name" (.Title | plainify) "description" ($description | plainify) "articleBody" (.Plain | plainify) "wordCount" .WordCount "inLanguage" $pageLang "datePublished" (.PublishDate.Format "2006-01-02T15:04:05-07:00") "dateModified" (.Lastmod.Format "2006-01-02T15:04:05-07:00") "author" (dict "@id" $personID) "publisher" (dict "@id" $personID) "isPartOf" (dict "@id" $blogID) -}}
+    {{- with (index .Params.categories 0) }}{{ $article = merge $article (dict "articleSection" .) }}{{ end -}}
     {{- with .Params.keywords }}{{ $article = merge $article (dict "keywords" .) }}{{ end -}}
     {{- if $image }}{{ $article = merge $article (dict "image" $image) }}{{ end -}}
     {{- if gt (len $about) 0 }}{{ $article = merge $article (dict "about" $about) }}{{ end -}}
