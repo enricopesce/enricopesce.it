@@ -58,7 +58,7 @@ jobs:
             --gc \
             --minify \
             --cleanDestinationDir \
-            --baseURL "${{ steps.pages.outputs.base_url }}"
+            --baseURL "https://www.enricopesce.it/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:

@@ -28,21 +28,21 @@ I progetti coprono esempi eseguibili per **OCI Generative AI**, cataloghi di mod
 Una raccolta di esempi Python eseguibili per OCI Generative AI. Copre uso diretto dell'SDK, LangChain, LlamaIndex, LangGraph e flussi con API compatibili OpenAI.
 
 - Repository: [github.com/enricopesce/oci-genai-python-starters](https://github.com/enricopesce/oci-genai-python-starters)
-- Articolo collegato: [OCI GenAI Python Starters: alcune piccole demo per iniziare](/it/oci-genai-python-starters-alcune-piccole-demo-per-iniziare/)
+- Articolo collegato: [OCI GenAI Python Starters: alcune piccole demo per iniziare](/it/oci-genai-python-starters-demo-python-per-iniziare/)
 
 ## OCI GenAI Catalog
 
 Una guida di riferimento e selezione per i modelli di Generative AI disponibili su Oracle Cloud Infrastructure.
 
 - Progetto: [enricopesce.github.io/oci-genai-catalog](https://enricopesce.github.io/oci-genai-catalog/)
-- Articolo collegato: [OCI GenAI Catalog: scegliere il modello giusto](/it/oci-genai-catalog-scegliere-il-modello-giusto/)
+- Articolo collegato: [OCI GenAI Catalog: scegliere il modello giusto](/it/oci-genai-catalog-scegliere-modello-giusto/)
 
 ## OKED
 
 Oracle Kubernetes Engine Deploy e' un progetto di automazione per creare cluster OKE con Pulumi e default pratici.
 
 - Repository: [github.com/enricopesce/oracle-kubernetes-engine-deploy](https://github.com/enricopesce/oracle-kubernetes-engine-deploy)
-- Articolo collegato: [Deploy di cluster Oracle Kubernetes Engine in pochi minuti](/it/deploy-di-cluster-oracle-kubernetes-engine-in-pochi-minuti/)
+- Articolo collegato: [Deploy di cluster Oracle Kubernetes Engine in pochi minuti](/it/distribuire-cluster-oracle-kubernetes-engine-in-pochi-minuti/)
 
 ## OCI Function Examples
 
