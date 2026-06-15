@@ -1,0 +1,15 @@
+{{- $isProd := or hugo.IsProduction (eq site.Params.env "production") -}}
+{{- $isPaginatorPage := false -}}
+{{- with (.Store.Get "seoListPaginator") -}}
+  {{- if gt .PageNumber 1 -}}
+    {{- $isPaginatorPage = true -}}
+  {{- end -}}
+{{- end -}}
+{{- $shouldIndex := and $isProd (ne .Params.robotsNoIndex true) (not .Params.searchHidden) (ne .Layout "search") (not $isPaginatorPage) -}}
+{{- if and $shouldIndex (eq .Kind "term") -}}
+  {{- $termPages := where .Pages "Kind" "page" -}}
+  {{- if lt (len $termPages) 2 -}}
+    {{- $shouldIndex = false -}}
+  {{- end -}}
+{{- end -}}
+{{- return $shouldIndex -}}

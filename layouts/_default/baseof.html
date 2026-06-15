@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 {{- $theme := site.Params.defaultTheme | default "auto" }}
-{{- $htmlLang := .Params.inLanguage | default .Language.Locale | default .Language.Lang | default site.Language.Locale | default site.Language.Lang | default "en" }}
+{{- $htmlLang := partial "seo_language.html" . }}
 {{- $htmlLang = lower (replace $htmlLang "_" "-") }}
 {{- if eq $theme "dark" }}
 <html lang="{{ $htmlLang }}" dir="{{ .Language.Direction | default "auto" }}" data-theme="dark">
@@ -12,6 +12,15 @@
 <html lang="{{ $htmlLang }}" dir="{{ .Language.Direction | default "auto" }}" data-theme="light">
 {{- else }}
 <html lang="{{ $htmlLang }}" dir="{{ .Language.Direction | default "auto" }}" data-theme="auto">
+{{- end }}
+
+{{- if or .IsHome (eq .Kind "section") (eq .Kind "term") }}
+    {{- $pages := union .RegularPages .Sections }}
+    {{- if .IsHome }}
+        {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+        {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" }}
+    {{- end }}
+    {{- .Store.Set "seoListPaginator" (.Paginate $pages) }}
 {{- end }}
 
 <head>

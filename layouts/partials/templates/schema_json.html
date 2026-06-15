@@ -1,10 +1,10 @@
 {{- $schema := site.Params.schema | default (dict) -}}
 {{- $authorName := $schema.name | default site.Params.author | default site.Title -}}
-{{- $personID := printf "%s#person" site.Home.Permalink -}}
+{{- $personID := printf "%s#person" ("/" | absURL) -}}
 {{- $websiteID := printf "%s#website" site.Home.Permalink -}}
 {{- $blogID := printf "%sposts/#blog" site.Home.Permalink -}}
-{{- $pageLang := .Params.inLanguage | default .Language.Locale | default .Language.Lang | default site.Language.Locale | default site.Language.Lang | default "en" -}}
-{{- $profileURL := "about/" | absLangURL -}}
+{{- $pageLang := partial "seo_language.html" . -}}
+{{- $profileURL := "about/" | absURL -}}
 {{- $personImage := ($schema.image | default "/me.webp") | absURL -}}
 
 {{- $sameAs := slice -}}
@@ -43,9 +43,7 @@
   {{- $breadcrumbItems = $breadcrumbItems | append (dict "@type" "ListItem" "position" (add (len $breadcrumbItems) 1) "name" (.Title | plainify) "item" .Permalink) -}}
   {{- $graph = $graph | append (dict "@type" "BreadcrumbList" "@id" (printf "%s#breadcrumb" .Permalink) "itemListElement" $breadcrumbItems) -}}
 
-  {{- $description := .Description -}}
-  {{- if not $description }}{{ $description = .Summary | plainify }}{{ end -}}
-  {{- if not $description }}{{ $description = site.Params.description | plainify }}{{ end -}}
+  {{- $description := partial "seo_description.html" . -}}
 
   {{- if and .IsPage (eq .Section "posts") -}}
     {{- $image := "" -}}

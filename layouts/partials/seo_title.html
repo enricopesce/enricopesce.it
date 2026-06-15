@@ -1,0 +1,34 @@
+{{- $brand := site.Params.author | default site.Params.label.text | default site.Title -}}
+{{- $title := site.Title -}}
+{{- if not .IsHome -}}
+  {{- $pageTitle := .Title | plainify -}}
+  {{- $lang := partial "seo_language.html" . -}}
+  {{- $isIT := hasPrefix (lower $lang) "it" -}}
+  {{- if eq .Kind "term" -}}
+    {{- if eq .Data.Singular "tag" -}}
+      {{- if $isIT -}}
+        {{- $pageTitle = printf "Tag %s" $pageTitle -}}
+      {{- else -}}
+        {{- $pageTitle = printf "%s Tag" $pageTitle -}}
+      {{- end -}}
+    {{- else if eq .Data.Singular "category" -}}
+      {{- if $isIT -}}
+        {{- $pageTitle = printf "Categoria %s" $pageTitle -}}
+      {{- else -}}
+        {{- $pageTitle = printf "%s Category" $pageTitle -}}
+      {{- end -}}
+    {{- end -}}
+  {{- else if eq .Kind "taxonomy" -}}
+    {{- if eq .Data.Singular "tag" -}}
+      {{- $pageTitle = cond $isIT "Tutti i tag" "All Tags" -}}
+    {{- else if eq .Data.Singular "category" -}}
+      {{- $pageTitle = cond $isIT "Tutte le categorie" "All Categories" -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if eq $pageTitle $brand -}}
+    {{- $title = $brand -}}
+  {{- else -}}
+    {{- $title = printf "%s | %s" $pageTitle $brand -}}
+  {{- end -}}
+{{- end -}}
+{{- return (trim $title "\n\r\t ") -}}

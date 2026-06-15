@@ -1,0 +1,53 @@
+{{- $lang := partial "seo_language.html" . -}}
+{{- $isIT := hasPrefix (lower $lang) "it" -}}
+{{- $description := "" -}}
+{{- with .Description -}}
+  {{- $description = . | plainify | htmlUnescape -}}
+{{- end -}}
+
+{{- if not $description -}}
+  {{- $title := .Title | plainify -}}
+  {{- if eq .Kind "term" -}}
+    {{- $count := len (where .Pages "Kind" "page") -}}
+    {{- if $isIT -}}
+      {{- $noun := "articoli" -}}
+      {{- if eq $count 1 }}{{- $noun = "articolo" -}}{{- end -}}
+      {{- if eq .Data.Singular "category" -}}
+        {{- $description = printf "Leggi %d %s nella categoria %q di Enrico Pesce su Oracle Cloud Infrastructure, automazione, benchmark e Generative AI." $count $noun $title -}}
+      {{- else -}}
+        {{- $description = printf "Leggi %d %s con tag %q di Enrico Pesce su Oracle Cloud Infrastructure, automazione, benchmark e Generative AI." $count $noun $title -}}
+      {{- end -}}
+    {{- else -}}
+      {{- $noun := "articles" -}}
+      {{- if eq $count 1 }}{{- $noun = "article" -}}{{- end -}}
+      {{- if eq .Data.Singular "category" -}}
+        {{- $description = printf "Browse %d %s in the %q category by Enrico Pesce, covering Oracle Cloud Infrastructure, automation, benchmarks, and Generative AI." $count $noun $title -}}
+      {{- else -}}
+        {{- $description = printf "Explore %d %s tagged %q by Enrico Pesce, covering Oracle Cloud Infrastructure, automation, benchmarks, and Generative AI." $count $noun $title -}}
+      {{- end -}}
+    {{- end -}}
+  {{- else if eq .Kind "taxonomy" -}}
+    {{- if $isIT -}}
+      {{- if eq .Data.Singular "category" -}}
+        {{- $description = "Sfoglia le categorie degli articoli OCI di Enrico Pesce: architettura cloud, serverless, Kubernetes, database, benchmark e Generative AI." -}}
+      {{- else -}}
+        {{- $description = "Sfoglia tutti i tag degli articoli OCI di Enrico Pesce: Oracle Cloud Infrastructure, Kubernetes, serverless, benchmark e Generative AI." -}}
+      {{- end -}}
+    {{- else -}}
+      {{- if eq .Data.Singular "category" -}}
+        {{- $description = "Browse OCI article categories by Enrico Pesce: cloud architecture, serverless, Kubernetes, databases, benchmarks, and Generative AI." -}}
+      {{- else -}}
+        {{- $description = "Browse all OCI article tags by Enrico Pesce, from Oracle Cloud Infrastructure and Kubernetes to serverless, benchmarks, and Generative AI." -}}
+      {{- end -}}
+    {{- end -}}
+  {{- else if or .IsPage .IsSection -}}
+    {{- $description = .Summary | plainify | htmlUnescape -}}
+    {{- if not $description -}}
+      {{- $description = printf "%s - %s" $title site.Title -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $description = site.Params.description | plainify | htmlUnescape -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return (trim $description "\n\r\t ") -}}

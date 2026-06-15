@@ -1,0 +1,9 @@
+{{- $lang := .Params.inLanguage | default .Language.Locale | default .Language.Lang | default site.Language.Locale | default site.Language.Lang | default "en" -}}
+{{- $lang = replace $lang "_" "-" -}}
+{{- $langLower := lower $lang -}}
+{{- if eq $langLower "en" -}}
+  {{- $lang = "en-US" -}}
+{{- else if eq $langLower "it" -}}
+  {{- $lang = "it-IT" -}}
+{{- end -}}
+{{- return $lang -}}
