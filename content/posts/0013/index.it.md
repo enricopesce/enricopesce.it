@@ -58,4 +58,4 @@ Trovi tutte le informazioni nella [pagina GitHub del progetto](https://github.co
 
 Ecco una breve demo:
 
-![Demo deployment OKED](static/demo.gif)
+![Demo deployment OKED](static/demo.webp)

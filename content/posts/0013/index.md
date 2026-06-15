@@ -58,4 +58,4 @@ You can find all the information on the [GitHub project page](https://github.com
 
 Here is a short demo:
 
-![OKED deployment demo](static/demo.gif)
+![OKED deployment demo](static/demo.webp)

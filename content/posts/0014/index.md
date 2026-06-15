@@ -141,11 +141,11 @@ Now the processed content is in `YOURBUCKETNAME` and ready to import.
 
 Sign in to the OCI Console and go to **Analytics & AI** > **Machine Learning** > **Data Labeling** > **Dataset** > **Import dataset**.
 
-![Import dataset step in OCI Data Labeling](static/import.png)
+![Import dataset step in OCI Data Labeling](static/import.avif)
 
-![Object Storage import configuration](static/import2.png)
+![Object Storage import configuration](static/import2.avif)
 
-![Imported cereal dataset](static/dataset.png)
+![Imported cereal dataset](static/dataset.avif)
 
 ### Create the model
 
@@ -155,11 +155,11 @@ Create a new Project on the OCI Vision page and select the Data Label data.
 
 Go to **Analytics & AI** > **Machine Learning** > **Vision** > **Project**.
 
-![OCI Vision project](static/project.png)
+![OCI Vision project](static/project.avif)
 
 Open the project and create a model. Choose **Image classification** as the type and use the `grains` dataset from OCI Data Labeling.
 
-![Create an OCI Vision image classification model](static/model.png)
+![Create an OCI Vision image classification model](static/model.avif)
 
 Confirm all and continue to start the model build.
 
@@ -167,7 +167,7 @@ In this phase, OCI builds the model automatically. Build time depends on the com
 
 You do not need to set up servers, buy a GPU, split the data manually, or apply algorithms yourself. OCI Vision handles the training workflow.
 
-![Trained OCI Vision model](static/trained.png)
+![Trained OCI Vision model](static/trained.avif)
 
 We have a very good F1 score for this model, now we can test it!
 
@@ -175,9 +175,9 @@ We have a very good F1 score for this model, now we can test it!
 
 I have downloaded new random images related to the trained object and tested them:
 
-![OCI Vision prediction for corn](static/corntest.png)
-![OCI Vision prediction for wheat](static/wheattest.png)
-![OCI Vision prediction for sorghum](static/sorghumtest.png)
+![OCI Vision prediction for corn](static/corntest.avif)
+![OCI Vision prediction for wheat](static/wheattest.avif)
+![OCI Vision prediction for sorghum](static/sorghumtest.avif)
 
 The model returned the correct label for every image with more than 90% confidence, which is a good result for this simple example.
 

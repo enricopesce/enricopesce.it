@@ -141,11 +141,11 @@ Ora il contenuto processato e' in `YOURBUCKETNAME` ed e' pronto per l'import.
 
 Accedi alla console OCI e vai in **Analytics & AI** > **Machine Learning** > **Data Labeling** > **Dataset** > **Import dataset**.
 
-![Import dataset in OCI Data Labeling](static/import.png)
+![Import dataset in OCI Data Labeling](static/import.avif)
 
-![Configurazione import da Object Storage](static/import2.png)
+![Configurazione import da Object Storage](static/import2.avif)
 
-![Dataset cereali importato](static/dataset.png)
+![Dataset cereali importato](static/dataset.avif)
 
 ### Creare il modello
 
@@ -155,11 +155,11 @@ Crea un nuovo Project nella pagina OCI Vision e seleziona i dati di Data Labelin
 
 Vai in **Analytics & AI** > **Machine Learning** > **Vision** > **Project**.
 
-![Progetto OCI Vision](static/project.png)
+![Progetto OCI Vision](static/project.avif)
 
 Apri il progetto e crea un modello. Scegli **Image classification** come tipo e usa il dataset `grains` da OCI Data Labeling.
 
-![Creazione modello OCI Vision image classification](static/model.png)
+![Creazione modello OCI Vision image classification](static/model.avif)
 
 Conferma tutto e continua per avviare la build del modello.
 
@@ -167,7 +167,7 @@ In questa fase OCI costruisce automaticamente il modello. Il tempo dipende dalla
 
 Non devi configurare server, comprare GPU, dividere manualmente i dati o applicare algoritmi. OCI Vision gestisce il workflow di training.
 
-![Modello OCI Vision addestrato](static/trained.png)
+![Modello OCI Vision addestrato](static/trained.avif)
 
 Il modello ha un F1 score molto buono: ora possiamo testarlo.
 
@@ -175,9 +175,9 @@ Il modello ha un F1 score molto buono: ora possiamo testarlo.
 
 Ho scaricato nuove immagini casuali relative agli oggetti addestrati e le ho testate:
 
-![Predizione OCI Vision per mais](static/corntest.png)
-![Predizione OCI Vision per grano](static/wheattest.png)
-![Predizione OCI Vision per sorgo](static/sorghumtest.png)
+![Predizione OCI Vision per mais](static/corntest.avif)
+![Predizione OCI Vision per grano](static/wheattest.avif)
+![Predizione OCI Vision per sorgo](static/sorghumtest.avif)
 
 Il modello ha restituito l'etichetta corretta per ogni immagine con confidenza superiore al 90%, un buon risultato per questo semplice esempio.
 
