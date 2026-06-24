@@ -53,4 +53,4 @@ The [IaC](https://github.com/enricopesce/fn-examples/blob/main/loadfileintoadw/i
 terraform apply
 ```
 
-If you are not familiar with Terraform, we recommend checking the[official documentation](https://registry.terraform.io/providers/oracle/oci/latest/docs) and our [tutorial](https://docs.oracle.com/en-us/iaas/developer-tutorials/tutorials/tf-simple-infrastructure/01-summary.htm) and [video](https://www.youtube.com/watch?v=MjmikFgvKvI)
+If you are not familiar with Terraform, we recommend checking the[official documentation](https://registry.terraform.io/providers/oracle/oci/latest/docs) and our [tutorial](https://docs.oracle.com/en-us/iaas/Content/dev/terraform/tutorials/tf-simple-infrastructure.htm) and [video](https://www.youtube.com/watch?v=MjmikFgvKvI)

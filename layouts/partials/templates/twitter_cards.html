@@ -1,18 +1,9 @@
-{{- if .Params.cover.image -}}
+{{- $coverImage := partial "seo_cover_image.html" . -}}
+{{- if $coverImage -}}
 <meta name="twitter:card" content="summary_large_image">
-{{- if (ne $.Params.cover.relative true) }}
-<meta name="twitter:image" content="{{ .Params.cover.image | absURL }}">
+<meta name="twitter:image" content="{{ $coverImage }}">
 {{- else }}
-<meta name="twitter:image" content="{{ (path.Join .RelPermalink .Params.cover.image ) | absURL }}">
-{{- end}}
-{{- else }}
-{{- $images := partial "templates/_funcs/get-page-images" . }}
-{{- with index $images 0 }}
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="{{ .Permalink }}">
-{{- else }}
-  <meta name="twitter:card" content="summary">
-{{- end }}
+<meta name="twitter:card" content="summary">
 {{- end }}
 
 {{- with partial "seo_title.html" . | plainify }}

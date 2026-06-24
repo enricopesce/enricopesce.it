@@ -54,7 +54,7 @@ OCI Object Storage e' utile per un repository Kopia perche' offre:
 
 - Accesso compatibile S3, quindi Kopia puo' usare il tipo repository `s3`.
 - Modello con namespace e bucket dedicati per isolare i dati di backup.
-- Piu' storage tier: Standard, Infrequent Access e Archive. Per un repository Kopia attivo, parti da Standard o Infrequent Access; usa Archive solo quando il processo di restore gestisce il recupero degli oggetti prima dell'accesso. Vedi la [documentazione Oracle sugli Object Storage tiers](https://docs.oracle.com/iaas/Content/Object/Concepts/understandingstoragetiers.htm).
+- Piu' storage tier: Standard, Infrequent Access e Archive. Per un repository Kopia attivo, parti da Standard o Infrequent Access; usa Archive solo quando il processo di restore gestisce il recupero degli oggetti prima dell'accesso. Vedi la [documentazione Oracle sugli Object Storage tiers](https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/understandingstoragetiers.htm).
 - Policy IAM e customer secret key, cosi' l'accesso puo' essere limitato al bucket usato per i backup.
 
 [Kopia](https://kopia.io/docs/) e' uno strumento di backup e restore con caratteristiche importanti per repository cloud:

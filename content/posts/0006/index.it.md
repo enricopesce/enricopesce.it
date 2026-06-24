@@ -37,7 +37,7 @@ Sfrutteremo al massimo le capacita' del cloud. In questo esempio useremo la meto
 
 Il progetto `toautonomous` si trova nello stesso repository GitHub usato finora per parlare di OCI Functions: [fn-examples](https://github.com/enricopesce/fn-examples/tree/main/toautonomous). Il README del progetto descrive la procedura di configurazione dell'infrastruttura.
 
-Se non hai familiarita' con Terraform, ti consiglio di consultare la [documentazione ufficiale](https://registry.terraform.io/providers/oracle/oci/latest/docs), il [tutorial](https://docs.oracle.com/en-us/iaas/developer-tutorials/tutorials/tf-simple-infrastructure/01-summary.htm) e il [video](https://www.youtube.com/watch?v=MjmikFgvKvI).
+Se non hai familiarita' con Terraform, ti consiglio di consultare la [documentazione ufficiale](https://registry.terraform.io/providers/oracle/oci/latest/docs), il [tutorial](https://docs.oracle.com/en-us/iaas/Content/dev/terraform/tutorials/tf-simple-infrastructure.htm) e il [video](https://www.youtube.com/watch?v=MjmikFgvKvI).
 
 Nel mio caso il file `terraform.tfvars` sara' simile a questo, con valori modificati:
 

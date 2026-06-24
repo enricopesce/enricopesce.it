@@ -53,4 +53,4 @@ Il codice [IaC](https://github.com/enricopesce/fn-examples/blob/main/loadfileint
 terraform apply
 ```
 
-Se non hai familiarita' con Terraform, ti consiglio di consultare la [documentazione ufficiale](https://registry.terraform.io/providers/oracle/oci/latest/docs), il [tutorial](https://docs.oracle.com/en-us/iaas/developer-tutorials/tutorials/tf-simple-infrastructure/01-summary.htm) e il [video](https://www.youtube.com/watch?v=MjmikFgvKvI).
+Se non hai familiarita' con Terraform, ti consiglio di consultare la [documentazione ufficiale](https://registry.terraform.io/providers/oracle/oci/latest/docs), il [tutorial](https://docs.oracle.com/en-us/iaas/Content/dev/terraform/tutorials/tf-simple-infrastructure.htm) e il [video](https://www.youtube.com/watch?v=MjmikFgvKvI).

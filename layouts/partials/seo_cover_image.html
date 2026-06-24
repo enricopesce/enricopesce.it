@@ -1,0 +1,19 @@
+{{- $image := "" -}}
+{{- with .Params.cover.image -}}
+  {{- $pageBundleCover := ($.Resources.ByType "image").GetMatch (printf "*%s*" .) -}}
+  {{- $globalResourcesCover := (resources.ByType "image").GetMatch (printf "*%s*" .) -}}
+  {{- $cover := or $pageBundleCover $globalResourcesCover -}}
+  {{- if $cover -}}
+    {{- $image = $cover.Permalink -}}
+  {{- else if ne $.Params.cover.relative true -}}
+    {{- $image = . | absURL -}}
+  {{- else -}}
+    {{- $image = (path.Join $.RelPermalink .) | absURL -}}
+  {{- end -}}
+{{- else -}}
+  {{- $images := partial "templates/_funcs/get-page-images" . -}}
+  {{- with index $images 0 -}}
+    {{- $image = .Permalink -}}
+  {{- end -}}
+{{- end -}}
+{{- return $image -}}

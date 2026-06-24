@@ -46,17 +46,7 @@
   {{- $description := partial "seo_description.html" . -}}
 
   {{- if and .IsPage (eq .Section "posts") -}}
-    {{- $image := "" -}}
-    {{- with .Params.cover.image -}}
-      {{- if ne $.Params.cover.relative true -}}
-        {{- $image = . | absURL -}}
-      {{- else -}}
-        {{- $image = (path.Join $.RelPermalink .) | absURL -}}
-      {{- end -}}
-    {{- else -}}
-      {{- $images := partial "templates/_funcs/get-page-images" . -}}
-      {{- with index $images 0 }}{{ $image = .Permalink }}{{ end -}}
-    {{- end -}}
+    {{- $image := partial "seo_cover_image.html" . -}}
 
     {{- $terms := slice -}}
     {{- with .Params.tags }}{{ $terms = . }}{{ else }}{{ with .Params.keywords }}{{ $terms = . }}{{ end }}{{ end -}}

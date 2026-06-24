@@ -185,7 +185,7 @@ params:
       - summary
       - content
   editPost:
-    URL: "https://github.com/enricopesce/blog/tree/main/content"
+    URL: "https://github.com/enricopesce/enricopesce.it/blob/main/content"
     Text: "Suggest Changes"
     appendFilePath: true
   cover:

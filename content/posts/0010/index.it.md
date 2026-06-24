@@ -101,7 +101,7 @@ Scegli **VM.Standard3.Flex** o **VM.Optimized3.Flex** quando la compatibilita' x
 
 Scegli **VM.Standard.E4.Flex** quando ti serve una shape AMD x86 e E5 non e' necessaria o non e' disponibile per regione e piano di capacita'.
 
-L'architettura ARM non e' piu' solo per mobile o dispositivi a basso consumo. Per workload server puo' essere una reale alternativa alle CPU x86 classiche, se runtime, pacchetti, immagini container e stack di osservabilita' la supportano. Per approfondire, leggi la pagina Oracle [What is Arm?](https://www.oracle.com/hk/cloud/compute/arm/what-is-arm/).
+L'architettura ARM non e' piu' solo per mobile o dispositivi a basso consumo. Per workload server puo' essere una reale alternativa alle CPU x86 classiche, se runtime, pacchetti, immagini container e stack di osservabilita' la supportano. Per approfondire, leggi la pagina Oracle [What is Arm?](https://www.oracle.com/apac/cloud/compute/arm/).
 
 ## Benchmark correlati
 

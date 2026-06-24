@@ -37,7 +37,7 @@ We will make the most of the cloud capabilities. In this example, we will use th
 
 The "toautonomous" project is in the same GitHub repository used so far to talk about OCI Function [fn-examples](https://github.com/enricopesce/fn-examples/tree/main/toautonomous). The project's README describes the infrastructure configuration procedure.
 
-If you are not familiar with Terraform, I recommend referring to the [official documentation](https://registry.terraform.io/providers/oracle/oci/latest/docs) and our [tutorial](https://docs.oracle.com/en-us/iaas/developer-tutorials/tutorials/tf-simple-infrastructure/01-summary.htm) and [video](https://www.youtube.com/watch?v=MjmikFgvKvI).
+If you are not familiar with Terraform, I recommend referring to the [official documentation](https://registry.terraform.io/providers/oracle/oci/latest/docs) and our [tutorial](https://docs.oracle.com/en-us/iaas/Content/dev/terraform/tutorials/tf-simple-infrastructure.htm) and [video](https://www.youtube.com/watch?v=MjmikFgvKvI).
 
 In my case, the terraform.tfvars file will be similar to this (values altered):
 

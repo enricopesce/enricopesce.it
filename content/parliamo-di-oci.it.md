@@ -3,7 +3,7 @@ title: "Parliamo di OCI"
 description: "Uno spazio per seguire e discutere i contenuti di Enrico Pesce su Oracle Cloud Infrastructure, OCI Generative AI, OKE, serverless e automazione."
 url: "parliamo-di-oci/"
 aliases:
-  - "/it/talk-oci/"
+  - "talk-oci/"
 locale: "it_IT"
 inLanguage: "it-IT"
 lastmod: 2026-06-03T00:00:00+00:00
