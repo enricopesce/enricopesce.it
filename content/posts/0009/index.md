@@ -1,24 +1,31 @@
 ---
-title: "Kopia OCI Backup: S3 Setup Guide"
-description: "Create an encrypted Kopia backup repository on OCI Object Storage using the S3-compatible API, snapshots, policies and restore workflow."
+title: "Kopia Backup: Cloud Storage Setup Guide (OCI, S3, Backblaze B2)"
+description: "Set up Kopia for encrypted, deduplicated cloud backups on OCI Object Storage, Backblaze B2 or any S3-compatible storage. Step-by-step guide with snapshots, retention policies and restore."
 date: 2024-02-06T13:00:00+01:00
-lastmod: 2026-06-03T00:00:00+00:00
+lastmod: 2026-06-29T00:00:00+00:00
 slug: "how-to-backup-your-data-in-10-minutes-with-kopia-and-oci"
 draft: false
 cover:
-  alt: Kopia OCI Backup S3 Setup
-  caption: Kopia OCI Backup S3 Setup
+  alt: Kopia Backup Cloud Storage Setup
+  caption: Kopia Backup Cloud Storage Setup
   relative: true
   image: "static/home.webp"
 keywords:
-- "kopia oci object storage"
-- "s3 compatible backup oracle"
-- "encrypted cloud backup"
-- "kopia tutorial"
 - "kopia backup"
+- "kopia tutorial"
+- "kopia oci object storage"
+- "kopia s3"
+- "kopia repo b2"
+- "kopia backblaze b2"
+- "kopia supported storage backends"
 - "kopia repository"
 - "kopia encryption"
+- "kopia deduplication"
+- "kopia compression"
+- "kopia snapshot retention"
 - "kopia backup features"
+- "s3 compatible backup oracle"
+- "encrypted cloud backup"
 - "oci object storage backup"
 tags:
 - "OCI"
@@ -29,43 +36,68 @@ categories:
 - "Backup and Storage"
 faq:
   - question: "What is Kopia?"
-    answer: "Kopia is an open-source backup tool that creates encrypted, compressed, and deduplicated snapshots of your data. It supports many storage backends including S3-compatible services, making OCI Object Storage a natural fit."
+    answer: "Kopia is an open-source backup tool that creates encrypted, compressed, and deduplicated snapshots of your data. It supports many storage backends including S3-compatible services like OCI Object Storage and Backblaze B2."
+  - question: "What storage backends does Kopia support?"
+    answer: "Kopia supports Amazon S3, any S3-compatible service (OCI Object Storage, Backblaze B2, MinIO, Wasabi, etc.), Google Cloud Storage, Azure Blob Storage, SFTP, WebDAV, and a local filesystem. For most cloud setups the S3-compatible repository type is the easiest starting point."
+  - question: "Does Kopia support Backblaze B2?"
+    answer: "Yes. Kopia connects to Backblaze B2 using the S3-compatible API endpoint (s3.us-west-004.backblazeb2.com for the us-west-004 region). Use your B2 application key ID and application key as the access key and secret key."
   - question: "Is OCI Object Storage compatible with the S3 API?"
     answer: "Yes. OCI Object Storage provides an S3-compatible API accessible via a regional endpoint. You need to create an S3 compatibility Customer Secret Key from the OCI console and use it in place of AWS credentials."
-  - question: "How does Kopia encrypt backups stored on OCI Object Storage?"
-    answer: "Kopia encrypts data client-side before uploading. You choose a password during repository initialization, and Kopia uses it to derive encryption keys. The storage backend never sees unencrypted data."
+  - question: "How does Kopia encrypt backups?"
+    answer: "Kopia encrypts data client-side before uploading to any storage backend. You choose a password during repository initialization, and Kopia derives encryption keys from it. The storage backend never sees unencrypted data."
+  - question: "How does Kopia deduplication work?"
+    answer: "Kopia splits files into content-defined chunks and stores each unique chunk only once across all snapshots. Repeated blocks — identical files, unchanged directories, or common library files — are stored a single time and referenced by all snapshots that include them, significantly reducing storage usage over time."
 ---
 
-Kopia can use **OCI Object Storage** as an S3-compatible backend for encrypted, deduplicated and compressed backups. The practical goal of this guide is simple: create a Kopia repository on OCI, validate it, run the first snapshot, and know how to reconnect or restore data later.
+**Kopia** is an open-source backup tool that creates encrypted, deduplicated and compressed snapshots and stores them on any S3-compatible cloud storage — including **OCI Object Storage**, **Backblaze B2**, AWS S3, MinIO, and more. The practical goal of this guide is simple: create a Kopia repository on your chosen backend, validate it, run the first snapshot, and know how to reconnect or restore data later.
 
 ## Quick setup
 
 | Step | What you need |
 |------|---------------|
-| 1. Create an OCI bucket | Bucket name, namespace and region. |
-| 2. Enable S3-compatible access | Customer access key and secret key for the OCI user. |
-| 3. Create the Kopia repository | `kopia repository create s3` with the OCI S3 endpoint. |
+| 1. Choose a storage backend | OCI Object Storage, Backblaze B2, or any S3-compatible service. |
+| 2. Create a bucket and access keys | Bucket name, endpoint, access key and secret key for your provider. |
+| 3. Create the Kopia repository | `kopia repository create s3` with the provider S3 endpoint. |
 | 4. Validate the repository | `kopia repository validate-provider`. |
 | 5. Create snapshots | `kopia snapshot create <path>`. |
 
-## Why Kopia and OCI Object Storage
+## Supported storage backends
 
-OCI Object Storage is useful for a Kopia backup repository because it provides:
+Kopia supports a wide range of storage backends. For cloud backups, the most common choices are:
+
+| Backend | Repository type | Notes |
+|---------|----------------|-------|
+| OCI Object Storage | `s3` | S3-compatible endpoint per region and namespace |
+| Backblaze B2 | `s3` | S3-compatible API via `s3.<region>.backblazeb2.com` |
+| Amazon S3 | `s3` | Native S3, no custom endpoint needed |
+| Google Cloud Storage | `gcs` | Requires a service account JSON key |
+| Azure Blob Storage | `azure` | Requires storage account and access key |
+| MinIO / Wasabi | `s3` | Any S3-compatible endpoint |
+| SFTP | `sftp` | For self-hosted or NAS targets |
+| Local filesystem | `filesystem` | Useful for external drives or NFS |
+
+This guide covers the two most popular self-managed cloud options in detail: OCI Object Storage and Backblaze B2.
+
+## Why Kopia for cloud backups
+
+[Kopia](https://kopia.io/docs/) is a backup and restore tool built around three properties that matter for any cloud repository:
+
+- **Deduplication**: identical content blocks are stored once and referenced across all snapshots.
+- **Compression**: chunks are compressed before encryption, reducing storage and transfer costs.
+- **Client-side encryption**: data is encrypted locally before it leaves your machine — the storage provider never sees plaintext.
+
+Combined, these mean you get efficient, private backups without trusting your cloud provider with readable data.
+
+## Why OCI Object Storage
+
+OCI Object Storage is useful as a Kopia backend because it provides:
 
 - S3-compatible access, so Kopia can use the `s3` repository type.
 - A dedicated namespace and bucket model for isolating backup data.
 - Multiple storage tiers: Standard, Infrequent Access, and Archive. For an active Kopia repository, start with Standard or Infrequent Access; use Archive only when your restore process can handle object retrieval before access. See Oracle's [Object Storage tiers documentation](https://docs.oracle.com/en-us/iaas/Content/Object/Concepts/understandingstoragetiers.htm).
 - IAM policies and customer secret keys, so access can be limited to the bucket used for backups.
 
-[Kopia](https://kopia.io/docs/) is a backup and restore tool with features that matter for cloud repositories:
-
-- Client-side encryption before data leaves the machine.
-- Deduplication, so repeated file blocks are stored only once.
-- Compression, which reduces transferred and stored data.
-- Snapshot retention policies for hourly, daily, weekly, monthly or custom backup plans.
-- CLI, GUI and server modes, depending on how you want to operate it.
-
-For this implementation I used the Kopia documentation:
+For reference, the Kopia documentation used in this guide:
 
 - [installation guide](https://kopia.io/docs/installation/)
 - [getting-started guide](https://kopia.io/docs/getting-started/)
@@ -120,6 +152,28 @@ Running concurrency test for 30s...
 All good.
 Cleaning up temporary data...
 ```
+
+## Backblaze B2 repository
+
+Backblaze B2 is a popular low-cost alternative to OCI Object Storage. Kopia connects to it using the same `s3` repository type via B2's S3-compatible API.
+
+**What you need from Backblaze:**
+- A B2 bucket (created in the B2 dashboard)
+- An application key with read/write access to that bucket
+- The S3 endpoint for your bucket's region (visible in the bucket details page, e.g. `s3.us-west-004.backblazeb2.com`)
+
+```console
+enrico.pesce@enrico ~ % kopia repository create s3 \
+  --bucket=my-kopia-backup \
+  --region=us-west-004 \
+  --endpoint=s3.us-west-004.backblazeb2.com \
+  --access-key=<B2-keyID> \
+  --secret-access-key=<B2-applicationKey>
+```
+
+The creation flow is identical to OCI: Kopia asks for a repository password, then you can run `kopia repository validate-provider` to confirm everything works. The same snapshot and restore commands apply regardless of backend.
+
+**B2 pricing note:** B2 charges for storage and download. Kopia's deduplication and compression reduce both; enable compression for text-heavy workloads to minimize egress costs.
 
 ## Reconnect to the Kopia repository
 
@@ -186,6 +240,26 @@ enrico.pesce@enrico:/Users/enrico.pesce/Downloads
   + 1 identical snapshots until 2024-02-06 13:00:00 CET
 ```
 
+## Deduplication and compression
+
+Two features make Kopia efficient for long-running backup repositories:
+
+**Deduplication** splits each file into content-defined chunks and stores each unique chunk only once. If you back up the same 10 GB library folder every day, only the changed chunks are uploaded — not 10 GB per snapshot. This applies across all sources that share a repository, so a second machine backing up similar files benefits from chunks already stored by the first.
+
+**Compression** reduces the size of each chunk before it is encrypted and uploaded. Kopia supports several algorithms; `zstd` is a good default that balances speed and ratio. Enable it per path via policy:
+
+```console
+kopia policy set --compression=zstd $HOME/Documents
+```
+
+Check actual savings with:
+
+```console
+kopia repository status
+```
+
+The output shows original size, deduplicated size, and compressed size so you can measure the real-world benefit.
+
 ## Restore and retention basics
 
 Backups are only useful if restore is tested. Kopia can restore a file or directory from a snapshot with:
@@ -196,7 +270,20 @@ kopia snapshot restore <snapshot-id> ./restore-test
 
 Run a small restore test after creating the repository, then schedule periodic restore checks. This catches repository access, password, lifecycle and retention problems before an incident.
 
-For retention, configure policies instead of relying on manual cleanup. Kopia policies let you control snapshot frequency, retention windows and compression settings for each protected path.
+For retention, configure policies instead of relying on manual cleanup. Kopia policies let you control snapshot frequency, retention windows and compression settings for each protected path:
+
+```console
+kopia policy set \
+  --keep-latest=10 \
+  --keep-hourly=24 \
+  --keep-daily=7 \
+  --keep-weekly=4 \
+  --keep-monthly=12 \
+  --keep-annual=3 \
+  $HOME/Documents
+```
+
+This keeps the 10 most recent snapshots plus hourly, daily, weekly, monthly and annual windows — all older snapshots outside these windows are eligible for garbage collection. Run `kopia snapshot gc` to reclaim space.
 
 ## KopiaUI screenshots
 
