@@ -43,20 +43,7 @@
 {{- else if $robotsIndex }}
 <link rel="alternate" hreflang="{{ .Language.Locale | default $pageLang }}" href="{{ .Permalink }}">
 {{- end }}
-{{- if and $robotsIndex (hasPrefix (lower $pageLang) "it") (ne .Kind "page") }}
-  {{- $enFallback := "" -}}
-  {{- if .IsHome -}}
-    {{- $enFallback = "/" | absURL -}}
-  {{- else if eq .RelPermalink "/it/posts/" -}}
-    {{- $enFallback = "/posts/" | absURL -}}
-  {{- else if eq .RelPermalink "/it/tags/oci/" -}}
-    {{- $enFallback = "/tags/oci/" | absURL -}}
-  {{- end -}}
-  {{- with $enFallback }}
-<link rel="alternate" hreflang="en-US" href="{{ . }}">
-<link rel="alternate" hreflang="x-default" href="{{ . }}">
-  {{- end }}
-{{- end }}
+
 {{- if site.Params.analytics.google.SiteVerificationTag }}
 <meta name="google-site-verification" content="{{ site.Params.analytics.google.SiteVerificationTag }}">
 {{- end }}

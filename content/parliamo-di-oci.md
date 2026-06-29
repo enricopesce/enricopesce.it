@@ -2,8 +2,6 @@
 title: "Talk OCI"
 description: "A space to follow and discuss Enrico Pesce's content on Oracle Cloud Infrastructure, OCI Generative AI, OKE, serverless architecture, and automation."
 url: "talk-oci/"
-aliases:
-  - "/parliamo-di-oci/"
 locale: "en_US"
 inLanguage: "en"
 lastmod: 2026-06-03T00:00:00+00:00
