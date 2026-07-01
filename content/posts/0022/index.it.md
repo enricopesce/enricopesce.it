@@ -1,6 +1,6 @@
 ---
-title: "OCI Generative AI in Python: da dove iniziare e perché è più complicato di quanto sembra"
-description: "Perché ho costruito una raccolta di demo Python minimali per OCI Generative AI — e cosa devi sapere prima di scegliere tra SDK OCI-native e API compatibile OpenAI."
+title: "OCI Generative AI in Python: da dove iniziare"
+description: "Demo Python minimali per OCI Generative AI, e cosa sapere prima di scegliere tra SDK OCI-native e API compatibile OpenAI."
 date: 2026-06-29T10:00:00+01:00
 lastmod: 2026-06-29T10:00:00+01:00
 slug: "tutorial-python-oci-generative-ai"

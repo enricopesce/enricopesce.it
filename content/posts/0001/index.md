@@ -1,6 +1,6 @@
 ---
 title: SAML authentication on OpenVPN with OCI IAM identity domains
-description: "A guide to integrate SAML authentication to your OpenVPN server"
+description: "Step-by-step guide to configure SAML authentication for OpenVPN using OCI IAM Identity Domains, adding enterprise SSO and MFA to your VPN access."
 date: 2023-01-20T19:00:00+01:00
 lastmod: 2026-06-12T00:00:00+00:00
 draft: false

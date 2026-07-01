@@ -109,7 +109,7 @@ Use this benchmark together with:
 
 - [Performance testing with PHP and OCI Compute instances]({{< relref "/posts/0008/index.md" >}}), focused on PHP workloads.
 - [OCI Compute Standard Flex Shapes: Another CPU Multicore Benchmark]({{< relref "/posts/0011/index.md" >}}), another multicore benchmark view.
-- [Intel x86 vs. ARM Architecture: A Comparative Analysis for Server Technologies]({{< relref "/posts/0012/index.md" >}}), useful when the decision is mainly about architecture.
+- [x86 vs ARM Architecture: Server Comparison]({{< relref "/posts/0012/index.md" >}}), useful when the decision is mainly about architecture.
 - [Generative AI: Efficient Inference on Cloud CPUs]({{< relref "/posts/0018/index.md" >}}), focused on CPU inference workloads.
 
 ## FAQ

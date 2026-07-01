@@ -1,5 +1,5 @@
 ---
-title: "Creare un servizio moderno di traduzione con OCI Generative AI"
+title: "Servizio di traduzione con OCI Generative AI"
 description: "Crea una API di traduzione con OCI Generative AI: servizio multilingua enterprise-ready, consapevole del contesto e con supporto a 10 lingue."
 date: 2024-12-18T18:00:00+01:00
 lastmod: 2026-06-12T00:00:00+00:00

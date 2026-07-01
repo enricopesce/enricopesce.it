@@ -39,6 +39,8 @@ In today's cloud-native landscape, Kubernetes has become the *de facto* standard
 
 OKED is an automated tool that simplifies the deployment of Oracle Kubernetes Engine (OKE) clusters. Built on the Pulumi framework, it enables users to have a fully functional Kubernetes environment up and running in minutes—without requiring extensive expertise in either OCI or Kubernetes.
 
+This is the **Pulumi** edition of OKED. If you prefer Terraform instead, see the [Terraform edition of OKED]({{< relref "/posts/0013/index.md" >}}).
+
 > "Up and running in minutes without any prompt and OCI expertise."
 
 The tool handles all aspects of cluster deployment, from infrastructure provisioning to network configuration, making it ideal for both beginners looking to experiment with Kubernetes and experienced developers seeking a reliable foundation for production deployments.

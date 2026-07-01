@@ -40,6 +40,8 @@ Dopo 10 anni di esperienza con pratiche DevOps, automazione, infrastructure as c
 
 OKED aiuta a distribuire un'infrastruttura Kubernetes completa su OCI, incluse le dipendenze di rete necessarie, senza richiedere esperienza specifica su OCI.
 
+Questa e' l'edizione **Terraform** di OKED. Se preferisci infrastructure as code basato su Python, vedi l'[edizione Pulumi di OKED]({{< relref "/posts/0017/index.md" >}}).
+
 I requisiti principali che mi hanno spinto a sviluppare il progetto sono:
 
 - **Semplicita'**: i clienti chiedono di essere operativi in pochi minuti senza prompt complessi o competenze infrastrutturali profonde.

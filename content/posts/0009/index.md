@@ -1,6 +1,6 @@
 ---
 title: "Kopia Backup: Cloud Storage Setup Guide (OCI, S3, Backblaze B2)"
-description: "Set up Kopia for encrypted, deduplicated cloud backups on OCI Object Storage, Backblaze B2 or any S3-compatible storage. Step-by-step guide with snapshots, retention policies and restore."
+description: "Set up Kopia for encrypted, deduplicated cloud backups on OCI Object Storage, Backblaze B2, or any S3-compatible storage, with snapshots and retention."
 date: 2024-02-06T13:00:00+01:00
 lastmod: 2026-06-29T00:00:00+00:00
 slug: "how-to-backup-your-data-in-10-minutes-with-kopia-and-oci"

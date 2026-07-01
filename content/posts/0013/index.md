@@ -40,6 +40,8 @@ After 10 years of experience with DevOps practices, automation, infrastructure a
 
 OKED helps you deploy a complete Kubernetes infrastructure on OCI, including the required network dependencies, without requiring OCI expertise.
 
+This is the **Terraform** edition of OKED. If you prefer Python-based infrastructure as code instead, see the [Pulumi edition of OKED]({{< relref "/posts/0017/index.md" >}}).
+
 The main requirements that motivated me to develop this project are as follows:
 
 - **Simplicity**: Customers ask to be up and running in minutes without complex prompts or deep infrastructure expertise.

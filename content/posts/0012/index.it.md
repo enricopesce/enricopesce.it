@@ -1,12 +1,12 @@
 ---
-title: "Architettura Intel x86 vs ARM: analisi comparativa per tecnologie server"
+title: "x86 vs ARM: confronto architetture server"
 description: "Confronto tra architetture server x86 e ARM: benchmark, efficienza energetica e impatto climatico nei data center cloud."
 date: 2024-04-15T18:00:00+01:00
 lastmod: 2026-06-12T00:00:00+00:00
 draft: false
 cover:
-  alt: "Architettura Intel x86 vs ARM: analisi comparativa per tecnologie server"
-  caption: "Architettura Intel x86 vs ARM: analisi comparativa per tecnologie server"
+  alt: "x86 vs ARM: confronto architetture server"
+  caption: "x86 vs ARM: confronto architetture server"
   relative: true
   image: "static/logo.webp"
 keywords:
