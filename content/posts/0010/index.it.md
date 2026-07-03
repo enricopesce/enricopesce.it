@@ -36,6 +36,10 @@ faq:
     answer: "VM.Standard.A1.Flex (Ampere) tipicamente guida nel rapporto prezzo-prestazioni grazie al costo per OCPU inferiore e ai punteggi multicore competitivi. E5.Flex è la scelta x86 migliore per le prestazioni pure. La scelta ottimale dipende dai requisiti single-thread vs. multicore del tuo carico di lavoro."
   - question: "Ampere A1 è adatto per carichi di lavoro in produzione su OCI?"
     answer: "Sì. VM.Standard.A1.Flex è pronto per la produzione ed è usato per web server, carichi containerizzati e inferenza AI. La maggior parte del software moderno compila ed esegue su ARM64 senza modifiche. Valida sempre con il tuo benchmark specifico prima di migrare."
+related:
+- "/posts/0011"
+- "/posts/0021"
+- "/posts/0012"
 ---
 
 Se stai confrontando le **shape OCI Compute Flex**, la risposta breve di questo test Geekbench 6 e': **VM.Standard.E5.Flex** guida per performance multicore pura, **VM.Standard.A1.Flex** e' la scelta piu' interessante sul costo, mentre le shape Intel restano utili quando la compatibilita' x86 e' un requisito.

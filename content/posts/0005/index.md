@@ -28,6 +28,10 @@ faq:
     answer: "You need a custom image when your function depends on system libraries not available in the standard Fn base images, such as Oracle Instant Client for database connectivity, native binaries, or specific OS packages."
   - question: "What is the maximum container image size for OCI Functions?"
     answer: "OCI recommends keeping function images under 256 MB for fast cold starts. Larger images are technically supported but significantly increase cold start latency."
+related:
+- "/posts/0003"
+- "/posts/0004"
+- "/posts/0006"
 ---
 
 As we have seen from my other articles, it is possible to use the FN project with different programming languages using predefined container images, the officially supported languages are:

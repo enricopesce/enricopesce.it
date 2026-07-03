@@ -32,6 +32,9 @@ faq:
     answer: "You create a project in OCI Vision, upload labeled images using OCI Data Labeling, and submit a training job. The service fine-tunes the model on your dataset. Once trained, you can call it via the OCI SDK or REST API."
   - question: "Is OCI Vision available on the OCI Free Tier?"
     answer: "OCI Vision offers a free tier with 1,000 image analysis transactions per month for pre-trained models. Custom model training incurs compute costs based on training time."
+related:
+- "/posts/0019"
+- "/posts/0016"
 ---
 
 ## OCI Vision: How do we identify cereals?

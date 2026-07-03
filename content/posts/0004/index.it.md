@@ -29,6 +29,10 @@ faq:
     answer: "OCI Events supporta trigger da Object Storage, Block Volume, Compute, Networking, Identity, Database e molti altri servizi. Qualsiasi risorsa che emette OCI Events può essere collegata a un'azione Function."
   - question: "Posso configurare trigger event-driven per OCI Functions con Terraform?"
     answer: "Sì. È possibile definire OCI Event Rules, applicazioni Function e risorse Function interamente in Terraform usando il provider OCI. Questo consente architetture event-driven completamente riproducibili e versionabili."
+related:
+- "/posts/0003"
+- "/posts/0006"
+- "/posts/0007"
 ---
 
 Il servizio OCI Functions permette di eseguire codice su infrastruttura che non devi gestire. In questo [articolo]({{< relref "/posts/0003/index.md" >}}) ho presentato un esempio base di OCI Function sviluppata in Python.

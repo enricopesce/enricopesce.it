@@ -28,6 +28,10 @@ faq:
     answer: "Yes. VM.Standard.A1.Flex is cost-effective for PHP workloads and scales well on multiple cores. PHP 8+ has strong ARM compatibility, making Ampere a viable production choice for web servers running nginx with PHP-FPM."
   - question: "What is an OCI Flex Shape?"
     answer: "OCI Flex Shapes let you choose the exact number of OCPUs and amount of RAM independently, rather than picking a fixed combination. You pay only for what you allocate, making them more economical than traditional fixed-size instance types."
+related:
+- "/posts/0010"
+- "/posts/0011"
+- "/posts/0021"
 ---
 
 A while ago, I developed a [tool](https://github.com/enricopesce/php-performance) with the aim of assessing the actual performance improvement between different versions of PHP. Subsequently, I search to understand which AWS instance type was the most performant. Since AWS does not allow for custom sizing of CPU and RAM resources, I wanted to explore the differences among the various instance types and determine which one would be most cost-effective to choose.

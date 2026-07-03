@@ -25,6 +25,10 @@ faq:
     answer: "In Geekbench 6 multicore tests, E5.Flex (AMD EPYC 9J14) outperforms E4.Flex (AMD EPYC 7J13) by approximately 20-30% at the same OCPU count. E5 also has a higher max boost frequency at 3.7 GHz versus 3.5 GHz for E4."
   - question: "Which OCI shape is best for multicore workloads?"
     answer: "For maximum raw multicore performance, VM.Standard.E5.Flex is the best x86 option. For the best price-per-core ratio, VM.Standard.A1.Flex (Ampere) is highly competitive, especially when workloads can utilize many cores simultaneously."
+related:
+- "/posts/0010"
+- "/posts/0021"
+- "/posts/0012"
 ---
 
 When selecting a compute instance, factors such as raw computational power, price-to-performance ratio, and workload optimization play a significant role. Let's focus on the following standard flex shapes available in most OCI regions:

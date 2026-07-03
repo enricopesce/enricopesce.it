@@ -29,6 +29,9 @@ faq:
     answer: "Yes. OKED supports deploying OKE clusters using Always Free Ampere A1.Flex instances as worker nodes. The OKE control plane has no cost, so a functional Kubernetes cluster can run at zero compute cost."
   - question: "What is the difference between Terraform and Pulumi for OKE deployment?"
     answer: "Terraform uses HCL declarative configuration, while Pulumi lets you write infrastructure code in Python, TypeScript, or Go. Pulumi is better for complex logic with loops and dynamic resources, while Terraform has a larger OCI-specific community ecosystem."
+related:
+- "/posts/0013"
+- "/posts/0015"
 ---
 
 In today's cloud-native landscape, Kubernetes has become the *de facto* standard for container orchestration. However, setting up a production-ready Kubernetes cluster can still be a complex and time-consuming process, especially for those new to the ecosystem. Enter **OKED** (*Oracle Kubernetes Engine Deploy*), an elegant solution that streamlines the deployment of Kubernetes clusters on Oracle Cloud Infrastructure.

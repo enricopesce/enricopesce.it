@@ -28,6 +28,10 @@ faq:
     answer: "OCI Functions natively supports Go, Java, Node.js, Ruby, and Python. Because functions run on container images, any language with a Docker-compatible runtime can be used via custom images."
   - question: "Is OCI Functions available on the OCI Always Free Tier?"
     answer: "Yes. OCI Always Free includes 2 million function invocations and 400,000 GB-seconds of compute per month. This is sufficient for most development and low-traffic production use cases."
+related:
+- "/posts/0004"
+- "/posts/0005"
+- "/posts/0006"
 ---
 
 The [OCI Function](https://www.oracle.com/cloud/cloud-native/functions/) service allows you to run code on an infrastructure that you don't have to manage, in a scalable and automated way.

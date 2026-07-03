@@ -30,6 +30,10 @@ faq:
     answer: "llama.cpp è un motore di inferenza open-source in C/C++ ottimizzato per eseguire LLM quantizzati su CPU e Apple Silicon. Usa librerie BLAS per le operazioni matriciali e istruzioni SIMD AVX2/NEON per massimizzare il throughput sulle CPU moderne."
   - question: "Ampere Altra (OCI A1.Flex) è adatto per l'inferenza AI?"
     answer: "Ampere Altra eccelle nell'inferenza AI grazie all'elevata larghezza di banda della memoria, all'alto numero di core e al supporto SIMD NEON. Per modelli quantizzati sotto gli 8B di parametri, A1.Flex offre token-per-secondo competitivi a una frazione del costo GPU."
+related:
+- "/posts/0019"
+- "/posts/0021"
+- "/posts/0010"
 ---
 
 E' passato un po' di tempo dall'ultimo articolo. Ultimamente ho approfondito l'inferenza AI, cioe' il processo di esecuzione dei modelli per generare risposte, cercando di capire se servano davvero GPU costose per eseguire modelli linguistici moderni. Spoiler: **la risposta potrebbe sorprenderti**.

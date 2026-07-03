@@ -29,6 +29,9 @@ faq:
     answer: "Sì. I modelli linguistici disponibili tramite OCI Generative AI gestiscono la traduzione in molte lingue con alta accuratezza contestuale. A differenza delle API di traduzione tradizionali, i LLM preservano tono, idiomi e terminologia specifica del dominio."
   - question: "Quale modello OCI Generative AI è migliore per i compiti di traduzione?"
     answer: "Per la traduzione, Cohere Command R+ e i modelli Meta Llama 3 disponibili su OCI GenAI funzionano bene in molte lingue europee e asiatiche. Command R+ è particolarmente adatto per traduzioni strutturate a livello di documento che richiedono coerenza."
+related:
+- "/posts/0019"
+- "/posts/0022"
 ---
 
 ## La sfida della traduzione moderna

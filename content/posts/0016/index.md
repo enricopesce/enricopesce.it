@@ -28,6 +28,9 @@ faq:
     answer: "Yes. Large language models available through OCI Generative AI handle translation across many languages with high contextual accuracy. Unlike traditional translation APIs, LLMs preserve tone, idioms, and domain-specific terminology."
   - question: "Which OCI Generative AI model is best for translation tasks?"
     answer: "For translation, Cohere Command R+ and Meta Llama 3 models available on OCI GenAI perform well across European and Asian languages. Command R+ is particularly suited for structured, document-level translations requiring consistency."
+related:
+- "/posts/0019"
+- "/posts/0022"
 ---
 
 ## The Challenge with Modern Translation

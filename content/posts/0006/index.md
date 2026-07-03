@@ -29,6 +29,10 @@ faq:
     answer: "OCI Vault is a managed secrets and key management service. Using Vault with Functions lets you rotate credentials centrally without redeploying the function, and ensures secrets are never stored in code, environment variables, or container images."
   - question: "Can I connect to Oracle Autonomous Database from Python inside an OCI Function?"
     answer: "Yes. Using a custom Docker image that includes Oracle Instant Client and the python-oracledb package, you can connect to Autonomous Database using mTLS with the wallet downloaded from the OCI console."
+related:
+- "/posts/0003"
+- "/posts/0007"
+- "/posts/0002"
 ---
 
 After seeing how to create a custom image, in the [previous case]({{< ref "/posts/0005" >}}) where we installed the Oracle client, now let's try to use this custom image to connect to an Oracle database.

@@ -32,6 +32,9 @@ faq:
     answer: "Si crea un progetto in OCI Vision, si caricano immagini etichettate usando OCI Data Labeling e si invia un job di training. Il servizio esegue il fine-tuning del modello sul dataset. Una volta addestrato, può essere chiamato tramite l'OCI SDK o l'API REST."
   - question: "OCI Vision è disponibile nel Free Tier OCI?"
     answer: "OCI Vision offre un tier gratuito con 1.000 transazioni di analisi immagini al mese per i modelli pre-addestrati. Il training di modelli personalizzati comporta costi di compute in base al tempo di addestramento."
+related:
+- "/posts/0019"
+- "/posts/0016"
 ---
 
 ## OCI Vision: come identifichiamo i cereali?

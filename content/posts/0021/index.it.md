@@ -41,6 +41,10 @@ faq:
   answer: "Per nuovi workload AMD x86, E6 dovrebbe essere la prima shape da valutare. Per workload gia' su E5, conviene eseguire un benchmark a parita' di configurazione prima di migrare."
 - question: "Oracle Acceleron e' la stessa cosa di E6 Standard?"
   answer: "No. E6 Standard e' la generazione della compute shape; E6 Standard Acceleron fa parte di una famiglia Acceleron piu' recente che aggiunge accelerazione di rete e infrastruttura basata su SmartNIC."
+related:
+- "/posts/0010"
+- "/posts/0011"
+- "/posts/0008"
 ---
 
 ## In breve

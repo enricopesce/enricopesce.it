@@ -47,6 +47,9 @@ faq:
     answer: "Kopia encrypts data client-side before uploading to any storage backend. You choose a password during repository initialization, and Kopia derives encryption keys from it. The storage backend never sees unencrypted data."
   - question: "How does Kopia deduplication work?"
     answer: "Kopia splits files into content-defined chunks and stores each unique chunk only once across all snapshots. Repeated blocks — identical files, unchanged directories, or common library files — are stored a single time and referenced by all snapshots that include them, significantly reducing storage usage over time."
+related:
+- "/posts/0004"
+- "/posts/0007"
 ---
 
 **Kopia** is an open-source backup tool that creates encrypted, deduplicated and compressed snapshots and stores them on any S3-compatible cloud storage — including **OCI Object Storage**, **Backblaze B2**, AWS S3, MinIO, and more. The practical goal of this guide is simple: create a Kopia repository on your chosen backend, validate it, run the first snapshot, and know how to reconnect or restore data later.

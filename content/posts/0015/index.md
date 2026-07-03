@@ -28,6 +28,9 @@ faq:
     answer: "Query the OCI Instance Metadata Service to get the instance OCID and region, then use the OCI CLI or SDK with Instance Principal authentication to call the instance action API with the STOP action. No API keys or credentials need to be stored on disk."
   - question: "What is the OCI Instance Metadata Service (IMDS)?"
     answer: "The OCI IMDS is an HTTP endpoint at 169.254.169.254 accessible from within any OCI instance. It provides metadata such as the instance OCID, region, availability domain, shape, and VNIC details without requiring authentication."
+related:
+- "/posts/0013"
+- "/posts/0017"
 ---
 
 ## Introduction

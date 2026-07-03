@@ -28,6 +28,10 @@ faq:
     answer: "Sì. VM.Standard.A1.Flex è conveniente per i carichi PHP e scala bene su più core. PHP 8+ ha un'ottima compatibilità ARM, rendendo Ampere una scelta valida per la produzione con server web nginx e PHP-FPM."
   - question: "Cos'è una OCI Flex Shape?"
     answer: "Le OCI Flex Shape permettono di scegliere il numero esatto di OCPU e la quantità di RAM in modo indipendente, invece di scegliere una combinazione fissa. Si paga solo per ciò che si alloca, rendendole più economiche rispetto ai tipi di istanza a dimensione fissa tradizionali."
+related:
+- "/posts/0010"
+- "/posts/0011"
+- "/posts/0021"
 ---
 
 Tempo fa ho sviluppato un [tool](https://github.com/enricopesce/php-performance) con l'obiettivo di valutare il reale miglioramento di performance tra diverse versioni di PHP. Successivamente ho cercato di capire quale tipo di istanza AWS fosse piu' performante. Poiche' AWS non permette una personalizzazione libera di CPU e RAM, volevo esplorare le differenze tra le varie istanze e capire quale fosse piu' conveniente.

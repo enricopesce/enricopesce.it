@@ -1,0 +1,32 @@
+{{- /* Renders FAQ and Related-posts sections inside .post-content so the FAQPage/related
+      links in schema_json.html correspond to content that is actually visible on the page. */ -}}
+{{- if eq .Section "posts" -}}
+{{- $isIT := eq .Lang "it" -}}
+
+{{- with .Params.faq }}
+<div class="post-content md-content post-faq">
+  <h2>{{ if $isIT }}Domande frequenti{{ else }}Frequently Asked Questions{{ end }}</h2>
+  {{- range . }}
+  <h3>{{ .question }}</h3>
+  <p>{{ .answer }}</p>
+  {{- end }}
+</div>
+{{- end }}
+
+{{- with .Params.related }}
+{{- $related := slice -}}
+{{- range . -}}
+  {{- with $.Site.GetPage . }}{{ $related = $related | append . }}{{ end -}}
+{{- end -}}
+{{- with $related }}
+<div class="post-content md-content post-related">
+  <h2>{{ if $isIT }}Approfondimenti correlati{{ else }}Related posts{{ end }}</h2>
+  <ul>
+    {{- range . }}
+    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+    {{- end }}
+  </ul>
+</div>
+{{- end }}
+{{- end }}
+{{- end -}}

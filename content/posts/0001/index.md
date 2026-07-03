@@ -28,6 +28,9 @@ faq:
     answer: "Yes. You can configure OpenVPN to delegate authentication to OCI IAM Identity Domains via SAML 2.0. Users authenticate through the Identity Domain portal, which can enforce MFA policies before granting VPN access."
   - question: "Is OCI IAM Identity Domains available on the Free Tier?"
     answer: "OCI IAM Identity Domains is included at no cost in all OCI tenancies for basic identity management. The Free Tier includes up to 2 Identity Domains with core SSO and MFA capabilities."
+related:
+- "/posts/0006"
+- "/posts/0015"
 ---
 
 Identity and access management is a crucial goal in a growing organization.

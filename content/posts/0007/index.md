@@ -29,6 +29,10 @@ faq:
     answer: "Yes. OCI Functions can download objects directly from Object Storage using the OCI Python SDK, parse CSV data with pandas or the standard csv module, and insert rows into Autonomous Database. For very large files, consider chunking or using OCI Data Integration instead."
   - question: "Is a serverless data ingestion pipeline on OCI cost-effective?"
     answer: "Yes. With OCI Functions you pay only for actual execution time. Object Storage charges are minimal for typical CSV workloads. For intermittent or batch ingestion patterns, this approach is significantly cheaper than a continuously running VM or managed ETL service."
+related:
+- "/posts/0004"
+- "/posts/0006"
+- "/posts/0009"
 ---
 
 In this article, we will leverage OCI's capabilities to the fullest, embracing the following principles:

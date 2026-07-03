@@ -27,6 +27,9 @@ faq:
     answer: "Yes. OCI Always Free includes two Autonomous Database instances with 20 GB storage each. The free tier supports both ATP and ADW workload types with up to 1 OCPU and 1 GB of RAM."
   - question: "What is the difference between ATP and ADW in Oracle Autonomous Database?"
     answer: "Autonomous Transaction Processing (ATP) is optimized for mixed, high-concurrency OLTP workloads, web applications, and reporting. Autonomous Data Warehouse (ADW) is tuned for analytical queries, data warehousing, and batch processing with columnar storage and parallel execution."
+related:
+- "/posts/0006"
+- "/posts/0007"
 ---
 
 ## Introduction to the most modern cloud database in the market

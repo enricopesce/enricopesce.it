@@ -4,6 +4,8 @@ description: "Minimal Python demos for OCI Generative AI, and what to know befor
 date: 2026-06-29T10:00:00+01:00
 lastmod: 2026-06-29T10:00:00+01:00
 slug: "oci-generative-ai-python-tutorial"
+aliases:
+- "/oci-genai-python-starters-a-few-small-demos-to-get-started/"
 draft: false
 cover:
   alt: "OCI Generative AI Python Tutorial"
@@ -53,6 +55,10 @@ faq:
   answer: "openai-responses targets the newer OCI Responses API endpoint, which requires a Generative AI project OCID and a different base URL. openai-chat uses the standard chat completions endpoint and only needs a service endpoint and compartment OCID."
 - question: "Can I run these demos in OCI Cloud Shell?"
   answer: "Yes. OCI Cloud Shell already has credentials configured. Clone the repo, create a virtual environment, install the demo's requirements, and fill in the .env file."
+related:
+- "/posts/0016"
+- "/posts/0019"
+- "/posts/0018"
 ---
 
 Every time I start experimenting with a new framework or API style on OCI Generative AI, I waste the same hour rebuilding the same boilerplate: right credentials, right endpoint, right model ID format, right environment variables. Then I discover that LangChain and the OpenAI-compatible API use a different variable than the raw SDK. Then I find that the newer Responses API needs a project OCID that the chat completions endpoint does not.

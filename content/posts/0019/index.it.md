@@ -29,6 +29,10 @@ faq:
     answer: "Scegli in base al compito principale: Cohere Command R+ per RAG e documenti enterprise, Llama 3.1/3.3 70B per ragionamento generale e coding, modelli Llama più piccoli per casi d'uso a bassa latenza, e modelli di embedding per la ricerca vettoriale. La dimensione della finestra di contesto e la qualità dell'output contano più del numero di parametri."
   - question: "Tutti i modelli OCI Generative AI sono disponibili in tutte le regioni?"
     answer: "No. La disponibilità dei modelli varia per regione OCI. US East (Ashburn) e EU Francoforte hanno tipicamente la selezione più ampia. Consulta la documentazione OCI Generative AI o lo strumento OCI GenAI Catalog per la disponibilità regionale aggiornata."
+related:
+- "/posts/0016"
+- "/posts/0018"
+- "/posts/0022"
 ---
 
 OCI Generative AI e' cresciuto rapidamente: Cohere, Google, Meta, OpenAI, xAI, tutti disponibili, ciascuno con piu' varianti. Ogni volta che iniziavo un nuovo progetto dovevo consultare la documentazione per trovare il modello corretto.

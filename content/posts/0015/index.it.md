@@ -29,6 +29,9 @@ faq:
     answer: "Si interroga l'OCI Instance Metadata Service per ottenere l'OCID e la regione dell'istanza, poi si usa l'OCI CLI o SDK con autenticazione Instance Principal per chiamare l'API instance action con l'azione STOP. Non è necessario archiviare API key o credenziali su disco."
   - question: "Cos'è l'OCI Instance Metadata Service (IMDS)?"
     answer: "L'OCI IMDS è un endpoint HTTP all'indirizzo 169.254.169.254 accessibile dall'interno di qualsiasi istanza OCI. Fornisce metadati come l'OCID dell'istanza, la regione, il dominio di disponibilità, la shape e i dettagli VNIC senza richiedere autenticazione."
+related:
+- "/posts/0013"
+- "/posts/0017"
 ---
 
 ## Introduzione

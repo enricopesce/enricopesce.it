@@ -28,6 +28,10 @@ faq:
     answer: "VM.Standard.A1.Flex uses the Ampere Altra Q80-30 processor, an ARM-based CPU. It is available in the Always Free tier (up to 4 OCPUs and 24 GB RAM combined), making it the most cost-accessible OCI shape for experimentation."
   - question: "How does ARM architecture impact energy efficiency in cloud data centers?"
     answer: "ARM processors typically deliver 2-3x better performance per watt than equivalent x86 chips. For cloud providers, this translates to lower cooling costs, higher rack density, and a reduced carbon footprint per unit of compute."
+related:
+- "/posts/0010"
+- "/posts/0011"
+- "/posts/0021"
 ---
 
 ## Intel x86 vs. ARM Architecture: A Comparative Analysis for Server Technologies

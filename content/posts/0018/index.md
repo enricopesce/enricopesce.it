@@ -29,6 +29,10 @@ faq:
     answer: "llama.cpp is an open-source C/C++ inference engine optimized for running quantized LLMs on CPU and Apple Silicon. It uses BLAS libraries for matrix operations and AVX2/NEON SIMD instructions to maximize throughput on modern CPUs."
   - question: "Is Ampere Altra (OCI A1.Flex) good for AI inference?"
     answer: "Ampere Altra excels at AI inference due to its high memory bandwidth, large core count, and NEON SIMD support. For quantized models under 8B parameters, A1.Flex delivers competitive tokens-per-second at a fraction of GPU cost."
+related:
+- "/posts/0019"
+- "/posts/0021"
+- "/posts/0010"
 ---
 
 It's been a while since I last wrote here. Lately, I've been diving deep into AI inference—the process of running AI models to generate responses—specifically exploring whether we truly need expensive GPUs for running modern language models. Spoiler alert: **the answer might surprise you**.

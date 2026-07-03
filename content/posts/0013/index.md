@@ -30,6 +30,9 @@ faq:
     answer: "OKE control plane is free. Worker nodes use compute instances, which can be Always Free A1.Flex shapes (up to 4 OCPUs and 24 GB RAM combined). With Ampere nodes you can run a small but functional Kubernetes cluster at zero cost."
   - question: "What is OKED and how does it simplify OKE deployment?"
     answer: "OKED (Oracle Kubernetes Engine Deploy) is an open-source CLI tool that automates provisioning of a production-ready OKE cluster with best-practice defaults. It handles networking, IAM policies, node pools, and cluster add-ons, reducing deployment to a single command."
+related:
+- "/posts/0017"
+- "/posts/0015"
 ---
 
 ## My first OCI automation project
