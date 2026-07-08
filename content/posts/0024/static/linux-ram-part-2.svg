@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Zram, zswap and Linux swap</title><desc id="desc">Memory pages compressed into a smaller Linux swap block</desc>
+  <rect width="1200" height="630" fill="#101827"/><circle cx="1070" cy="90" r="220" fill="#22c55e" opacity=".14"/>
+  <text x="72" y="105" fill="#86efac" font-family="sans-serif" font-size="28" font-weight="700">LINUX RAM · PART 2</text>
+  <text x="72" y="175" fill="#f8fafc" font-family="sans-serif" font-size="52" font-weight="700">Compress cold pages</text>
+  <text x="72" y="220" fill="#cbd5e1" font-family="sans-serif" font-size="25">zram · zswap · swappiness</text>
+  <g fill="#60a5fa"><rect x="95" y="300" width="110" height="70" rx="10"/><rect x="225" y="300" width="110" height="70" rx="10"/><rect x="355" y="300" width="110" height="70" rx="10"/><rect x="485" y="300" width="110" height="70" rx="10"/></g>
+  <path d="M620 335h120" stroke="#f8fafc" stroke-width="10"/><path d="m720 305 40 30-40 30" fill="none" stroke="#f8fafc" stroke-width="10"/>
+  <rect x="800" y="285" width="300" height="145" rx="24" fill="#07111f" stroke="#4ade80" stroke-width="5"/>
+  <text x="865" y="345" fill="#86efac" font-family="monospace" font-size="32" font-weight="700">zram0</text>
+  <rect x="850" y="375" width="200" height="22" rx="11" fill="#1e293b"/><rect x="850" y="375" width="86" height="22" rx="11" fill="#4ade80"/>
+  <text x="95" y="500" fill="#94a3b8" font-family="sans-serif" font-size="24">pages</text><text x="858" y="500" fill="#94a3b8" font-family="sans-serif" font-size="24">less RAM, more CPU</text>
+</svg>
