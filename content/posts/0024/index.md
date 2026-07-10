@@ -29,13 +29,13 @@ faq:
   answer: "No. It trades CPU cycles for compressing cold pages and absorbing peaks; incompressible data and active working sets still require physical RAM."
 ---
 
-## In brief
+In [part 1 of this series]({{< relref "/posts/0023/index.md" >}}) I made the case for measuring memory pressure before spending money on RAM that now costs more than four times what it did a year ago. If your measurements showed short, compressible peaks — cold pages sitting around while the active working set fits fine — this is the post where compression earns its keep.
 
-With contract DRAM more than four times its Q3 2025 level, **zram and zswap can defer an upgrade**, but they do not create free memory. They spend CPU cycles compressing cold pages and work best when data is compressible and the processor has headroom.
+I want to be upfront about one thing, because "just enable zram" has become the reflexive advice in every forum thread about low memory: zram and zswap do not create free memory. They spend CPU cycles compressing pages you are not actively using. When the data compresses well and the CPU has headroom, that trade is excellent. When it doesn't, you've added a layer of complexity and gained nothing. So the goal here is not to enable everything — it's to pick one mechanism deliberately and prove it helps.
 
-This is [part 2 of the series]({{< relref "/posts/0023/index.md" >}}). The key rule is: **choose zram or zswap deliberately** instead of stacking mechanisms without measurement.
+## Zram, zswap and disk swap: what actually differs
 
-## Zram, zswap and disk swap
+The names are confusingly similar, so here is the distinction that matters. Zram is a swap device that lives entirely in RAM: pages get compressed and stay in memory, no disk involved, no fallback. Zswap is a compressed cache *in front of* a real swap device: when its pool fills up, it evicts pages to disk.
 
 | Mechanism | Page destination | Advantage | Constraint |
 |---|---|---|---|
@@ -43,7 +43,11 @@ This is [part 2 of the series]({{< relref "/posts/0023/index.md" >}}). The key r
 | zram | compressed RAM block device | fast, no disk I/O | consumes RAM and CPU, no implicit fallback |
 | zswap | compressed cache in front of swap | reduces I/O and can evict to disk | needs backing swap and more monitoring |
 
-Inventory the current system first:
+In practice: zram fits desktops and small hosts where there is no swap device worth having. Zswap fits machines that already have swap on decent storage and want fewer disk writes and lower latency on the hot part of it.
+
+## First, check what you already have
+
+This is the step that gets skipped, and it's the one that causes the weirdest problems. Many distributions ship with one of these mechanisms already enabled — and if you add a second compressed swap on top without noticing, you end up with two layers competing for the same pages.
 
 ```bash
 swapon --show --output=NAME,TYPE,SIZE,USED,PRIO
@@ -52,11 +56,11 @@ cat /sys/module/zswap/parameters/enabled 2>/dev/null || true
 cat /proc/sys/vm/swappiness
 ```
 
-Many distributions already configure one mechanism. Identify it before creating a competing compressed swap.
+If something is already configured, work with it. Tune what's there instead of bolting a competitor next to it.
 
 ## Profile A: zram on a small host
 
-For a non-persistent maintenance-window test:
+Here is a non-persistent test you can run in a maintenance window and undo completely:
 
 ```bash
 sudo modprobe zram
@@ -65,32 +69,32 @@ sudo mkswap /dev/zram0
 sudo swapon --priority 100 /dev/zram0
 ```
 
-Replace `8G` with **50–100% of physical RAM** as a starting hypothesis. Virtual size is not preallocated RAM, but memory consumption grows with stored pages. Kernel documentation notes little value above 2× RAM when assuming a 2:1 ratio.
+Replace `8G` with somewhere between 50% and 100% of physical RAM as a starting hypothesis — and treat it as exactly that, a hypothesis. The virtual size is not preallocated RAM; the device consumes memory as it receives pages. The kernel documentation notes there is little value going above 2× RAM if you assume a typical 2:1 compression ratio.
 
-Check supported algorithms:
+On the algorithm: `lz4` favors speed and low latency, `zstd` usually favors compression ratio. Which one wins depends on your data, not on someone else's benchmark. You can see what your kernel supports with:
 
 ```bash
 cat /sys/block/zram0/comp_algorithm
 ```
 
-`lz4` favors speed and latency; `zstd` often favors ratio. Benchmark your data. To remove the test, first ensure enough free memory exists to page everything back in:
+To remove the test, make sure there is enough free memory to page everything back in first, then:
 
 ```bash
 sudo swapoff /dev/zram0
 sudo zramctl --reset /dev/zram0
 ```
 
-Persistence is distribution-specific. Use the system's packaged zram generator or service with the size, algorithm and priority you validated; do not create a second service if one exists.
+Once you've validated a size, algorithm and priority, make it persistent using whatever zram generator or service your distribution packages — and resist the temptation to create a second service if one already exists.
 
 ## Profile B: zswap with disk fallback
 
-Zswap compresses pages entering swap in a dynamic pool, then may evict them to its backing device when full. Confirm real swap exists:
+Zswap compresses pages on their way to swap into a dynamic pool, and when the pool fills, it can write them out to the backing device. That means it needs real swap behind it — confirm that first:
 
 ```bash
 swapon --show
 ```
 
-Runtime test:
+For a runtime test:
 
 ```bash
 echo 1 | sudo tee /sys/module/zswap/parameters/enabled
@@ -98,43 +102,43 @@ cat /sys/module/zswap/parameters/compressor
 cat /sys/module/zswap/parameters/max_pool_percent
 ```
 
-For boot-time activation, add this through your distribution's kernel-command-line mechanism:
+To make it active from boot, add this to the kernel command line through your distribution's mechanism:
 
 ```text
 zswap.enabled=1 zswap.compressor=zstd zswap.max_pool_percent=20
 ```
 
-Twenty percent is a conservative baseline. A larger pool can retain cold pages that would be better evicted to NVMe so active work can use the RAM.
+Twenty percent is a conservative starting point, and bigger is not automatically better. A large pool can end up holding cold pages hostage in RAM when they would be better off evicted to NVMe, leaving the memory for work that actually needs it.
 
-## Swappiness: do not copy the lowest number
+## Swappiness: stop copying the lowest number you can find
 
-`vm.swappiness` represents the relative cost of swap and filesystem paging on a 0–200 scale. Zero does not fully disable swap and can postpone it until pressure is severe. Kernel documentation says **values above 100 can make sense for in-memory swap**.
+There is a whole folklore around `vm.swappiness`, most of it built on the idea that swap is bad and therefore the number should be low. What the parameter actually expresses is the relative cost of swapping versus filesystem paging, on a 0–200 scale. Setting it to zero doesn't disable swap — it postpones swapping until pressure is already severe, which is usually the worst possible moment.
 
-Start a zram test with:
+The interesting part for this post: the kernel documentation explicitly says values *above* 100 can make sense when your swap is faster than filesystem I/O — which is exactly what in-memory compressed swap is. So for a zram test, start at:
 
 ```bash
 sudo sysctl vm.swappiness=100
 ```
 
-If PSI stays low and CPU has headroom, compare 100 with 133. For disk-only swap, treat 10, 30 or 60 as benchmark hypotheses, not universal recipes.
+If PSI stays low and the CPU has headroom, compare 100 against 133 and see which your workload prefers. For plain disk swap, the traditional 10, 30 or 60 are benchmark hypotheses, not universal recipes.
 
-Persist the winning value:
+When you have a winner, persist it:
 
 ```bash
 echo 'vm.swappiness=100' | sudo tee /etc/sysctl.d/80-memory-tuning.conf
 sudo sysctl --system
 ```
 
-## Prove compression is worthwhile
+## Prove it's actually helping
 
-For zram:
+This is the part that separates a tuned system from a system with extra moving parts. For zram:
 
 ```bash
 zramctl
 cat /sys/block/zram0/mm_stat
 ```
 
-Compare original data, compressed data and total memory actually used. An 8 GiB virtual device containing 4 GiB of pages is not 8 GiB saved.
+Compare original data, compressed data, and total memory actually used. An 8 GiB virtual device holding 4 GiB of pages is not 8 GiB saved — the real saving is the difference between what the pages would occupy uncompressed and what the device uses now.
 
 For zswap:
 
@@ -142,25 +146,27 @@ For zswap:
 sudo grep -H . /sys/kernel/debug/zswap/{stored_pages,pool_total_size,written_back_pages} 2>/dev/null
 ```
 
-Debugfs may not be mounted. In both cases also record:
+(Debugfs may not be mounted on your system.) In both cases, keep recording the same signals from part 1:
 
 ```bash
 vmstat 1
 cat /proc/pressure/memory
 ```
 
-The tuning succeeds when PSI stalls and swap I/O fall without saturating CPU or worsening application latency. Poor compression, higher CPU or persistent `full` PSI means the active set needs real RAM or application limits.
+The tuning succeeded if PSI stalls and swap I/O go down without saturating the CPU or hurting application latency. If compression ratios are poor, CPU usage climbs, or `full` PSI stays high, the honest conclusion is that your active working set needs real RAM or application-level limits — not more compression.
 
-## Mistakes to avoid
+## The mistakes that keep coming back
 
-- Enabling zram and zswap together without a specific design and benchmark.
-- Sizing zram from virtual capacity alone.
-- Setting `swappiness=0` to “protect” performance.
-- Running `swapoff` under pressure; it can cause OOM.
-- Treating swap as a memory-leak fix.
-- Changing production settings without a rollback.
+A few things I would flag in any review of a memory-tuning change:
 
-[Part 3]({{< relref "/posts/0025/index.md" >}}) stops one service from consuming the whole host using systemd and cgroup v2.
+- Enabling zram *and* zswap together without a specific design and a benchmark to justify it.
+- Sizing zram by its virtual capacity, as if that were reserved savings.
+- Setting `swappiness=0` to "protect" performance.
+- Running `swapoff` on a host already under pressure — that can trigger the OOM killer directly.
+- Treating swap as a fix for a memory leak.
+- Changing production settings without writing down the rollback first.
+
+Compression protects you from peaks, but it can't stop one badly behaved service from eating the whole host. That's a containment problem, and it's what [part 3]({{< relref "/posts/0025/index.md" >}}) solves with systemd and cgroup v2.
 
 ## Sources
 

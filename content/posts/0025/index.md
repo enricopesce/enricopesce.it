@@ -29,22 +29,24 @@ faq:
   answer: "Usually not. MemorySwapMax=0 can increase pressure and bring OOM forward. Set a cap only when the latency profile requires it and after measuring PSI and memory.events."
 ---
 
-## In brief
+Everyone who has run Linux servers for a while has lived through some version of this incident: one service — a leaky app, a batch job, a runaway query — grows until the whole host starts thrashing, and by the time the OOM killer wakes up, it kills something you cared about more than the actual culprit. The zram and zswap work from [part 2]({{< relref "/posts/0024/index.md" >}}) protects you from peaks, but it does nothing against this. Compression buys headroom; it doesn't assign blame.
 
-Compression from [part 2]({{< relref "/posts/0024/index.md" >}}) protects against peaks, but it cannot stop one service starving the host. With **cgroup v2 and systemd**, `MemoryHigh` applies controlled pressure, `MemoryMax` provides the final boundary, and `MemoryLow` protects essential working sets.
+This matters more now than it used to. With RAM at 2026 prices, the natural response is to consolidate more workloads onto the hosts you already have — and consolidation is only sane if one service failing can't take the others down with it. That's what cgroup v2 and systemd give you, and the good news is that the useful subset is four settings.
 
-When RAM is expensive, consolidating workloads is sensible only if failures remain isolated.
+## Start from what the service actually uses
 
-## Verify cgroup v2 and current usage
+Before setting any limit, check that you're on cgroup v2 and look at the service's real consumption:
 
 ```bash
 stat -fc %T /sys/fs/cgroup
 systemctl show app.service -p ControlGroup -p MemoryCurrent -p MemoryPeak -p MemorySwapCurrent
 ```
 
-The first command should print `cgroup2fs`. Replace `app.service` and observe its peak under representative load. Derive the budget from the **measured working set**, not an arbitrary host percentage.
+The first command should print `cgroup2fs`. Replace `app.service` with your service and watch its peak under representative load. This is the number your budget comes from — the measured working set, not "25% of the host" or whatever arbitrary fraction feels fair.
 
-## The four important controls
+## The four settings that matter
+
+systemd exposes the cgroup v2 memory controls as unit properties:
 
 | systemd setting | cgroup v2 control | Role |
 |---|---|---|
@@ -53,18 +55,18 @@ The first command should print `cgroup2fs`. Replace `app.service` and observe it
 | `MemoryMax=` | `memory.max` | hard boundary and final OOM defense |
 | `MemorySwapMax=` | `memory.swap.max` | maximum swap charged to the cgroup |
 
-Use `MemoryHigh` as the main operational control and leave headroom before `MemoryMax`. Setting only `MemoryMax` lets a service run straight into a hard wall without an observable pressure band.
+The design intent is worth understanding, because most people reach straight for `MemoryMax` and stop there. `MemoryHigh` is meant to be your main operational control: crossing it triggers reclaim and throttling inside the cgroup, which slows the service down and shows up in your monitoring — pressure you can observe and react to. `MemoryMax` is the wall behind it. If you set only the wall, the service runs full speed into a hard OOM with no visible warning band before it.
 
-## A reversible test
+## Try it reversibly first
 
-Suppose the service has a 1.2 GiB stable working set and valid peaks below 1.6 GiB:
+Say the service has a stable working set of 1.2 GiB and legitimate peaks below 1.6 GiB. A reasonable first budget:
 
 ```bash
 sudo systemctl set-property --runtime app.service \
   MemoryHigh=1500M MemoryMax=1800M MemorySwapMax=512M
 ```
 
-Generate load and inspect:
+The `--runtime` flag means everything disappears at reboot, which is exactly what you want for a test. Now generate load and watch what happens:
 
 ```bash
 watch -n 1 'systemctl show app.service -p MemoryCurrent -p MemoryPeak -p MemorySwapCurrent'
@@ -73,18 +75,18 @@ sudo cat "/sys/fs/cgroup${CG}/memory.events"
 sudo cat "/sys/fs/cgroup${CG}/memory.pressure"
 ```
 
-In `memory.events`, rising `high` counts soft-boundary crossings. `oom` and `oom_kill` mean the budget or application needs correction. High cgroup PSI with low host PSI proves isolation works; it does not prove service latency is acceptable.
+In `memory.events`, a rising `high` counter means the service crossed the soft boundary — expected occasionally, a problem if constant. `oom` and `oom_kill` mean either the budget is wrong or the application is. One subtlety worth internalizing: high PSI inside the cgroup with low PSI on the host proves the *isolation* is working. It says nothing about whether the service's latency is still acceptable — check that separately.
 
-Remove only the test limits, without deleting any pre-existing overrides:
+To undo just the test limits without touching any pre-existing overrides:
 
 ```bash
 sudo systemctl set-property --runtime app.service \
   MemoryHigh=infinity MemoryMax=infinity MemorySwapMax=infinity
 ```
 
-## Make the budget persistent
+## Make it persistent
 
-Create an override instead of editing a packaged unit:
+Once the budget survives real load, put it in an override — never edit the packaged unit file directly:
 
 ```bash
 sudo systemctl edit app.service
@@ -104,29 +106,29 @@ sudo systemctl daemon-reload
 sudo systemctl restart app.service
 ```
 
-A restart changes service state; schedule it and validate application behavior.
+The restart is a real service interruption — schedule it like one and verify the application afterwards.
 
 ## Protect what must stay alive
 
-For a small essential service such as a proxy or monitoring agent, `MemoryLow=256M` asks the kernel to preserve that budget on a best-effort basis during reclaim. It works only when applied coherently through the hierarchy and when protections do not promise more RAM than exists.
+Limits push down; `MemoryLow` pushes the other way. For a small essential service — the proxy, the monitoring agent, the thing you need working *especially* when the host is under pressure — it asks the kernel to spare that budget during reclaim, on a best-effort basis:
 
 ```ini
 [Service]
 MemoryLow=256M
 ```
 
-Do not protect every service. If everything is priority, nothing is.
+Two caveats. It only works if applied coherently through the cgroup hierarchy, and the protections you hand out can't add up to more RAM than exists. Which leads to the obvious discipline: don't protect everything. If every service is priority, none of them is.
 
-## Predictable OOM instead of a frozen host
+## A predictable OOM beats a frozen host
 
-`systemd-oomd` uses PSI and cgroup v2 to act before pressure makes the host unusable. Check availability and status:
+Even with budgets in place, hosts can still end up in trouble, and the kernel OOM killer tends to arrive late and choose badly. `systemd-oomd` uses PSI and cgroup v2 to act earlier, while the host is still responsive:
 
 ```bash
 systemctl status systemd-oomd
 oomctl
 ```
 
-`ManagedOOMMemoryPressure=` and `ManagedOOMSwap=` depend on the systemd version and unit hierarchy. Before enabling them, check:
+The `ManagedOOMMemoryPressure=` and `ManagedOOMSwap=` directives depend on your systemd version and unit hierarchy, so check before enabling them:
 
 ```bash
 systemd --version
@@ -134,30 +136,24 @@ man systemd.resource-control
 man systemd-oomd.service
 ```
 
-A controlled OOM is still an outage. Configure sensible restart behavior, protect data consistency, and alert differently for an intentional kill and a crash.
+And keep perspective: a controlled OOM is still an outage. Make sure the unit has a sensible restart policy, that data stays consistent through a kill, and that your alerting can tell an intentional kill from a crash.
 
-## Containers: verify the real limit
+## Containers: verify the limit actually exists
 
-Container runtimes translate limits into cgroups. Verify at the kernel level, not only in orchestration YAML:
+Container runtimes translate their memory limits into these same cgroups — which means the YAML can say one thing and the kernel another. Verify at the kernel level:
 
 ```bash
 systemd-cgls
 systemd-cgtop --depth=3
 ```
 
-An unlimited container is not isolated from host RAM. A limit below its normal working set causes reclaim and restarts; a huge limit exists only on paper. Apply the same baseline, soft boundary, hard defense and `memory.events` monitoring.
+A container with no limit is not isolated from host RAM at all. A limit below its normal working set means constant reclaim and restarts. A huge limit exists only on paper. The same method applies unchanged: baseline the working set, set a soft boundary with headroom, keep a hard defense behind it, and watch `memory.events`.
 
-## Allocation strategy
+## Don't allocate memory that isn't there
 
-On a 16 GiB host, do not distribute 16 GiB of `MemoryMax` as if the kernel, page cache and peaks did not exist. Reserve capacity for:
+Last trap: on a 16 GiB host, don't hand out 16 GiB of `MemoryMax` across your services as if the kernel, the page cache and simultaneous peaks didn't exist. Leave explicit room for the kernel and its slab caches, the filesystem cache doing useful work, the access/logging/monitoring services, realistic overlapping peaks, zram or zswap if you enabled them in part 2 — and enough headroom that you can still SSH in and fix things when something goes wrong.
 
-- kernel, slab and filesystem cache;
-- access, logging and monitoring services;
-- realistic simultaneous peaks;
-- zram or zswap, when enabled;
-- administrative recovery headroom.
-
-[Part 4]({{< relref "/posts/0026/index.md" >}}) turns every measurement into a before/after benchmark and a buy-or-optimize decision.
+At this point in the series you can measure pressure, absorb peaks with compression, and contain individual services. [Part 4]({{< relref "/posts/0026/index.md" >}}) puts it all together: a before/after benchmark and an honest answer to the question that started everything — optimize, or buy the RAM.
 
 ## Sources
 

@@ -29,15 +29,13 @@ faq:
   answer: "When useful load is unchanged and, after fixing leaks, caches, concurrency and isolation, full PSI, swap-in, latency and OOM remain above objectives. The physical working set then does not fit available memory."
 ---
 
-## In brief
+If you search "reduce Linux RAM usage", what you mostly find is lists of sysctls to paste — set swappiness to this, drop the caches, disable that. I've never seen that approach survive contact with a real production host. What works is much less glamorous: a measure-change-verify cycle, applied in the right order — shrink the application working set first, isolate services second, compress third, and buy RAM only when the numbers prove nothing else will do.
 
-The effective way to **reduce Linux RAM usage** is not a list of sysctls. It is a controlled measure-change-verify cycle. Shrink the application working set first, isolate services second, then use compression and swap; buy RAM only when pressure remains incompatible with objectives.
+This is the final part of the series. It ties together the [pressure measurements from part 1]({{< relref "/posts/0023/index.md" >}}), the [zram and zswap profiles from part 2]({{< relref "/posts/0024/index.md" >}}), and the [systemd/cgroup limits from part 3]({{< relref "/posts/0025/index.md" >}}) into a plan you can run start to finish.
 
-This concludes the series that began with [prices and diagnosis]({{< relref "/posts/0023/index.md" >}}), continued with [zram and zswap]({{< relref "/posts/0024/index.md" >}}), and added [systemd/cgroup limits]({{< relref "/posts/0025/index.md" >}}).
+## 1. Define the load and the budget
 
-## 1. Define load and budget
-
-Choose a repeatable window with the same dataset, concurrency and duration. Record at least:
+Nothing else in this plan means anything without a repeatable test window: same dataset, same concurrency, same duration. Record at least:
 
 ```bash
 date -Is
@@ -47,89 +45,91 @@ vmstat 1 60
 ps -eo pid,user,comm,rss,%mem --sort=-rss | head -n 25
 ```
 
-Add p95/p99 latency, throughput, errors and job duration. “Less RAM” is not an optimization if it halves useful work.
+Alongside the system numbers, capture the application ones — p95/p99 latency, throughput, error rate, job duration. This is the guard rail for the whole exercise: "less RAM" is not an optimization if it comes with half the useful work.
 
-## 2. Remove only what is unnecessary
+## 2. Remove only what is genuinely unnecessary
 
-List running services and major cgroups:
+Start with what's actually running:
 
 ```bash
 systemctl --type=service --state=running
 systemd-cgtop --depth=2
 ```
 
-For each candidate, identify its owner, dependencies and rollback. For a confirmed unnecessary service:
+For each candidate, answer three questions before touching it: who uses this, what depends on it, and how do I bring it back. Only then:
 
 ```bash
 sudo systemctl disable --now example.service
 ```
 
-Do not blindly disable security, networking, logging or cloud-management agents. A few MiB is not worth an unmanageable machine.
+The temptation here is to go hunting for every last daemon. Don't disable security agents, networking, logging or cloud-management tooling to save a few MiB — the savings are trivial and the machine you get back is one you can't manage anymore.
 
 ## 3. Reduce concurrency, heaps and caches at the source
 
-A cgroup limit protects the host; correct application configuration avoids hitting it. Find three multipliers:
+This is where the real memory is, and it's the step people skip because it means opening application configs instead of typing sysctls. A cgroup limit protects the host; correct application sizing is what keeps you from hitting that limit in the first place. Three multipliers are worth hunting:
 
-- **workers and threads:** 32 processes at 200 MiB consume 6.4 GiB before shared caches;
-- **maximum heap:** JVMs, runtimes and databases commonly expose an explicit cap;
-- **unbounded caches:** limit bytes or entries and define eviction.
+- **Workers and threads.** 32 worker processes at 200 MiB each is 6.4 GiB before you've counted any shared caches. Worker counts are usually set once, generously, and never revisited.
+- **Maximum heap.** JVMs, language runtimes and databases almost always expose an explicit cap — check whether yours reflects what the application needs or what someone guessed years ago.
+- **Unbounded caches.** Any in-process cache without a byte or entry limit will eventually find one for you. Give it a bound and an eviction policy.
 
-Change one variable at a time. Compare throughput per GiB and latency, not only RSS. If halving workers cuts RAM 40% but throughput only 5%, that is a real improvement. Periodic restarts mitigate a leak; they do not fix it.
+Change one variable at a time, and judge by throughput per GiB and latency, not by RSS alone. If halving the workers cuts RAM by 40% and throughput by only 5%, you've found a real improvement. And if a service leaks: periodic restarts are a mitigation, not a fix — don't let them become permanent architecture.
 
-## 4. Bound tmpfs
+## 4. Put a bound on tmpfs
 
-`tmpfs` can grow into memory and swap. Inspect it:
+Easy to forget: `tmpfs` grows into memory and swap like anything else. See what you have:
 
 ```bash
 findmnt -t tmpfs
 df -h -t tmpfs
 ```
 
-For a mount managed in `/etc/fstab`, set a workload-appropriate cap:
+For a mount you manage in `/etc/fstab`, set a size that matches the workload:
 
 ```fstab
 tmpfs /srv/app-tmp tmpfs rw,nosuid,nodev,size=1G 0 0
 ```
 
-Size is a maximum, not preallocation. Measure the peak and test how the application handles `ENOSPC` before lowering it. Do not confuse disk-backed `/tmp` with tmpfs.
+The size is a maximum, not a preallocation, so bounding it costs nothing when usage is normal. Before lowering an existing one, measure the actual peak and test how the application reacts to `ENOSPC`. And check what you're actually dealing with — a disk-backed `/tmp` is not a tmpfs.
 
 ## 5. Apply service budgets
 
-Use the [part 3]({{< relref "/posts/0025/index.md" >}}) pattern: `MemoryHigh` just above normal working set, `MemoryMax` as final defense, and `MemoryLow` only for essential components.
+Now apply the pattern from part 3 to the services that matter: `MemoryHigh` just above the normal working set, `MemoryMax` as the final defense, `MemoryLow` only for the truly essential components.
 
-Test a batch command in a transient scope:
+For batch jobs, a transient scope lets you test a budget without writing any unit files:
 
 ```bash
 systemd-run --user --scope -p MemoryHigh=2G -p MemoryMax=2500M ./job.sh
 ```
 
-The job must handle slowdown, failure and retry. A limit does not automatically make a memory-hungry application efficient.
+One expectation to set: the job has to handle being slowed down, failing, and retrying. A limit contains a memory-hungry application; it doesn't make it efficient.
 
 ## 6. Choose zram or zswap
 
-If cold compressible pages remain, apply one profile from [part 2]({{< relref "/posts/0024/index.md" >}}). Keep it only when:
+If after all of the above you still have cold, compressible pages, apply one of the two profiles from part 2 — one, not both. Keep the configuration only if the full picture improves:
 
-- PSI `some` and `full` fall;
-- disk swap-in/out and I/O wait fall;
-- CPU retains headroom;
-- p95 and p99 do not regress;
+- PSI `some` and `full` go down;
+- disk swap-in/out and I/O wait go down;
+- the CPU keeps headroom;
+- p95 and p99 latency don't regress;
 - no new OOM events appear.
 
-## 7. Do not turn sysctls into superstition
+If any of those fail, compression is costing you more than it saves. Take it out.
 
-Keep defaults until measurements identify a problem:
+## 7. Don't turn sysctls into superstition
 
-- `vm.swappiness` expresses relative paging cost; it is not a RAM switch;
-- `vm.vfs_cache_pressure` can reclaim dentries/inodes more aggressively but hurt filesystem workloads;
-- `vm.overcommit_memory` controls virtual allocation admission, not working-set size;
-- `vm.drop_caches` is a test tool, not periodic maintenance;
-- Transparent Huge Pages help some workloads and harm others; they are not a generic RAM-saving feature.
+I left the sysctls for last on purpose, because that's where they belong. Keep the defaults until a measurement points at a specific problem:
 
-For every persistent change, record the old value, reason, date and rollback command.
+- `vm.swappiness` expresses the relative cost of paging — it's not a RAM switch;
+- `vm.vfs_cache_pressure` can reclaim dentries and inodes more aggressively, and hurt filesystem-heavy workloads doing it;
+- `vm.overcommit_memory` controls admission of virtual allocations — it does nothing to your working set;
+- `vm.drop_caches` is a testing tool, not periodic maintenance;
+- Transparent Huge Pages help some workloads and hurt others — they are not a generic RAM saver.
 
-## Before/after table
+For every change you do keep, write down the old value, the reason, the date, and the rollback command. Future you, at 3 AM, will be grateful.
 
-Run each configuration at least three times:
+## The before/after table
+
+This is the deliverable of the whole series. Run each configuration at least three times and fill it in:
 
 | KPI | Before | After | Goal |
 |---|---:|---:|---:|
@@ -142,26 +142,28 @@ Run each configuration at least three times:
 | Throughput |  |  | unchanged or better |
 | OOM/restarts |  |  | zero unexpected |
 
-Do not judge from one spike. Compare median and worst case over equivalent windows.
+Don't judge from a single spike in either direction. Compare medians and worst cases over equivalent windows.
 
-## When to buy RAM despite the price
+## When buying RAM is the right answer
 
-Purchasing is rational when all these are true:
+After a whole series about not buying RAM, it's only fair to say clearly when you should. The purchase is rational when all of these hold:
 
-1. the load is useful and cannot be removed;
+1. the load is useful and can't be removed;
 2. no leaks or unbounded caches remain;
-3. concurrency and heaps are sized;
-4. cgroups stop one service destabilizing the host;
-5. compression and swap cannot meet latency/CPU SLOs;
-6. `full` PSI, paging or OOM remain repeatable.
+3. concurrency and heaps are properly sized;
+4. cgroups stop any one service from destabilizing the host;
+5. compression and swap can't meet your latency and CPU objectives;
+6. `full` PSI, paging or OOM events remain, repeatably.
 
-At that point you are buying a physical working set demonstrated by evidence. With multiplied DRAM prices, the benchmark prevents both a premature upgrade and weeks of tuning a machine that is simply undersized.
+At that point you're not throwing money at a symptom — you're buying a physical working set that the evidence says doesn't fit. Even at multiplied DRAM prices, that's the right call, and the benchmark is what protects you from both failure modes: the premature upgrade, and the weeks spent tuning a machine that was simply undersized.
 
-## Final checklist
+## The checklist
+
+Everything from the four parts, in order:
 
 - [ ] Baseline recorded with load and SLOs
 - [ ] Top processes checked with RSS/PSS
-- [ ] Unnecessary services removed with rollback
+- [ ] Unnecessary services removed, with rollback
 - [ ] Workers, heaps, caches and tmpfs bounded
 - [ ] `MemoryHigh` and `MemoryMax` tested
 - [ ] zram **or** zswap measured
