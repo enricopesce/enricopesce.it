@@ -21,6 +21,16 @@ Use Markdown for content and YAML for front matter/configuration. Keep YAML inde
 
 Avoid editing `themes/PaperMod/` for site-specific changes; prefer overrides in `layouts/` or assets under the site root.
 
+## SEO Indexing Policy
+
+The canonical indexing policy lives in `layouts/partials/seo_should_index.html` and is reused by the page head and `layouts/sitemap.xml`. Keep the two in sync by changing that partial rather than adding one-off robots directives.
+
+- Index canonical articles and useful taxonomy hubs. A tag or category term becomes indexable only when it contains at least two articles.
+- Single-article taxonomy archives must remain `noindex, follow` and absent from the sitemap: they add little unique value beyond their canonical article, while `follow` preserves their internal links for crawlers.
+- Search pages and pagination page 2 onward must remain `noindex, follow`. Pagination uses the first page as canonical.
+- Do not treat Google Search Console's “Excluded by noindex” as an error when it corresponds to these intentional pages. Investigate “Crawled, currently not indexed” on canonical articles or established topic hubs.
+- Validate SEO-policy changes with a production Hugo build, then inspect representative rendered output: one single-article term must be `noindex`; a multi-article hub such as `/tags/oci/` must be indexable; sitemap URLs must exclude the thin term.
+
 ## Testing Guidelines
 
 There is no separate automated test suite. Validate changes by running `./hugo --gc --minify` before committing. For content or layout changes, also run `./hugo server -D` and inspect the affected page, archive listing, navigation, metadata, and asset loading in a browser.
@@ -34,3 +44,5 @@ Pull requests should include a concise summary, the validation command run, link
 ## Security & Configuration Tips
 
 Do not commit secrets, private analytics credentials, or generated build output. Public configuration such as the Google Tag Manager container ID belongs in `config.yml`; environment-specific credentials should stay outside the repository.
+
+Search Console CSV exports used for temporary analysis belong in `cacca/`; keep them untracked unless there is an explicit decision to preserve a dated dataset in the repository.
