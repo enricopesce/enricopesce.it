@@ -153,7 +153,7 @@ Un container senza limite non è affatto isolato dalla RAM dell'host. Un limite 
 
 Ultima trappola: su un host da 16 GiB, non distribuire 16 GiB di `MemoryMax` tra i servizi come se il kernel, la page cache e i picchi simultanei non esistessero. Lascia spazio esplicito per il kernel e le sue slab cache, per la cache del filesystem che fa lavoro utile, per i servizi di accesso, logging e monitoring, per picchi sovrapposti realistici, per zram o zswap se li hai abilitati nella parte 2 — e abbastanza margine da poter ancora entrare in SSH e sistemare le cose quando qualcosa va storto.
 
-A questo punto della serie sai misurare la pressione, assorbire i picchi con la compressione e contenere i singoli servizi. La [parte 4]({{< relref "/posts/0026/index.it.md" >}}) mette tutto insieme: un benchmark prima/dopo e una risposta onesta alla domanda da cui è partito tutto — ottimizzare, o comprare la RAM.
+A questo punto della serie sai misurare la pressione, assorbire i picchi con la compressione e contenere i singoli servizi. La [parte 4](/it/ridurre-consumo-ram-linux-piano-benchmark/) mette tutto insieme: un benchmark prima/dopo e una risposta onesta alla domanda da cui è partito tutto — ottimizzare, o comprare la RAM.
 
 ## Fonti
 

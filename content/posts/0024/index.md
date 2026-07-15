@@ -166,7 +166,7 @@ A few things I would flag in any review of a memory-tuning change:
 - Treating swap as a fix for a memory leak.
 - Changing production settings without writing down the rollback first.
 
-Compression protects you from peaks, but it can't stop one badly behaved service from eating the whole host. That's a containment problem, and it's what [part 3]({{< relref "/posts/0025/index.md" >}}) solves with systemd and cgroup v2.
+Compression protects you from peaks, but it can't stop one badly behaved service from eating the whole host. That's a containment problem, and it's what [part 3](/limit-linux-service-ram-systemd-cgroup-v2/) solves with systemd and cgroup v2.
 
 ## Sources
 

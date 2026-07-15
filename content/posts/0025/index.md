@@ -153,7 +153,7 @@ A container with no limit is not isolated from host RAM at all. A limit below it
 
 Last trap: on a 16 GiB host, don't hand out 16 GiB of `MemoryMax` across your services as if the kernel, the page cache and simultaneous peaks didn't exist. Leave explicit room for the kernel and its slab caches, the filesystem cache doing useful work, the access/logging/monitoring services, realistic overlapping peaks, zram or zswap if you enabled them in part 2 — and enough headroom that you can still SSH in and fix things when something goes wrong.
 
-At this point in the series you can measure pressure, absorb peaks with compression, and contain individual services. [Part 4]({{< relref "/posts/0026/index.md" >}}) puts it all together: a before/after benchmark and an honest answer to the question that started everything — optimize, or buy the RAM.
+At this point in the series you can measure pressure, absorb peaks with compression, and contain individual services. [Part 4](/reduce-linux-ram-usage-plan-benchmark/) puts it all together: a before/after benchmark and an honest answer to the question that started everything — optimize, or buy the RAM.
 
 ## Sources
 

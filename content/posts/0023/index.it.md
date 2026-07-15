@@ -45,7 +45,7 @@ faq:
 
 La prima volta che quest'anno ho guardato il prezzo di un upgrade di memoria, ho dato per scontato che il listino fosse sbagliato. Non lo era. I prezzi contrattuali della DRAM sono oggi oltre quattro volte quelli del terzo trimestre 2025, e improvvisamente una domanda che non richiedeva nemmeno di pensarci — "aggiungo RAM e via?" — merita di nuovo tempo da ingegnere.
 
-Questa serie nasce da lì. Per anni buttare memoria sul problema è stata la mossa razionale: la RAM costava poco, le ore di lavoro no. Nel 2026 quel conto si è ribaltato, e prima di spendere a questi prezzi conviene capire se il limite è vera pressione di memoria, cache recuperabile che *sembra* solo consumo, o un singolo processo che nessuno guarda da mesi. Questa prima parte costruisce la risposta — una baseline attendibile. La [parte 2 configura swap, zram e zswap]({{< relref "/posts/0024/index.it.md" >}}), la [parte 3 contiene i servizi con i cgroup]({{< relref "/posts/0025/index.it.md" >}}) e la [parte 4 mette tutto insieme in un piano e in una decisione compro/ottimizzo]({{< relref "/posts/0026/index.it.md" >}}).
+Questa serie nasce da lì. Per anni buttare memoria sul problema è stata la mossa razionale: la RAM costava poco, le ore di lavoro no. Nel 2026 quel conto si è ribaltato, e prima di spendere a questi prezzi conviene capire se il limite è vera pressione di memoria, cache recuperabile che *sembra* solo consumo, o un singolo processo che nessuno guarda da mesi. Questa prima parte costruisce la risposta — una baseline attendibile. La [parte 2 configura swap, zram e zswap](/it/zram-zswap-swap-linux-configurazione/), la [parte 3 contiene i servizi con i cgroup](/it/limitare-ram-servizi-linux-systemd-cgroup-v2/) e la [parte 4 mette tutto insieme in un piano e in una decisione compro/ottimizzo](/it/ridurre-consumo-ram-linux-piano-benchmark/).
 
 ## Oltre quattro volte — ma quale prezzo?
 
@@ -151,7 +151,7 @@ Alla fine delle 24 ore, i numeri puntano in una di poche direzioni, e ognuna cor
 
 - **PSI basso, niente swap-in, available stabile:** non comprare RAM solo perché `used` sembra alto. Qui non c'è nessun problema.
 - **Un processo cresce e non torna mai indietro:** caccia a leak e cache senza limite, prima di toccare l'hardware.
-- **Picchi brevi di pagine fredde comprimibili:** zram o zswap possono assorbirli — è la [parte 2]({{< relref "/posts/0024/index.it.md" >}}).
+- **Picchi brevi di pagine fredde comprimibili:** zram o zswap possono assorbirli — è la [parte 2](/it/zram-zswap-swap-linux-configurazione/).
 - **Un servizio affama tutti gli altri:** è un problema di contenimento per i limiti cgroup — parte 3.
 - **PSI e swap-in restano alti dopo il tuning, a carico utile stabile:** ora, e solo ora, l'espansione fisica è sostenuta dai dati.
 

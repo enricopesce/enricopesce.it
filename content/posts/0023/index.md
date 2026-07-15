@@ -45,7 +45,7 @@ faq:
 
 The first time I priced out a memory upgrade this year, I assumed the listing was wrong. It wasn't. DRAM contract prices are now more than four times what they were in the third quarter of 2025, and suddenly a question that used to be a no-brainer — "should I just add RAM?" — is worth actual engineering time again.
 
-That's what this series is about. For years, throwing memory at the problem was the rational move: RAM was cheap, engineer hours weren't. In 2026 that math has flipped, and before spending money at these prices you want to know whether the constraint is real memory pressure, reclaimable cache that only *looks* like consumption, or one process that nobody has looked at in months. This first part builds that answer — a reliable baseline. [Part 2 configures swap, zram and zswap]({{< relref "/posts/0024/index.md" >}}), [part 3 contains services with cgroups]({{< relref "/posts/0025/index.md" >}}), and [part 4 puts it all together into a plan and a buy-or-optimize decision]({{< relref "/posts/0026/index.md" >}}).
+That's what this series is about. For years, throwing memory at the problem was the rational move: RAM was cheap, engineer hours weren't. In 2026 that math has flipped, and before spending money at these prices you want to know whether the constraint is real memory pressure, reclaimable cache that only *looks* like consumption, or one process that nobody has looked at in months. This first part builds that answer — a reliable baseline. [Part 2 configures swap, zram and zswap](/zram-zswap-linux-swap-configuration/), [part 3 contains services with cgroups](/limit-linux-service-ram-systemd-cgroup-v2/), and [part 4 puts it all together into a plan and a buy-or-optimize decision](/reduce-linux-ram-usage-plan-benchmark/).
 
 ## More than four times — but which price?
 
@@ -151,7 +151,7 @@ At the end of the 24 hours, the numbers point in one of a few directions, and ea
 
 - **Low PSI, no swap-in, stable available memory:** don't buy RAM just because `used` looks high. There's no problem here.
 - **One process grows and never comes back down:** hunt for leaks or unbounded caches before touching hardware.
-- **Short peaks of compressible cold pages:** zram or zswap can absorb them — that's [part 2]({{< relref "/posts/0024/index.md" >}}).
+- **Short peaks of compressible cold pages:** zram or zswap can absorb them — that's [part 2](/zram-zswap-linux-swap-configuration/).
 - **One service starves all the others:** that's a containment problem for cgroup limits — part 3.
 - **PSI and swap-in stay high after tuning, at steady useful load:** now, and only now, physical expansion is backed by evidence.
 

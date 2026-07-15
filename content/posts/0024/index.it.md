@@ -172,7 +172,7 @@ Alcune cose che segnalerei in qualsiasi review di una modifica al tuning della m
 - Usare lo swap come soluzione a un memory leak.
 - Cambiare impostazioni in produzione senza aver scritto prima il rollback.
 
-La compressione ti protegge dai picchi, ma non può impedire a un servizio che si comporta male di mangiarsi tutto l'host. Quello è un problema di contenimento, ed è quello che la [parte 3]({{< relref "/posts/0025/index.it.md" >}}) risolve con systemd e cgroup v2.
+La compressione ti protegge dai picchi, ma non può impedire a un servizio che si comporta male di mangiarsi tutto l'host. Quello è un problema di contenimento, ed è quello che la [parte 3](/it/limitare-ram-servizi-linux-systemd-cgroup-v2/) risolve con systemd e cgroup v2.
 
 ## Fonti
 
