@@ -1,7 +1,7 @@
 ---
 title: "Limitare la RAM dei servizi Linux con systemd e cgroup v2"
 description: "Come usare MemoryHigh, MemoryMax, MemoryLow e MemorySwapMax per impedire che un servizio Linux porti l'intero host in OOM."
-date: 2026-07-24T09:00:00+00:00
+date: 2026-07-21T09:00:00+00:00
 lastmod: 2026-07-08T00:00:00+00:00
 slug: "limitare-ram-servizi-linux-systemd-cgroup-v2"
 draft: false

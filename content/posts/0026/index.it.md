@@ -1,7 +1,7 @@
 ---
 title: "Ridurre il consumo di RAM su Linux: piano pratico e benchmark finale"
 description: "Un piano Linux in sette passi per ridurre RAM: servizi, worker, cache, tmpfs, cgroup, zram e criteri misurabili per decidere se acquistare memoria."
-date: 2026-07-31T09:00:00+00:00
+date: 2026-07-22T00:00:00+00:00
 lastmod: 2026-07-08T00:00:00+00:00
 slug: "ridurre-consumo-ram-linux-piano-benchmark"
 draft: false

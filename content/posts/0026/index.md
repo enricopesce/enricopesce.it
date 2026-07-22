@@ -1,7 +1,7 @@
 ---
 title: "Reduce Linux RAM Usage: A Practical Plan and Final Benchmark"
 description: "A seven-step Linux plan for reducing RAM through services, workers, caches, tmpfs, cgroups and zram, with measurable purchase criteria."
-date: 2026-07-31T09:00:00+00:00
+date: 2026-07-22T00:00:00+00:00
 lastmod: 2026-07-08T00:00:00+00:00
 slug: "reduce-linux-ram-usage-plan-benchmark"
 draft: false
