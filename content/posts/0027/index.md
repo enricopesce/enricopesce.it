@@ -35,14 +35,17 @@ With Oracle Zero Data Loss Autonomous Recovery Service and Cloud Protect, you ca
 
 The database keeps running where it is; RMAN backups, archive logs, and redo are transferred securely to the recovery service.
 
+Oracle describes [Zero Data Loss Autonomous Recovery Service](https://www.oracle.com/database/zero-data-loss-autonomous-recovery-service/) as a fully managed data-protection service. [Zero Data Loss Cloud Protect](https://docs.oracle.com/en/cloud/paas/recovery-service/dbrsu/protecting-premises-databases-using-recovery-service.html) extends that protection to eligible on-premises Oracle Databases through the Cloud Protect Fleet Agent.
+
 ## What the customer gets
 
-- Centralized Oracle RMAN full and incremental backups.
-- Archive-log protection and, with Real-Time Redo, protection for the most recent transactions.
-- Recovery points that can be selected over time.
-- Encrypted backups and centrally managed retention policies.
-- Monitoring of protection status.
-- Less dependence on manual procedures, local scripts, and backup storage to manage.
+- **A defined recovery target instead of a generic “nightly backup.”** RMAN Level 0 and Level 1 backups, archive logs, and—when Real-Time Redo is enabled—the latest committed transactions are protected centrally. Real-Time Redo can reduce data-loss exposure to less than one second; the actual RPO must still be agreed and validated for the individual environment.
+- **A usable recovery path after ransomware or logical corruption.** The team can select a recovery point before the incident and restore from Recovery Service, rather than depending only on the last full backup. Oracle documents continuous recovery validation and point-in-time recovery as service capabilities.
+- **Backups protected from operational mistakes.** Backups are encrypted; protection policies govern retention and can use retention lock for immutability. Cloud Protect is designed to provide logically air-gapped, immutable backups for eligible on-premises databases.
+- **One control plane for distributed databases.** Administrators can see protected databases, protection and recoverability status, backup usage, and the assigned policy in OCI instead of reconciling local scripts and storage across sites.
+- **Less work on the production database and for the operations team.** Incremental-forever protection removes the routine need for weekly full backups, while the managed service centralizes backup lifecycle and validation activities.
+
+In practical terms, the customer receives an agreed RPO/RTO design, a monitored recovery posture, and documented restore procedures—not simply another location where backup files are stored.
 
 The objective is to minimize the RPO: the amount of data the organization risks losing after an incident.
 
@@ -105,3 +108,10 @@ Continuous protection answers more important questions:
 You do not need a full migration to OCI to start improving data resilience. The customer can keep Oracle Database where it makes sense for the business and use OCI as a centralized protection and recovery platform.
 
 *Each implementation must be validated for its specific environment: Oracle version, TDE, connectivity, network capacity, RPO/RTO, retention, and restore testing are essential project elements.*
+
+## Official Oracle resources
+
+- [Oracle Database Zero Data Loss Autonomous Recovery Service overview](https://www.oracle.com/database/zero-data-loss-autonomous-recovery-service/)
+- [Zero Data Loss Autonomous Recovery Service features](https://www.oracle.com/database/zero-data-loss-autonomous-recovery-service/features/)
+- [Oracle documentation: protecting on-premises databases with Zero Data Loss Cloud Protect](https://docs.oracle.com/en/cloud/paas/recovery-service/dbrsu/protecting-premises-databases-using-recovery-service.html)
+- [Oracle documentation: Recovery Service overview](https://docs.oracle.com/en/cloud/paas/recovery-service/dbrsu/about-recovery-service.html)

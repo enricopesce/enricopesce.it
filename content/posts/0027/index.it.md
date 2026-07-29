@@ -35,14 +35,17 @@ Con Oracle Zero Data Loss Autonomous Recovery Service e Cloud Protect è possibi
 
 Il database continua a funzionare dove si trova; backup RMAN, archivelog e redo vengono trasferiti in modo sicuro verso il servizio di recovery.
 
+Oracle descrive [Zero Data Loss Autonomous Recovery Service](https://www.oracle.com/database/zero-data-loss-autonomous-recovery-service/) come un servizio completamente gestito per la protezione dei dati. [Zero Data Loss Cloud Protect](https://docs.oracle.com/en/cloud/paas/recovery-service/dbrsu/protecting-premises-databases-using-recovery-service.html) estende questa protezione ai database Oracle on-premises idonei tramite Cloud Protect Fleet Agent.
+
 ## Cosa ottiene il cliente
 
-- Backup completi e incrementali Oracle RMAN centralizzati.
-- Protezione degli archivelog e, con Real-Time Redo, delle transazioni più recenti.
-- Recovery point selezionabili nel tempo.
-- Cifratura dei backup e policy di retention gestite centralmente.
-- Monitoraggio dello stato di protezione.
-- Meno dipendenza da procedure manuali, script locali e storage backup da amministrare.
+- **Un obiettivo di recovery definito, non un generico “backup notturno”.** Backup RMAN Level 0 e Level 1, archivelog e—quando è abilitato Real-Time Redo—le ultime transazioni confermate vengono protetti centralmente. Real-Time Redo può ridurre l’esposizione alla perdita di dati a meno di un secondo; l'RPO effettivo va comunque concordato e validato sul singolo ambiente.
+- **Un percorso di ripristino utilizzabile dopo ransomware o corruzione logica.** Il team può selezionare un recovery point precedente all'incidente e ripristinare da Recovery Service, invece di dipendere soltanto dall'ultimo backup completo. Oracle documenta la validazione continua del recovery e il point-in-time recovery come capacità del servizio.
+- **Backup protetti dagli errori operativi.** I backup sono cifrati; le protection policy regolano la retention e possono usare retention lock per l'immutabilità. Cloud Protect è progettato per offrire backup immutabili e logicamente air-gapped per i database on-premises idonei.
+- **Un unico punto di controllo per database distribuiti.** Gli amministratori vedono in OCI database protetti, stato di protezione e recoverability, utilizzo dei backup e policy assegnata, senza dover riconciliare script e storage locali tra sedi diverse.
+- **Meno attività sul database di produzione e per il team operativo.** La protezione incremental-forever elimina la necessità ricorrente di full backup settimanali, mentre il servizio gestito centralizza ciclo di vita e validazione dei backup.
+
+In termini pratici, il cliente ottiene un disegno RPO/RTO concordato, una postura di recovery monitorata e procedure di restore documentate: non semplicemente un'altra destinazione in cui conservare file di backup.
 
 L'obiettivo è ridurre al minimo l'RPO: la quantità di dati che l'azienda rischia di perdere dopo un incidente.
 
@@ -105,3 +108,10 @@ Una protezione continua risponde invece a domande più importanti:
 Non serve una migrazione completa in OCI per iniziare a migliorare la resilienza dei dati. Il cliente può mantenere Oracle Database dove ha senso per il proprio business e usare OCI come piattaforma centralizzata di protezione e recovery.
 
 *Ogni implementazione va validata sul singolo ambiente: versione Oracle, TDE, connettività, capacità di rete, RPO/RTO, retention e test di ripristino sono elementi essenziali del progetto.*
+
+## Risorse Oracle ufficiali
+
+- [Panoramica di Oracle Database Zero Data Loss Autonomous Recovery Service](https://www.oracle.com/database/zero-data-loss-autonomous-recovery-service/)
+- [Funzionalità di Zero Data Loss Autonomous Recovery Service](https://www.oracle.com/database/zero-data-loss-autonomous-recovery-service/features/)
+- [Documentazione Oracle: proteggere database on-premises con Zero Data Loss Cloud Protect](https://docs.oracle.com/en/cloud/paas/recovery-service/dbrsu/protecting-premises-databases-using-recovery-service.html)
+- [Documentazione Oracle: panoramica di Recovery Service](https://docs.oracle.com/en/cloud/paas/recovery-service/dbrsu/about-recovery-service.html)
