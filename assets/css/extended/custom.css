@@ -16,6 +16,15 @@
   border-radius: 6px;
 }
 
+.post-updated {
+  color: var(--secondary);
+  font-size: 0.9rem;
+}
+
+.post-updated p {
+  margin-bottom: 0;
+}
+
 .post-tags:empty,
 .post-footer:has(.post-tags:empty):not(:has(.paginav)):not(:has(.share-buttons)) {
   display: none;

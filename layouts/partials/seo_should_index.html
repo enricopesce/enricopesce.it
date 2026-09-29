@@ -1,20 +1,9 @@
-{{- $isProd := or hugo.IsProduction (eq site.Params.env "production") -}}
+{{- $shouldIndex := partial "seo_should_index_base.html" . -}}
 {{- $isPaginatorPage := false -}}
 {{- with (.Store.Get "seoListPaginator") -}}
   {{- if gt .PageNumber 1 -}}
     {{- $isPaginatorPage = true -}}
   {{- end -}}
 {{- end -}}
-{{- $shouldIndex := and $isProd (ne .Params.robotsNoIndex true) (not .Params.searchHidden) (ne .Layout "search") (not $isPaginatorPage) -}}
-{{- /*
-  A term archive containing only one article adds little beyond the canonical
-  article itself. Keep it crawlable through noindex, follow; index terms once
-  they become useful topic hubs with at least two articles.
-*/ -}}
-{{- if and $shouldIndex (eq .Kind "term") -}}
-  {{- $termPages := where .Pages "Kind" "page" -}}
-  {{- if lt (len $termPages) 2 -}}
-    {{- $shouldIndex = false -}}
-  {{- end -}}
-{{- end -}}
+{{- if $isPaginatorPage }}{{- $shouldIndex = false }}{{- end -}}
 {{- return $shouldIndex -}}

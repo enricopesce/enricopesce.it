@@ -2,7 +2,7 @@
 title: "RAM a prezzi record: misurare la memoria Linux prima di comprarne altra"
 description: "Perché nel 2026 la DRAM costa oltre quattro volte rispetto al 2025 e come misurare pressione, cache e processi Linux prima di espandere la RAM."
 date: 2026-07-10T09:00:00+00:00
-lastmod: 2026-07-08T00:00:00+00:00
+lastmod: 2026-07-10T09:00:00+00:00
 slug: "ram-prezzi-record-misurare-memoria-linux"
 draft: false
 cover:

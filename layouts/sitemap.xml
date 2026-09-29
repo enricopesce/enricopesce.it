@@ -10,14 +10,15 @@
       {{- end }}
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-      {{- if .IsTranslated }}
-        {{- range .AllTranslations }}
-          {{- if partial "seo_should_index.html" . }}
+      {{- $translations := partial "seo_translations.html" . }}
+      {{- if gt (len $translations) 1 }}
+        {{- range $translations }}
+          {{- if partial "seo_should_index_base.html" . }}
     <xhtml:link rel="alternate" hreflang="{{ .Language.Locale | default .Lang }}" href="{{ .Permalink }}"/>
           {{- end }}
         {{- end }}
-        {{- with (index (where .AllTranslations "Lang" "en") 0) }}
-          {{- if partial "seo_should_index.html" . }}
+        {{- with (index (where $translations "Lang" "en") 0) }}
+          {{- if partial "seo_should_index_base.html" . }}
     <xhtml:link rel="alternate" hreflang="x-default" href="{{ .Permalink }}"/>
           {{- end }}
         {{- end }}

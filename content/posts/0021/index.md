@@ -2,7 +2,7 @@
 title: "OCI E6 vs E5 vs E4: Compute Flex Shapes"
 description: "What changes with OCI E6 Standard Compute, when to test it against E5 and E4, and how to plan an E6 benchmark or migration."
 date: 2026-06-03T09:00:00+00:00
-lastmod: 2026-06-03T00:00:00+00:00
+lastmod: 2026-06-03T09:00:00+00:00
 slug: "oci-e6-vs-e5-vs-e4-compute-flex-shapes"
 draft: false
 cover:

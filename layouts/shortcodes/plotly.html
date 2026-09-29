@@ -1,4 +1,7 @@
 {{- $src := index .Params 0 -}}
+{{- if hasPrefix $src "//" -}}
+  {{- $src = printf "https:%s" $src -}}
+{{- end -}}
 {{- $height := "640" -}}
 {{- $title := "Interactive Plotly chart" -}}
 {{- if ge (len .Params) 2 }}{{- $height = index .Params 1 -}}{{- end -}}

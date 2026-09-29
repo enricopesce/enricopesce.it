@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Oracle Database continuous backup with OCI Cloud Protect</title>
+  <desc id="desc">Oracle databases in different locations send backups and real-time redo securely to OCI Recovery Service.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f2937"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#f97316"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <text x="76" y="94" font-family="Arial, Helvetica, sans-serif" font-size="43" font-weight="700" fill="#f8fafc">Continuous Oracle Database Protection</text>
+  <text x="76" y="137" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#cbd5e1">Cloud Protect + Zero Data Loss Autonomous Recovery Service</text>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="76" y="206" width="320" height="292" rx="26" fill="#f8fafc"/>
+    <text x="112" y="258" font-size="24" font-weight="700" fill="#0f172a">Oracle Database</text>
+    <g fill="#e2e8f0" stroke="#64748b" stroke-width="3">
+      <ellipse cx="236" cy="312" rx="84" ry="28"/>
+      <path d="M152 312v72c0 16 38 28 84 28s84-12 84-28v-72"/>
+      <ellipse cx="236" cy="348" rx="84" ry="28"/>
+      <ellipse cx="236" cy="384" rx="84" ry="28"/>
+    </g>
+    <text x="236" y="453" text-anchor="middle" font-size="19" fill="#475569">On premises · multicloud · OCI</text>
+    <path d="M418 350H756" stroke="#f97316" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow)"/>
+    <text x="587" y="315" text-anchor="middle" font-size="21" font-weight="700" fill="#fed7aa">RMAN + archive logs</text>
+    <text x="587" y="390" text-anchor="middle" font-size="21" fill="#cbd5e1">Real-Time Redo</text>
+    <rect x="786" y="190" width="338" height="326" rx="26" fill="#fff7ed" stroke="#f97316" stroke-width="4"/>
+    <text x="955" y="250" text-anchor="middle" font-size="29" font-weight="700" fill="#9a3412">OCI Recovery Service</text>
+    <path d="M865 329c0-50 40-90 90-90 43 0 79 30 88 70 38 2 68 33 68 71 0 40-32 72-72 72H870c-39 0-71-32-71-71 0-34 24-63 57-69 2-9 5-18 9-27" fill="#ffedd5" stroke="#ea580c" stroke-width="5"/>
+    <path d="M911 354l31 31 61-68" fill="none" stroke="#16a34a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="955" y="480" text-anchor="middle" font-size="20" fill="#7c2d12">Immutable · validated · recoverable</text>
+  </g>
+  <text x="76" y="570" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#94a3b8">Centralized protection without moving the operational workload</text>
+</svg>

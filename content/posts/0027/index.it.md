@@ -2,9 +2,16 @@
 title: "Proteggere Oracle Database con backup continuo, ovunque risieda"
 description: "Centralizzare backup e recovery di Oracle Database in OCI con Zero Data Loss Autonomous Recovery Service e Cloud Protect, senza spostare i workload operativi."
 date: 2026-07-29T00:00:00+00:00
-lastmod: 2026-07-29T00:00:00+00:00
+lastmod: 2026-09-29T00:00:00+00:00
 slug: "proteggere-oracle-database-backup-continuo"
 draft: false
+cover:
+  alt: "Backup continuo di Oracle Database con OCI Cloud Protect"
+  caption: "Protezione continua di Oracle Database con OCI Cloud Protect"
+  relative: true
+  image: "static/oracle-database-continuous-backup.svg"
+  width: 1200
+  height: 630
 keywords:
 - "backup continuo Oracle Database"
 - "Oracle Zero Data Loss Autonomous Recovery Service"
@@ -27,6 +34,17 @@ softwareRequirements:
 - "Oracle RMAN"
 - "OCI Cloud Protect Fleet Agent"
 - "Connettività privata verso OCI"
+faq:
+- question: "OCI Cloud Protect può proteggere un Oracle Database on-premises?"
+  answer: "Sì. Per le configurazioni Oracle Database idonee, Cloud Protect Fleet Agent collega il database on-premises a OCI Zero Data Loss Autonomous Recovery Service tramite connettività privata sicura."
+- question: "Real-Time Redo garantisce zero perdita di dati?"
+  answer: "Non esiste una garanzia universale valida per ogni ambiente. Real-Time Redo può ridurre l'esposizione alla perdita di dati a meno di un secondo, ma l'RPO effettivo dipende da connettività e configurazione e deve essere verificato sul singolo deployment."
+- question: "Il database operativo deve essere spostato in OCI?"
+  answer: "No. Il database può rimanere on-premises, su un altro cloud o in OCI, mentre backup RMAN, archivelog e, facoltativamente, redo in tempo reale vengono protetti centralmente in OCI."
+related:
+- "/posts/0009"
+- "/posts/0002"
+- "/posts/0006"
 ---
 
 Un database Oracle può risiedere on-premises, su un cloud provider diverso o in OCI. La domanda non cambia: quanto dato possiamo permetterci di perdere in caso di ransomware, errore applicativo, corruzione logica o guasto infrastrutturale?

@@ -1,5 +1,6 @@
 ---
 title: "OCI Articles"
+translationKey: "posts"
 description: "Technical articles about Oracle Cloud Infrastructure, Kubernetes, serverless architecture, automation, cloud benchmarks, and Generative AI."
 locale: "en_US"
 inLanguage: "en"

@@ -1,5 +1,6 @@
 ---
 title: "Enrico Pesce - OCI Cloud Specialist"
+translationKey: "home"
 description: "Enrico Pesce publishes practical guides on Oracle Cloud Infrastructure, OCI Generative AI, Kubernetes, serverless architecture, automation, and cloud benchmarks."
 locale: "en_US"
 inLanguage: "en"

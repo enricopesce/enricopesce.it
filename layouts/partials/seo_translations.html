@@ -1,0 +1,20 @@
+{{- $translations := .AllTranslations -}}
+{{- /*
+  Hugo can expose an asymmetric AllTranslations set for a multilingual home,
+  section, or same-slug taxonomy term. Resolve the equivalent logical path in
+  the other language sites so hreflang remains reciprocal.
+*/ -}}
+{{- if eq (len $translations) 1 -}}
+  {{- range hugo.Sites -}}
+    {{- if ne .Language.Lang $.Language.Lang -}}
+      {{- if $.IsHome -}}
+        {{- $translations = $translations | append .Home -}}
+      {{- else -}}
+        {{- with .GetPage $.Path -}}
+          {{- $translations = $translations | append . -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return (sort $translations "Language.Weight") -}}

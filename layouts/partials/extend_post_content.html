@@ -3,6 +3,12 @@
 {{- if eq .Section "posts" -}}
 {{- $isIT := eq .Lang "it" -}}
 
+{{- if .Lastmod.After .PublishDate }}
+<div class="post-content md-content post-updated">
+  <p><strong>{{ if $isIT }}Ultimo aggiornamento:{{ else }}Last updated:{{ end }}</strong> <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}">{{ .Lastmod | time.Format ":date_long" }}</time></p>
+</div>
+{{- end }}
+
 {{- with .Params.faq }}
 <div class="post-content md-content post-faq">
   <h2>{{ if $isIT }}Domande frequenti{{ else }}Frequently Asked Questions{{ end }}</h2>

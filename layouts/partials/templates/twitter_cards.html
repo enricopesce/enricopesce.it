@@ -2,6 +2,7 @@
 {{- if $coverImage -}}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="{{ $coverImage }}">
+<meta name="twitter:image:alt" content="{{ .Params.cover.alt | default .Title | plainify }}">
 {{- else }}
 <meta name="twitter:card" content="summary">
 {{- end }}

@@ -5,9 +5,9 @@
 > Personal technical blog by {{ $author }} about Oracle Cloud Infrastructure, OCI Generative AI, OKE/Kubernetes, serverless, automation, infrastructure as code, benchmarks, and practical cloud engineering.
 
 Canonical site: {{ site.Home.Permalink }}
-Author profile: {{ "/about/" | absURL }}
-Contact/context page: {{ "/parliamo-di-oci/" | absURL }}
-Projects: {{ "/projects/" | absURL }}
+Author profile: {{ with site.GetPage "/about" }}{{ .Permalink }}{{ end }}
+Contact/context page: {{ with site.GetPage "/parliamo-di-oci" }}{{ .Permalink }}{{ end }}
+Projects: {{ with site.GetPage "/projects" }}{{ .Permalink }}{{ end }}
 Robots policy: public pages are crawlable by search and AI answer crawlers; see {{ "/robots.txt" | absURL }}.
 Primary audience: cloud engineers, architects, DevOps teams, developers, and Italian technical communities evaluating Oracle Cloud Infrastructure.
 

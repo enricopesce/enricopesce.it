@@ -28,7 +28,7 @@
 
     {{- if $cover -}}
         {{- if (and (in $processableFormats $cover.MediaType.SubType) ($responsiveImages) (eq $prod true)) }}
-            <img loading="{{$loading}}"
+            <img loading="{{$loading}}" decoding="async"{{ if $.IsSingle }} fetchpriority="high"{{ end }}
                 srcset='{{- range $size := $sizes -}}
                             {{- if (ge $cover.Width $size) }}
                                 {{- printf "%s %s" (($cover.Resize (printf "%sx" $size)).Permalink) (printf "%sw," $size) }}
@@ -44,9 +44,9 @@
             {{- $w := .Params.cover.width | default 0 }}
             {{- $h := .Params.cover.height | default 0 }}
             {{- if and $w $h }}
-            <img loading="{{ $loading }}" src="{{ $imgdl }}" alt="{{ $alt }}" width="{{ $w }}" height="{{ $h }}">
+            <img loading="{{ $loading }}" decoding="async"{{ if $.IsSingle }} fetchpriority="high"{{ end }} src="{{ $imgdl }}" alt="{{ $alt }}" width="{{ $w }}" height="{{ $h }}">
             {{- else }}
-            <img loading="{{ $loading }}" src="{{ $imgdl }}" alt="{{ $alt }}">
+            <img loading="{{ $loading }}" decoding="async"{{ if $.IsSingle }} fetchpriority="high"{{ end }} src="{{ $imgdl }}" alt="{{ $alt }}">
             {{- end }}
         {{- end }}
     {{- else }}
@@ -54,9 +54,9 @@
         {{- $w := .Params.cover.width | default 0 }}
         {{- $h := .Params.cover.height | default 0 }}
         {{- if and $w $h }}
-        <img loading="{{ $loading }}" src="{{ $imgdl }}" alt="{{ $alt }}" width="{{ $w }}" height="{{ $h }}">
+        <img loading="{{ $loading }}" decoding="async"{{ if $.IsSingle }} fetchpriority="high"{{ end }} src="{{ $imgdl }}" alt="{{ $alt }}" width="{{ $w }}" height="{{ $h }}">
         {{- else }}
-        <img loading="{{ $loading }}" src="{{ $imgdl }}" alt="{{ $alt }}">
+        <img loading="{{ $loading }}" decoding="async"{{ if $.IsSingle }} fetchpriority="high"{{ end }} src="{{ $imgdl }}" alt="{{ $alt }}">
         {{- end }}
     {{- end }}
 

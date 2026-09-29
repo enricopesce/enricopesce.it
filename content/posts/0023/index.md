@@ -2,7 +2,7 @@
 title: "Record RAM Prices: Measure Linux Memory Before Buying More"
 description: "Why DRAM costs more than four times its 2025 level and how to measure Linux pressure, cache and processes before adding RAM."
 date: 2026-07-10T09:00:00+00:00
-lastmod: 2026-07-08T00:00:00+00:00
+lastmod: 2026-07-10T09:00:00+00:00
 slug: "record-ram-prices-measure-linux-memory"
 draft: false
 cover:

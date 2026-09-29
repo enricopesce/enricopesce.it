@@ -2,7 +2,7 @@
 title: "Zram, zswap and Linux Swap: A Practical Configuration Guide"
 description: "How to choose and configure zram, zswap and Linux swap, tune swappiness, and measure compression, latency and paging."
 date: 2026-07-17T09:00:00+00:00
-lastmod: 2026-07-08T00:00:00+00:00
+lastmod: 2026-07-17T09:00:00+00:00
 slug: "zram-zswap-linux-swap-configuration"
 draft: false
 cover:

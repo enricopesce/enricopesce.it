@@ -5,6 +5,13 @@ date: 2024-02-10T18:00:00+01:00
 lastmod: 2026-06-12T00:00:00+00:00
 slug: "another-cpu-multicore-performance-of-oci-compute-standard-flex-shapes"
 draft: false
+cover:
+  alt: "OCI Compute Flex Shapes multicore benchmark"
+  caption: "OCI Compute Flex Shapes multicore benchmark"
+  relative: true
+  image: "static/oci-flex-multicore-benchmark.svg"
+  width: 1200
+  height: 630
 keywords:
 - "oci flex shapes benchmark"
 - "ampere a1 performance"

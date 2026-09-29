@@ -2,7 +2,7 @@
 title: "Zram, zswap e swap su Linux: configurazione pratica senza comprare RAM"
 description: "Come scegliere e configurare zram, zswap e swap su Linux, impostare swappiness e misurare compressione, latenza e paging."
 date: 2026-07-17T09:00:00+00:00
-lastmod: 2026-07-08T00:00:00+00:00
+lastmod: 2026-07-17T09:00:00+00:00
 slug: "zram-zswap-swap-linux-configurazione"
 draft: false
 cover:

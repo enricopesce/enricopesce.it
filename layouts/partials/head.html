@@ -1,5 +1,6 @@
 {{- $pageLang := partial "seo_language.html" . -}}
 {{- $robotsIndex := partial "seo_should_index.html" . -}}
+{{- $translations := partial "seo_translations.html" . -}}
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,15 +28,15 @@
 <meta name="author" content="{{ (partial "author.html" . ) }}">
 <link rel="canonical" href="{{ if .Params.canonicalURL -}} {{ trim .Params.canonicalURL " " }} {{- else -}} {{ .Permalink }} {{- end }}">
 {{- /* Hreflang: emit every indexable translation so Google/AI crawlers can map language variants. */}}
-{{- if and $robotsIndex .IsTranslated }}
-{{- range .AllTranslations }}
-{{- if partial "seo_should_index.html" . }}
+{{- if and $robotsIndex (gt (len $translations) 1) }}
+{{- range $translations }}
+{{- if partial "seo_should_index_base.html" . }}
 <link rel="alternate" hreflang="{{ .Language.Locale | default .Lang }}" href="{{ .Permalink }}">
 {{- end }}
 {{- end }}
-{{- with .AllTranslations }}
+{{- with $translations }}
   {{- range . }}
-    {{- if and (eq .Lang "en") (partial "seo_should_index.html" .) }}
+    {{- if and (eq .Lang "en") (partial "seo_should_index_base.html" .) }}
 <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
     {{- end }}
   {{- end }}

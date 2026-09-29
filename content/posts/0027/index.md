@@ -2,9 +2,16 @@
 title: "Protect Oracle Database with Continuous Backup, Wherever It Runs"
 description: "Centralize Oracle Database backup and recovery in OCI with Zero Data Loss Autonomous Recovery Service and Cloud Protect, without moving operational workloads."
 date: 2026-07-29T00:00:00+00:00
-lastmod: 2026-07-29T00:00:00+00:00
+lastmod: 2026-09-29T00:00:00+00:00
 slug: "protect-oracle-database-continuous-backup"
 draft: false
+cover:
+  alt: "Oracle Database continuous backup with OCI Cloud Protect"
+  caption: "Continuous Oracle Database protection with OCI Cloud Protect"
+  relative: true
+  image: "static/oracle-database-continuous-backup.svg"
+  width: 1200
+  height: 630
 keywords:
 - "Oracle Database continuous backup"
 - "Oracle Zero Data Loss Autonomous Recovery Service"
@@ -27,6 +34,17 @@ softwareRequirements:
 - "Oracle RMAN"
 - "OCI Cloud Protect Fleet Agent"
 - "Private connectivity to OCI"
+faq:
+- question: "Can OCI Cloud Protect protect an on-premises Oracle Database?"
+  answer: "Yes. For eligible Oracle Database configurations, the Cloud Protect Fleet Agent connects an on-premises database to OCI Zero Data Loss Autonomous Recovery Service through secure private connectivity."
+- question: "Does Real-Time Redo guarantee zero data loss?"
+  answer: "No universal guarantee applies to every environment. Real-Time Redo can reduce data-loss exposure to less than one second, but the actual RPO depends on connectivity and configuration and must be tested for the individual deployment."
+- question: "Must the operational database move to OCI?"
+  answer: "No. The database can remain on premises, in another cloud, or in OCI while RMAN backups, archive logs, and optionally real-time redo are protected centrally in OCI."
+related:
+- "/posts/0009"
+- "/posts/0002"
+- "/posts/0006"
 ---
 
 An Oracle database can run on premises, with another cloud provider, or in OCI. The question does not change: how much data can we afford to lose in the event of ransomware, an application error, logical corruption, or an infrastructure failure?

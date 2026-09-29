@@ -35,8 +35,19 @@
   <meta property="og:type" content="website">
 {{- end }}
 
+{{- $coverResource := or ((.Resources.ByType "image").GetMatch (printf "*%s*" (.Params.cover.image | default ""))) ((resources.ByType "image").GetMatch (printf "*%s*" (.Params.cover.image | default ""))) -}}
 {{- with partial "seo_cover_image.html" . }}
   <meta property="og:image" content="{{ . }}">
+  <meta property="og:image:alt" content="{{ $.Params.cover.alt | default $.Title | plainify }}">
+  {{- with or $.Params.cover.width (and $coverResource (ne $coverResource.MediaType.SubType "svg") $coverResource.Width) }}
+  <meta property="og:image:width" content="{{ . }}">
+  {{- end }}
+  {{- with or $.Params.cover.height (and $coverResource (ne $coverResource.MediaType.SubType "svg") $coverResource.Height) }}
+  <meta property="og:image:height" content="{{ . }}">
+  {{- end }}
+  {{- with $coverResource }}
+  <meta property="og:image:type" content="{{ .MediaType.Type }}">
+  {{- end }}
 {{- end }}
 
 {{- with .Params.audio }}

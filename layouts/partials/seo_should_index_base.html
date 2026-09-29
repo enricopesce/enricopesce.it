@@ -1,0 +1,10 @@
+{{- $isProd := or hugo.IsProduction (eq site.Params.env "production") -}}
+{{- $shouldIndex := and $isProd (ne .Params.robotsNoIndex true) (not .Params.searchHidden) (ne .Layout "search") -}}
+{{- /* A one-article term is crawlable but too thin to index as a standalone hub. */ -}}
+{{- if and $shouldIndex (eq .Kind "term") -}}
+  {{- $termPages := where .Pages "Kind" "page" -}}
+  {{- if lt (len $termPages) 2 -}}
+    {{- $shouldIndex = false -}}
+  {{- end -}}
+{{- end -}}
+{{- return $shouldIndex -}}
